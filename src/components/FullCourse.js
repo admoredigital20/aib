@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useLocation } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 import CdNav from './CdNav'
 
 export default function FullCourse() {
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
     return (
         <div>
             <div>
@@ -54,7 +62,7 @@ export default function FullCourse() {
                             </div>
                         </Col>
                         <Col md="3" className="all-course-card">
-                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course2.jpg" + ")" }}>
                                 <div className="free-course">Free</div>
                                 <div className="course-detail">
                                     <h5>Information Visualization :</h5><span>Using Python</span>
@@ -77,7 +85,7 @@ export default function FullCourse() {
                             </div>
                         </Col>
                         <Col md="3" className="all-course-card">
-                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course3.jpg" + ")" }}>
                                 <div className="free-course">Free</div>
                                 <div className="course-detail">
                                     <h5>Information Visualization :</h5><span>Using Python</span>
@@ -100,7 +108,99 @@ export default function FullCourse() {
                             </div>
                         </Col>
                         <Col md="3" className="all-course-card">
-                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course4.jpg" + ")" }}>
+                                <div className="free-course">Free</div>
+                                <div className="course-detail">
+                                    <h5>Information Visualization :</h5><span>Using Python</span>
+                                    <div className="user-credit">
+                                        <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
+                                        <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
+                                    </div>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col md="3" className="all-course-card">
+                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course5.jpg" + ")" }}>
+                                <div className="free-course">Free</div>
+                                <div className="course-detail">
+                                    <h5>Information Visualization :</h5><span>Using Python</span>
+                                    <div className="user-credit">
+                                        <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
+                                        <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
+                                    </div>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col md="3" className="all-course-card">
+                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course6.jpg" + ")" }}>
+                                <div className="free-course">Free</div>
+                                <div className="course-detail">
+                                    <h5>Information Visualization :</h5><span>Using Python</span>
+                                    <div className="user-credit">
+                                        <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
+                                        <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
+                                    </div>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col md="3" className="all-course-card">
+                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course7.jpg" + ")" }}>
+                                <div className="free-course">Free</div>
+                                <div className="course-detail">
+                                    <h5>Information Visualization :</h5><span>Using Python</span>
+                                    <div className="user-credit">
+                                        <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
+                                        <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
+                                    </div>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col md="3" className="all-course-card">
+                            <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course8.jpg" + ")" }}>
                                 <div className="free-course">Free</div>
                                 <div className="course-detail">
                                     <h5>Information Visualization :</h5><span>Using Python</span>

@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { courseListReducer } from "./reducer/courseReducer";
-import { bootcampListReducer } from "./reducer/generalReducer";
+import { bootcampListReducer, helpReducer } from "./reducer/generalReducer";
 import { userRegisterReducer, userSigninReducer } from "./reducer/userReducer";
 
 const initialState= {
@@ -14,6 +14,7 @@ const reducer = combineReducers({
   bootcampList:bootcampListReducer,
   userSignin:userSigninReducer,
   userRegister:userRegisterReducer,
+  help:helpReducer,
 
 })
 

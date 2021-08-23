@@ -1,10 +1,18 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import React, {useEffect} from 'react'
+import { useLocation } from "react-router-dom";
+import { Col,  Row } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 import Footer from './Footer'
 import Navbar1 from './Navbar'
 
 export default function LearnMore() {
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
     return (
         <div className="lm">
             <Navbar1 />

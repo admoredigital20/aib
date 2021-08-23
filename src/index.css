@@ -14,87 +14,87 @@ code {
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-Light.eot');
-  src: local('Semplicita Pro Light'), local('SemplicitaPro-Light'), url('http://localhost:5004/assets/font/SemplicitaPro-Light.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-Light.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-Light.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-Light.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-Light.eot');
+  src: local('Semplicita Pro Light'), local('SemplicitaPro-Light'), url('http://localhost:3000/assets/font/SemplicitaPro-Light.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-Light.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-Light.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-Bold.eot');
-  src: local('Semplicita Pro Bold'), local('SemplicitaPro-Bold'), url('http://localhost:5004/assets/font/SemplicitaPro-Bold.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-Bold.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-Bold.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-Bold.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-Bold.eot');
+  src: local('Semplicita Pro Bold'), local('SemplicitaPro-Bold'), url('http://localhost:3000/assets/font/SemplicitaPro-Bold.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-Bold.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-Bold.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-BoldItalic.eot');
-  src: local('Semplicita Pro Bold Italic'), local('SemplicitaPro-BoldItalic'), url('http://localhost:5004/assets/font/SemplicitaPro-BoldItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-BoldItalic.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-BoldItalic.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-BoldItalic.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-BoldItalic.eot');
+  src: local('Semplicita Pro Bold Italic'), local('SemplicitaPro-BoldItalic'), url('http://localhost:3000/assets/font/SemplicitaPro-BoldItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-BoldItalic.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-BoldItalic.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-BoldItalic.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-SemiBoldItalic.eot');
-  src: local('Semplicita Pro SemiBold Italic'), local('SemplicitaPro-SemiBoldItalic'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBoldItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBoldItalic.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBoldItalic.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBoldItalic.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-SemiBoldItalic.eot');
+  src: local('Semplicita Pro SemiBold Italic'), local('SemplicitaPro-SemiBoldItalic'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBoldItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBoldItalic.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBoldItalic.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-MediumItalic.eot');
-  src: local('Semplicita Pro Medium Italic'), local('SemplicitaPro-MediumItalic'), url('http://localhost:5004/assets/font/SemplicitaPro-MediumItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-MediumItalic.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-MediumItalic.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-MediumItalic.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-MediumItalic.eot');
+  src: local('Semplicita Pro Medium Italic'), local('SemplicitaPro-MediumItalic'), url('http://localhost:3000/assets/font/SemplicitaPro-MediumItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-MediumItalic.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-MediumItalic.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-MediumItalic.ttf') format('truetype');
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-LightItalic.eot');
-  src: local('Semplicita Pro Light Italic'), local('SemplicitaPro-LightItalic'), url('http://localhost:5004/assets/font/SemplicitaPro-LightItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-LightItalic.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-LightItalic.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-LightItalic.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-LightItalic.eot');
+  src: local('Semplicita Pro Light Italic'), local('SemplicitaPro-LightItalic'), url('http://localhost:3000/assets/font/SemplicitaPro-LightItalic.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-LightItalic.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-LightItalic.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-LightItalic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-SemiBold.eot');
-  src: local('Semplicita Pro SemiBold'), local('SemplicitaPro-SemiBold'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBold.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBold.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBold.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-SemiBold.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-SemiBold.eot');
+  src: local('Semplicita Pro SemiBold'), local('SemplicitaPro-SemiBold'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBold.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBold.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBold.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-Regular.eot');
-  src: local('Semplicita Pro Regular'), local('SemplicitaPro-Regular'), url('http://localhost:5004/assets/font/SemplicitaPro-Regular.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-Regular.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-Regular.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-Regular.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-Regular.eot');
+  src: local('Semplicita Pro Regular'), local('SemplicitaPro-Regular'), url('http://localhost:3000/assets/font/SemplicitaPro-Regular.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-Regular.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-Regular.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-Italic.eot');
-  src: local('Semplicita Pro Italic'), local('SemplicitaPro-Italic'), url('http://localhost:5004/assets/font/SemplicitaPro-Italic.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-Italic.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-Italic.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-Italic.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-Italic.eot');
+  src: local('Semplicita Pro Italic'), local('SemplicitaPro-Italic'), url('http://localhost:3000/assets/font/SemplicitaPro-Italic.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-Italic.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-Italic.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Semplicita Pro';
-  src: url('http://localhost:5004/assets/font/SemplicitaPro-Medium.eot');
-  src: local('Semplicita Pro Medium'), local('SemplicitaPro-Medium'), url('http://localhost:5004/assets/font/SemplicitaPro-Medium.eot?#iefix') format('embedded-opentype'), url('http://localhost:5004/assets/font/SemplicitaPro-Medium.woff2') format('woff2'), url('http://localhost:5004/assets/font/SemplicitaPro-Medium.woff') format('woff'), url('http://localhost:5004/assets/font/SemplicitaPro-Medium.ttf') format('truetype');
+  src: url('http://localhost:3000/assets/font/SemplicitaPro-Medium.eot');
+  src: local('Semplicita Pro Medium'), local('SemplicitaPro-Medium'), url('http://localhost:3000/assets/font/SemplicitaPro-Medium.eot?#iefix') format('embedded-opentype'), url('http://localhost:3000/assets/font/SemplicitaPro-Medium.woff2') format('woff2'), url('http://localhost:3000/assets/font/SemplicitaPro-Medium.woff') format('woff'), url('http://localhost:3000/assets/font/SemplicitaPro-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SF Pro Display';
-  src: url('http://localhost:5004/assets/font/SFProDisplay-Semibold.ttf');
+  src: url('http://localhost:3000/assets/font/SFProDisplay-Semibold.ttf');
 }
 
 .col-pd-0 {
@@ -440,7 +440,7 @@ code {
 }
 
 .header1 {
-  /* background-image: url('http://localhost:5004/assets/img/header1.png'); */
+  /* background-image: url('http://localhost:3000/assets/img/header1.png'); */
   width: 100%;
   min-height: 800px;
   height: 100vh;
@@ -492,6 +492,18 @@ code {
   width: 7.5rem;
   margin-left: 2rem;
   border-color: #43ABFB;
+}
+
+.cdnav-signed-btn button {
+  background-color: #43ABFB;
+    border-radius: 10px;
+    width: 7.5rem;
+    margin-left: 2rem;
+    border-color: #43ABFB;
+}
+
+.cdnav-signed-btn .dropdown-menu a {
+  color: #212529 !important;
 }
 
 .signin-nav:focus {
@@ -995,7 +1007,8 @@ code {
 }
 
 .sec5 .sec5-btn {
-  /* margin-left: 10rem; */
+  margin-top: -12rem;
+  margin-left: 9rem;
 }
 
 .sec5 .py-img {
@@ -1148,6 +1161,7 @@ code {
   padding-right: 1.3rem;
 }
 
+
 .sec7 .review-vid {
   background-size: cover;
   height: 10rem;
@@ -1173,7 +1187,7 @@ code {
 }
 
 .sec9 {
-  /* background-image: url("http://localhost:5004/assets/img/sec9-bg.jpg");
+  /* background-image: url("http://localhost:3000/assets/img/sec9-bg.jpg");
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -1209,7 +1223,7 @@ code {
 .sec10 .web-img-grp h6 {
   font-size: 0.8rem;
   position: absolute;
-  margin-left: 3rem;
+  margin-left: -2rem;
   margin-top: 1.5rem;
   background-color: #433530;
   color: #fff;
@@ -1220,10 +1234,15 @@ code {
 
 .sec10 .web-img-grp h4 {
   position: absolute;
-  margin-left: 3rem;
+  margin-left: -2rem;
   margin-top: 4rem;
   color: #fff;
   font-size: 1.3rem;
+}
+
+.sec10 .web-main-content {
+  display: flex;
+  justify-content: center;
 }
 
 .sec11 {
@@ -1317,17 +1336,32 @@ code {
   font-size: 1.2rem;
 }
 
+.sec12 .sec12-p {
+background: none;
+border: none;
+}
+
 .sec12 .sec12-p input {
   background-color: #00072c;
   border-color: #00072c;
   border-style: hidden;
   border-bottom: 2px solid #3194e0;
+  color: #fff;
+}
+
+.sec12 .sec12-p input:focus {
+  outline: none;
 }
 
 .sec12 .lp-form-arrow {
   font-size: 1.6rem;
   position: relative;
   top: 4px;
+}
+
+.sec12-p button {
+  background: none;
+  border: none;
 }
 
 /* Course Page */
@@ -1720,7 +1754,7 @@ code {
 }
 
 .lm-header {
-  /* background-image: url("http://localhost:5004/assets/img/lm-header.png"); */
+  /* background-image: url("http://localhost:3000/assets/img/lm-header.png"); */
   width: 100%;
   min-height: 800px;
   height: 100vh;
@@ -1978,9 +2012,11 @@ code {
 }
 
 .sec9 .content p {
-  max-width: 100%;
+  width: 60%;
   font-size: 1rem;
 }
+
+
 
 .sec9 .slidernav {
   grid-row-start: 1;
@@ -2075,6 +2111,10 @@ code {
   .sec7 .rev-half{
     display: none;
   }
+  .sec9 .content p {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
 
 
@@ -2107,6 +2147,7 @@ code {
   .lm2-col{
     margin-top: 25px;
   }
+
 }
 
 
@@ -2215,4 +2256,21 @@ code {
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+.username-redux {
+  color: #000;
+  text-decoration: none;
+}
+
+.sec11-play-btn-in {
+  position: relative;
+    width: 100px !important;
+    margin-top: -50%;
+}
+
+.sec11-div-play {
+  text-align: center;
+  height: 0;
 }

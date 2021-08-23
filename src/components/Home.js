@@ -9,27 +9,37 @@ import HomeSlider from './HomeSlider';
 import Navbar1 from './Navbar';
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
-import { listBootcamp } from '../actions/generalAction';
+import { help, helpList, listBootcamp } from '../actions/generalAction';
 var FontAwesome = require('react-fontawesome')
 
 
 const Home = () => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [query, setQuery] = useState('')
 
     const courseList = useSelector((state) => state.courseList);
     const { loading, error, courses } = courseList;
 
-    const bootcampList =useSelector(state => state.bootcampList)
-    const {loading:bootcampLoading,error:bootcampError,bootcamps}=bootcampList
-    
+    const bootcampList = useSelector(state => state.bootcampList)
+    const { loading: bootcampLoading, error: bootcampError, bootcamps } = bootcampList
+
+    const help = useSelector(state => state.help)
+    const { loading: loadingHelp, error: errorHelp, helpQuery } = help
+
     console.log(courses);
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(listCourse())
-        dispatch(listBootcamp() )
+        dispatch(listBootcamp())
     }, [dispatch])
 
+
+    useEffect(() => {
+        console.log(courses);
+    }, [])
 
 
     var lh = "../"
@@ -94,6 +104,15 @@ const Home = () => {
     const [hwwContent, setHwwContent] = useState(`${hww1}`)
     const contentHandler = (e) => {
         setHwwContent(e);
+    }
+
+    const helpHandler = (e) => {
+        e.preventDefault()
+        dispatch(helpList(name, email, query))
+        setName('')
+        setQuery('')
+        setEmail('')
+        console.log(helpQuery, 'help');
     }
 
     var hwwImg1 = "../assets/img/hww-b-w (1).png"
@@ -198,8 +217,8 @@ const Home = () => {
                             <Col md={3}><h2 className="sec2-h2">Our Bootcamp and Training Courses</h2></Col>
                             <Col md={9} className="all-course-cat">
                                 <div className="course-cat course-cat-active" onClick={hideAndShow}><h5>Data Science & ML</h5></div>
-                                <div className="course-cat" onClick={hideAndShow1}><h5>Data Science & ML</h5></div>
-                                <div className="course-cat" onClick={hideAndShow2}><h5>Data Science & ML</h5></div>
+                                <div className="course-cat" onClick={hideAndShow1}><h5>Deep Learning</h5></div>
+                                <div className="course-cat" onClick={hideAndShow2}><h5>Artificial Intelligence</h5></div>
                             </Col>
                         </Row>
 
@@ -208,154 +227,36 @@ const Home = () => {
                                 error ? <MessageBox>{error}</MessageBox>
                                     :
                                     (
-                                        <>{courses.results.data.slice(0,4).map(data => {
+                                        <>{courses.results.data.slice(0, 4).map(data => {
                                             return (
-                                            
-                                                    <Col key={data.id} md="3" sm="6" xs='12' className="all-course-card">
-                                                        <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                                            <div className="free-course">{data.course_type}</div>
-                                                            <div className="course-detail">
-                                                                <h5>Information Visualization :</h5><span>Using {data.name}</span>
-                                                                <div className="user-credit">
-                                                                    <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                                                    <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                                                </div>
-                                                                <Row className="prof-details">
-                                                                    <Col className="col-pd-0 mw-mc">
-                                                                        <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                                                    </Col>
-                                                                    <Col className="col-pd-0">
-                                                                        <Row>
-                                                                            <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                                            <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                                        </Row>
-                                                                    </Col>
-                                                                </Row>
+
+                                                <Col key={data.id} md="3" sm="6" xs='12' className="all-course-card">
+                                                    <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                                                        <div className="free-course">{data.course_type}</div>
+                                                        <div className="course-detail">
+                                                            <h5>Information Visualization :</h5><span>Using {data.name}</span>
+                                                            <div className="user-credit">
+                                                                <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
+                                                                <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
                                                             </div>
+                                                            <Row className="prof-details">
+                                                                <Col className="col-pd-0 mw-mc">
+                                                                    <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                                                </Col>
+                                                                <Col className="col-pd-0">
+                                                                    <Row>
+                                                                        <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                                        <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                                    </Row>
+                                                                </Col>
+                                                            </Row>
                                                         </div>
-                                                    </Col>
+                                                    </div>
+                                                </Col>
                                             )
                                         })}</>
                                     )}
-                            {/* {courses.results.data.map(course => {
-                                return (
-                                    <Col key={course.id} md="3" sm="6" xs='12' className="all-course-card">
-                                        <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                            <div className="free-course">Free</div>
-                                            <div className="course-detail">
-                                                <h5>Information Visualization :</h5><span>Using Python</span>
-                                                <div className="user-credit">
-                                                    <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                                    <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                                </div>
-                                                <Row className="prof-details">
-                                                    <Col className="col-pd-0 mw-mc">
-                                                        <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                                    </Col>
-                                                    <Col className="col-pd-0">
-                                                        <Row>
-                                                            <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                            <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                        </Row>
-                                                    </Col>
-                                                </Row>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                )
-                            })} */}
-                            {/* <Col md="3" sm="6" xs='12' className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" sm="6" xs='12' className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" sm="6" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" sm="6" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col> */}
+
                         </Row>
 
 
@@ -384,7 +285,7 @@ const Home = () => {
                                 </div>
                             </Col>
                             <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course2.jpg" + ")" }}>
                                     <div className="free-course">Free</div>
                                     <div className="course-detail">
                                         <h5>Information Visualization :</h5><span>Using Python</span>
@@ -407,7 +308,7 @@ const Home = () => {
                                 </div>
                             </Col>
                             <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course3.jpg" + ")" }}>
                                     <div className="free-course">Free</div>
                                     <div className="course-detail">
                                         <h5>Information Visualization :</h5><span>Using Python</span>
@@ -430,7 +331,7 @@ const Home = () => {
                                 </div>
                             </Col>
                             <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course4.jpg" + ")" }}>
                                     <div className="free-course">Free</div>
                                     <div className="course-detail">
                                         <h5>Information Visualization :</h5><span>Using Python</span>
@@ -555,11 +456,11 @@ const Home = () => {
 
                         <Row>
                             <Col md={12} className="all-course-cat ">
-                                <div className="course-cat view-all"><h5>View All Courses &nbsp;<FontAwesome
+                                <LinkContainer to="/fullcourse"><div className="course-cat view-all"><h5>View All Courses &nbsp;<FontAwesome
                                     className="long-arrow-fw"
                                     name="arrow-right"
                                     style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                /></h5></div>
+                                /></h5></div></LinkContainer>
                             </Col>
                         </Row>
                     </Container>
@@ -573,32 +474,32 @@ const Home = () => {
                         </Row>
                         <Row className="upcoming-bc-grp">
                             {bootcampLoading ? <LoadingBox></LoadingBox> :
-                            bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
-                         :
-                         <>{bootcamps.results.data.slice(0,2).map(data => {
-                            return (
-                            
-                                <Col key={data.id} md={6} sm={12}>
-                                <div className="upcoming-bc" style={{ backgroundImage: "url(" + "../assets/img/upcoming-bc.jpg" + ")" }}>
-                                    <div className="ub-bg-overlay">
-                                        <Row className="ub-details">
-                                            <Col>
-                                                <h4>{data.task}: </h4><h6>{data.subject}</h6>
-                                            </Col>
-                                            <Col className="txt-r8">
-                                                <Row className="ub-price">$399.99</Row>
-                                                <Row className="ub-date">28/12/21 : 12:00 PM</Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            )
-                        })}
+                                bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
+                                    :
+                                    <>{bootcamps.results.data.slice(0, 2).map(data => {
+                                        return (
 
-                         </>
-                         }
-                            
+                                            <Col key={data.id} md={6} sm={12}>
+                                                <div className="upcoming-bc" style={{ backgroundImage: "url(" + "../assets/img/upcoming-bc1.png" + ")" }}>
+                                                    <div className="ub-bg-overlay">
+                                                        <Row className="ub-details">
+                                                            <Col>
+                                                                <h4>{data.task}: </h4><h6>{data.subject}</h6>
+                                                            </Col>
+                                                            <Col className="txt-r8">
+                                                                <Row className="ub-price">$399.99</Row>
+                                                                <Row className="ub-date">28/12/21 : 12:00 PM</Row>
+                                                            </Col>
+                                                        </Row>
+                                                    </div>
+                                                </div>
+                                            </Col>
+                                        )
+                                    })}
+
+                                    </>
+                            }
+
                         </Row>
                     </Container>
                 </section>
@@ -626,15 +527,15 @@ const Home = () => {
                             </Col>
                             <Col md="3">
                                 <div className="sec4-div">
-                                    <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
-                                    <Row><h5>Redefining Learning <br />With Light-board</h5></Row>
+                                    <Row><img className="icon" src="../assets/img/sec4-img-icon1.svg" alt="Redefining Learning With Light-board" /></Row>
+                                    <Row><h5>Domain-specific <br />capstone project</h5></Row>
                                     <Row className="sec4-grp">
                                         <Col md={5} xs={5} className="sec4-r8">
                                             <p>See How <br />Lightboard <br />Works</p>
                                             <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                         </Col>
                                         <Col md={7} xs={7}>
-                                            <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
+                                            <img className="sec4-img2" src="../assets/img/sec4-img.png" alt="sec4-img2" />
                                         </Col>
                                     </Row>
                                 </div>
@@ -642,7 +543,7 @@ const Home = () => {
                             <Col md="3">
                                 <div className="sec4-div">
                                     <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
-                                    <Row><h5>Redefining Learning <br />With Light-board</h5></Row>
+                                    <Row><h5>Small Group (5-25) <br />Focused Learning</h5></Row>
                                     <Row className="sec4-grp">
                                         <Col md={5} xs={5} className="sec4-r8">
                                             <p>See How <br />Lightboard <br />Works</p>
@@ -685,7 +586,7 @@ const Home = () => {
                             <Col md={3} className="sec5-div3">
                                 <p><strong>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix on to the coding world</p>
                             </Col>
-                            <Col md={{ span: 4, offset: 5 }}></Col>
+                            <Col md={{ span: 5, offset: 4 }} sm={10}><img src="../assets/img/theCoach4.png" width="100%" /></Col>
                         </Row>
                         <Row className="sec5-div4">
                             <Col>
@@ -804,12 +705,53 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </div>
+                                <div className="review-1">
+                                    <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
                             </Col>
                             <Col>
-                                <div className="rev-half">
-                                </div>
+
                                 <div className="review-1">
                                     <p className="review-p">The ultimate learning experience with AIBrilliance,</p>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
+                                <div className="review-2">
+                                    <p className="review-p">The ultimate learning experience with AIBrilliance,</p>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
+                                <div className="review-1">
+                                    <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
@@ -865,22 +807,22 @@ const Home = () => {
                             </Col>
                         </Row>
                         <Row className="web-img-grp">
-                            <Col md={3}>
+                            <Col md={6} lg={3} className="web-main-content">
                                 <h6>15th AUG 21, 11:00 EST</h6>
                                 <h4>Master in Python <br />Coding and more</h4>
                                 <img className="webinar-img" src="../assets/img/webinar (1).png" />
                             </Col>
-                            <Col md={3}>
+                            <Col md={6} lg={3} className="web-main-content">
                                 <h6>15th AUG 21, 11:00 EST</h6>
                                 <h4>Master in Python <br />Coding and more</h4>
                                 <img className="webinar-img" src="../assets/img/webinar (2).png" />
                             </Col>
-                            <Col md={3}>
+                            <Col md={6} lg={3} className="web-main-content">
                                 <h6>15th AUG 21, 11:00 EST</h6>
                                 <h4>Master in Python <br />Coding and more</h4>
                                 <img className="webinar-img" src="../assets/img/webinar (3).png" />
                             </Col>
-                            <Col md={3}>
+                            <Col md={6} lg={3} className="web-main-content">
                                 <h6>15th AUG 21, 11:00 EST</h6>
                                 <h4>Master in Python <br />Coding and more</h4>
                                 <img className="webinar-img" src="../assets/img/webinar (4).png" />
@@ -911,6 +853,9 @@ const Home = () => {
                             <Col md={4}>
                                 <div className="mg-sgt-vid">
                                     <img src="../assets/img/mg (1).png" />
+                                    <div className="sec11-div-play">
+                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn.png" />
+                                    </div>
                                     <Col md={8}>
                                         <h5>Corporate Training & Talent Partner Program</h5>
                                     </Col>
@@ -920,6 +865,9 @@ const Home = () => {
                             <Col md={4}>
                                 <div className="mg-sgt-vid">
                                     <img src="../assets/img/mg (2).png" />
+                                    <div className="sec11-div-play">
+                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn.png" />
+                                    </div>
                                     <Col md={8}>
                                         <h5>Empowering Women in Data Science</h5>
                                     </Col>
@@ -929,6 +877,9 @@ const Home = () => {
                             <Col md={4}>
                                 <div className="mg-sgt-vid">
                                     <img src="../assets/img/mg (3).png" />
+                                    <div className="sec11-div-play">
+                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn.png" />
+                                    </div>
                                     <Col md={8}>
                                         <h5>Experienced Teaching
                                             Policies</h5>
@@ -944,19 +895,22 @@ const Home = () => {
                         <Row>
                             <Col md={{ span: 3, offset: 1 }} className="sec12-help"><h3>How Can We <br />Help You ?</h3></Col>
                             <Col md={{ offset: 1 }}>
-                                <Row>
-                                    <Col><p className="sec12-p">Your Name is <input type="email" placeholder="enter name" /> and</p></Col>
-                                </Row>
-                                <Row>
-                                    <Col><p className="sec12-p">you would like to be reached at <input type="email" placeholder="enter email id" /></p></Col>
-                                </Row>
-                                <Row>
-                                    <Col><p className="sec12-p">I have a query on <input type="email" placeholder="enter your query" /><FontAwesome
-                                        className="lp-form-arrow"
-                                        name="arrow-circle-right"
-                                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
-                                    /></p></Col>
-                                </Row>
+                                <form onSubmit={helpHandler}>
+                                    <Row>
+                                        <Col><p className="sec12-p">Your Name is <input type="text" id='name' placeholder="enter name" value={name} onChange={(e) => setName(e.target.value)} /> and</p></Col>
+                                    </Row>
+                                    <Row>
+                                        <Col><p className="sec12-p">you would like to be reached at <input type="email" id='email' placeholder="enter email id" value={email} onChange={(e) => setEmail(e.target.value)} /></p></Col>
+                                    </Row>
+                                    <Row>
+                                        <Col><p className="sec12-p">I have a query on <input type="text" id='query' placeholder="enter your query" value={query} onChange={(e) => setQuery(e.target.value)} />
+                                            <button type="submit"><FontAwesome
+                                                className="lp-form-arrow"
+                                                name="arrow-circle-right"
+                                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
+                                            /></button></p></Col>
+                                    </Row>
+                                </form>
                             </Col>
                         </Row>
                     </Container>

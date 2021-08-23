@@ -1,7 +1,12 @@
-export  const LH = "http://localhost:8000"
+export  const LH = "http://3.109.5.41"
 
 
 export  const BOOTCAMP_LIST_REQUEST = "BOOTCAMP_LIST_REQUEST"
 export  const BOOTCAMP_LIST_SUCCESS = "BOOTCAMP_LIST_SUCCESS"
 export  const BOOTCAMP_LIST_FAIL = "BOOTCAMP_LIST_FAIL"
+
+
+export  const HELP_LIST_REQUEST = "HELP_LIST_REQUEST"
+export  const HELP_LIST_SUCCESS = "HELP_LIST_SUCCESS"
+export  const HELP_LIST_FAIL = "HELP_LIST_FAIL"
 

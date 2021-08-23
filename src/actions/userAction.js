@@ -6,9 +6,9 @@ export const signin = (email, password) => async (dispatch) => {
     dispatch({ type: USER_SIGNIN_REQUEST, payload: { email, password } });
 
     try {
-        const { data } = await axios.post(`${LH}/app/api/login`, { email, password });
-        dispatch({ type: USER_SIGNIN_SUCCESS, payload: data.results.data });
-        localStorage.setItem("userInfo", JSON.stringify(data))
+        const { data } = await axios.post("http://3.109.5.41/app/api/login", { email, password });
+        dispatch({ type: USER_SIGNIN_SUCCESS, payload: data});
+        localStorage.setItem("userInfo", JSON.stringify(data.results.data))
     } catch (error) {
         dispatch({
             type: USER_SIGNIN_FAIL, payload: error.response && error.response.data.message
@@ -25,7 +25,6 @@ export const register = (username, password, email) => async (dispatch) => {
     try {
         const { data } = await axios.post(`${LH}/app/api/signup`, {username, password, email})
         dispatch({ type: USER_REGISTER_SUCCESS, payload: data })
-        dispatch({ type: USER_SIGNIN_SUCCESS, payload: data.results.data });
         localStorage.setItem("userInfo", JSON.stringify(data))
     } catch (error) {
         dispatch({
