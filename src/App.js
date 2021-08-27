@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import CourseDetails from "./components/CourseDetails";
 import FullCourse from "./components/FullCourse";
 import LearnMore from "./components/LearnMore";
+import Literature from "./components/CourseDiv";
 
 function App() {
   return (

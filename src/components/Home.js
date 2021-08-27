@@ -3,14 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { Row, Col, Container, Button, Form } from "react-bootstrap"
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap'
-import { listCourse } from '../actions/courseActions';
 import Footer from './Footer';
 import HomeSlider from './HomeSlider';
 import Navbar1 from './Navbar';
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
 import { help, helpList, listBootcamp } from '../actions/generalAction';
+import { webinarCourse } from '../actions/webinarAction';
+import CourseDiv from './CourseDiv';
 var FontAwesome = require('react-fontawesome')
+
 
 
 const Home = () => {
@@ -18,79 +20,29 @@ const Home = () => {
     const [email, setEmail] = useState('')
     const [query, setQuery] = useState('')
 
-    const courseList = useSelector((state) => state.courseList);
-    const { loading, error, courses } = courseList;
 
     const bootcampList = useSelector(state => state.bootcampList)
     const { loading: bootcampLoading, error: bootcampError, bootcamps } = bootcampList
 
+    const webinarList = useSelector(state => state.webinarList)
+    const { loading: webinarLoading, error: webinarError, webinar } = webinarList
+
     const help = useSelector(state => state.help)
     const { loading: loadingHelp, error: errorHelp, helpQuery } = help
 
-    console.log(courses);
+    console.log(bootcamps);
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(listCourse())
         dispatch(listBootcamp())
+        dispatch(webinarCourse())
     }, [dispatch])
 
 
     useEffect(() => {
-        console.log(courses);
+        console.log(bootcamps);
     }, [])
-
-
-    var lh = "../"
-
-    const [info, setInfo] = useState(true);
-    const [info1, setInfo1] = useState(false);
-    const [info2, setInfo2] = useState(false);
-
-
-    const hideAndShow = (e) => {
-        if (!info) {
-            setInfo(true)
-            setInfo1(false)
-            setInfo2(false)
-        }
-
-        var elems = document.querySelector(".course-cat-active");
-        if (elems !== null) {
-            elems.classList.remove("course-cat-active");
-        }
-        e.target.parentNode.classList.add("course-cat-active")
-    }
-
-    const hideAndShow1 = (e) => {
-        if (!info1) {
-            setInfo1(true)
-            setInfo(false)
-            setInfo2(false)
-        }
-
-        var elems = document.querySelector(".course-cat-active");
-        if (elems !== null) {
-            elems.classList.remove("course-cat-active");
-        }
-        e.target.parentNode.classList.add("course-cat-active")
-
-    }
-    const hideAndShow2 = (e) => {
-        if (!info2) {
-            setInfo2(true)
-            setInfo1(false)
-            setInfo(false)
-        }
-
-
-        var elems = document.querySelector(".course-cat-active");
-        if (elems !== null) {
-            elems.classList.remove("course-cat-active");
-        }
-        e.target.parentNode.classList.add("course-cat-active")
-    }
 
 
     // How we work
@@ -201,7 +153,7 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </Col>
-                                <Col><img className="header1-img" src={lh + "assets/img/header1-img1.png"} alt="ai brilliance header zoom image" /></Col>
+                                <Col><img className="header1-img" src="../assets/img/header1-img1.png" alt="ai brilliance header zoom image" /></Col>
                             </Row>
                         </Container>
                         <Row className="ai-op">
@@ -209,262 +161,8 @@ const Home = () => {
                         </Row>
                     </div>
                 </section>
-                <section>
-                    <Container className="sec2">
+                <CourseDiv />
 
-
-                        <Row>
-                            <Col md={3}><h2 className="sec2-h2">Our Bootcamp and Training Courses</h2></Col>
-                            <Col md={9} className="all-course-cat">
-                                <div className="course-cat course-cat-active" onClick={hideAndShow}><h5>Data Science & ML</h5></div>
-                                <div className="course-cat" onClick={hideAndShow1}><h5>Deep Learning</h5></div>
-                                <div className="course-cat" onClick={hideAndShow2}><h5>Artificial Intelligence</h5></div>
-                            </Col>
-                        </Row>
-
-                        <Row className='sec-2-row-mobile' style={{ display: info ? "flex" : "none" }}>
-                            {loading ? <LoadingBox></LoadingBox> :
-                                error ? <MessageBox>{error}</MessageBox>
-                                    :
-                                    (
-                                        <>{courses.results.data.slice(0, 4).map(data => {
-                                            return (
-
-                                                <Col key={data.id} md="3" sm="6" xs='12' className="all-course-card">
-                                                    <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                                        <div className="free-course">{data.course_type}</div>
-                                                        <div className="course-detail">
-                                                            <h5>Information Visualization :</h5><span>Using {data.name}</span>
-                                                            <div className="user-credit">
-                                                                <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                                                <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                                            </div>
-                                                            <Row className="prof-details">
-                                                                <Col className="col-pd-0 mw-mc">
-                                                                    <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                                                </Col>
-                                                                <Col className="col-pd-0">
-                                                                    <Row>
-                                                                        <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                                        <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                                    </Row>
-                                                                </Col>
-                                                            </Row>
-                                                        </div>
-                                                    </div>
-                                                </Col>
-                                            )
-                                        })}</>
-                                    )}
-
-                        </Row>
-
-
-                        <Row style={{ display: info1 ? "flex" : "none" }}>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Machine Laungage</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course2.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course3.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course4.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
-
-
-                        <Row style={{ display: info2 ? "flex" : "none" }}>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Artificial Intaligient</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="3" className="all-course-card">
-                                <div className="course-card" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
-                                    <div className="free-course">Free</div>
-                                    <div className="course-detail">
-                                        <h5>Information Visualization :</h5><span>Using Python</span>
-                                        <div className="user-credit">
-                                            <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
-                                            <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">120</span>
-                                        </div>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
-
-
-
-
-                        <Row>
-                            <Col md={12} className="all-course-cat ">
-                                <LinkContainer to="/fullcourse"><div className="course-cat view-all"><h5>View All Courses &nbsp;<FontAwesome
-                                    className="long-arrow-fw"
-                                    name="arrow-right"
-                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                /></h5></div></LinkContainer>
-                            </Col>
-                        </Row>
-                    </Container>
-                </section>
                 <section>
                     <Container className="sec3">
                         <Row>
@@ -480,15 +178,15 @@ const Home = () => {
                                         return (
 
                                             <Col key={data.id} md={6} sm={12}>
-                                                <div className="upcoming-bc" style={{ backgroundImage: "url(" + "../assets/img/upcoming-bc1.png" + ")" }}>
+                                                <div className="upcoming-bc" style={{ backgroundImage: "url(" + data.image + ")" }}>
                                                     <div className="ub-bg-overlay">
                                                         <Row className="ub-details">
                                                             <Col>
-                                                                <h4>{data.task}: </h4><h6>{data.subject}</h6>
+                                                                <h4>{data.name} </h4><h6>{data.sub_name}</h6>
                                                             </Col>
                                                             <Col className="txt-r8">
-                                                                <Row className="ub-price">$399.99</Row>
-                                                                <Row className="ub-date">28/12/21 : 12:00 PM</Row>
+                                                                <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
+                                                                <Row className="ub-date">{data.date}</Row>
                                                             </Col>
                                                         </Row>
                                                     </div>
@@ -775,19 +473,19 @@ const Home = () => {
                         <Row><p className="sec8-p">Where students whom I have taught datascience and machine learning are working:</p></Row>
                         <Row className="sec8-logo">
                             <Col>
-                                <img src="../assets/img/brandlogo1.png" />
+                                <img src="../assets/img/brand5.jpg" />
                             </Col>
                             <Col>
-                                <img src="../assets/img/brandlogo1.png" />
+                                <img src="../assets/img/brand4.jpg" />
                             </Col>
                             <Col>
-                                <img src="../assets/img/brandlogo1.png" />
+                                <img src="../assets/img/brand3.jpg" />
                             </Col>
                             <Col>
-                                <img src="../assets/img/brandlogo1.png" />
+                                <img src="../assets/img/brand2.jpg" />
                             </Col>
                             <Col>
-                                <img src="../assets/img/brandlogo1.png" />
+                                <img src="../assets/img/brand1.jpg" />
                             </Col>
 
                         </Row>
@@ -807,26 +505,25 @@ const Home = () => {
                             </Col>
                         </Row>
                         <Row className="web-img-grp">
-                            <Col md={6} lg={3} className="web-main-content">
-                                <h6>15th AUG 21, 11:00 EST</h6>
-                                <h4>Master in Python <br />Coding and more</h4>
-                                <img className="webinar-img" src="../assets/img/webinar (1).png" />
-                            </Col>
-                            <Col md={6} lg={3} className="web-main-content">
-                                <h6>15th AUG 21, 11:00 EST</h6>
-                                <h4>Master in Python <br />Coding and more</h4>
-                                <img className="webinar-img" src="../assets/img/webinar (2).png" />
-                            </Col>
-                            <Col md={6} lg={3} className="web-main-content">
-                                <h6>15th AUG 21, 11:00 EST</h6>
-                                <h4>Master in Python <br />Coding and more</h4>
-                                <img className="webinar-img" src="../assets/img/webinar (3).png" />
-                            </Col>
-                            <Col md={6} lg={3} className="web-main-content">
-                                <h6>15th AUG 21, 11:00 EST</h6>
-                                <h4>Master in Python <br />Coding and more</h4>
-                                <img className="webinar-img" src="../assets/img/webinar (4).png" />
-                            </Col>
+                            {
+                                webinarLoading ? (<LoadingBox></LoadingBox>) :
+                                    webinarError ? (<MessageBox>{webinarError}</MessageBox>) :
+
+                                        webinar.results.data.map(web => {
+                                            return (
+                                                <Col md={6} lg={3} className="web-main-content">
+                                                    <h6>15th AUG 21, 11:00 EST</h6>
+                                                    <h4>{web.name}<br/>{web.sub_name}</h4>
+                                                    <img className="webinar-img" src={web.image} />
+                                                </Col>
+                                            )
+                                        }
+
+                                        )
+
+
+                            }
+
                         </Row>
                     </Container>
                 </section>

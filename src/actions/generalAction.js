@@ -9,7 +9,7 @@ export const listBootcamp = ( )=>  async (dispatch) =>{
     });
   
     try{
-       const {data} =await axios.get("http://3.109.5.41/app/api/bootcamp/list")
+       const {data} =await axios.get(`${LH}/app/api/bootcamp/list`)
        dispatch({type:BOOTCAMP_LIST_SUCCESS,payload:data})
        
     }catch(error){

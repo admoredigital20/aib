@@ -9,7 +9,7 @@ export const listCourse = ( )=>  async (dispatch) =>{
     });
   
     try{
-       const {data} =await axios.get("http://3.109.5.41/app/api/courses/list")
+       const {data} =await axios.get(`${LH}/app/api/courses/list`)
        dispatch({type:COURSE_LIST_SUCCESS,payload:data})
        
     }catch(error){

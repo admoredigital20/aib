@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { courseListReducer } from "./reducer/courseReducer";
 import { bootcampListReducer, helpReducer } from "./reducer/generalReducer";
 import { userRegisterReducer, userSigninReducer } from "./reducer/userReducer";
+import { webinarListReducer } from "./reducer/webinarReducer";
 
 const initialState= {
   userSignin:{
@@ -11,6 +12,7 @@ const initialState= {
 };
 const reducer = combineReducers({
   courseList:courseListReducer,
+  webinarList:webinarListReducer,
   bootcampList:bootcampListReducer,
   userSignin:userSigninReducer,
   userRegister:userRegisterReducer,
