@@ -204,7 +204,7 @@ const Home = () => {
                 <section className="sec4">
                     <Container>
                         <Row>
-                            <Col md="3">
+                            <Col md="3" className="make-us-diff">
                                 <h3>What makes us Different</h3>
                                 <Button className="btn-blue">Read About Us</Button>
                             </Col>
@@ -287,16 +287,16 @@ const Home = () => {
                             <Col md={{ span: 5, offset: 4 }} sm={10}><img src="../assets/img/theCoach4.png" width="100%" /></Col>
                         </Row>
                         <Row className="sec5-div4">
-                            <Col>
+                            <Col xs={6} sm={3} className="div4-col">
                                 <h6>Environment <br />Setup</h6>
                             </Col>
-                            <Col>
+                            <Col xs={6} sm={3}>
                                 <h6>Coding <br />Tutorials</h6>
                             </Col>
-                            <Col>
+                            <Col xs={6} sm={3}>
                                 <h6>2 hr weekly <br />Coding support</h6>
                             </Col>
-                            <Col>
+                            <Col xs={6} sm={3}>
                                 <h6>Domain Specific <br />Capstone Project</h6>
                             </Col>
                         </Row>
@@ -308,7 +308,7 @@ const Home = () => {
                         <Row>
                             <h2>How We Work ?</h2>
                         </Row>
-                        <Row>
+                        <Row className="sec6-hover-img">
                             <Col><img onMouseOver={() => { contentHandler(hww1); imgHandler(); }} onMouseOut={imgHandlerout} className="hww-img" src={hwwImgState} /></Col>
                             <Col><img onMouseOver={() => { contentHandler(hww2); imgHandler2(); }} onMouseOut={imgHandlerout2} className="hww-img" src={hwwImgState2} /></Col>
                             <Col><img onMouseOver={() => { contentHandler(hww3); imgHandler3(); }} onMouseOut={imgHandlerout3} className="hww-img" src={hwwImgState3} /></Col>
@@ -325,7 +325,7 @@ const Home = () => {
                                 <Row><h4>Student <br />Feedbacks.</h4></Row>
                                 <Row><p>Our Students are proudly rendering <br />their service in the following companies</p></Row>
                                 <br />
-                                <Row><Col><Button className="btn-blue sec5-btn">Join the Gang</Button></Col></Row>
+                                <Row className="sec5-btn-row"><Col><Button className="btn-blue sec5-btn">Join the Gang</Button></Col></Row>
                             </Col>
                             <Col md={{ offset: 1 }} >
                                 <Row className="review-row">
@@ -600,7 +600,7 @@ const Home = () => {
                                         <Col><p className="sec12-p">you would like to be reached at <input type="email" id='email' placeholder="enter email id" value={email} onChange={(e) => setEmail(e.target.value)} /></p></Col>
                                     </Row>
                                     <Row>
-                                        <Col><p className="sec12-p">I have a query on <input type="text" id='query' placeholder="enter your query" value={query} onChange={(e) => setQuery(e.target.value)} />
+                                        <Col className="sec12-p-div"><p className="sec12-p">I have a query on <input type="text" id='query' placeholder="enter your query" value={query} onChange={(e) => setQuery(e.target.value)} />
                                             <button type="submit"><FontAwesome
                                                 className="lp-form-arrow"
                                                 name="arrow-circle-right"
