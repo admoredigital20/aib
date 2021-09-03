@@ -11,6 +11,9 @@ import MessageBox from '../components/MessageBox'
 import { help, helpList, listBootcamp } from '../actions/generalAction';
 import { webinarCourse } from '../actions/webinarAction';
 import CourseDiv from './CourseDiv';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 var FontAwesome = require('react-fontawesome')
 
 
@@ -125,6 +128,43 @@ const Home = () => {
 
 
 
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 1000,
+        autoplaySpeed: 2000,
+        cssEase: "linear",
+        arrow: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
+
 
     return (
         <>
@@ -165,6 +205,7 @@ const Home = () => {
 
                 <section>
                     <Container className="sec3">
+
                         <Row>
                             <Col className="sec3-heading">
                                 <h2>Upcoming Bootcamp</h2>
@@ -182,7 +223,7 @@ const Home = () => {
                                                     <div className="ub-bg-overlay">
                                                         <Row className="ub-details">
                                                             <Col>
-                                                                <h4>{data.name} </h4><h6>{data.sub_name}</h6>
+                                                                <h4>{data.name}: </h4><h6>{data.sub_name}</h6>
                                                             </Col>
                                                             <Col className="txt-r8">
                                                                 <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
@@ -205,63 +246,119 @@ const Home = () => {
                     <Container>
                         <Row>
                             <Col md="3" className="make-us-diff">
-                                <h3>What makes us Different</h3>
-                                <Button className="btn-blue">Read About Us</Button>
+                                <h3 className='sec4-h3'>What makes us Different</h3>
+                                <Button className="btn-blue"><span className='sec4-btn-tiltle'>Read About Us</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
                             </Col>
-                            <Col md="3">
-                                <div className="sec4-div">
-                                    <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
-                                    <Row><h5>Redefining Learning <br />With Light-board</h5></Row>
-                                    <Row className="sec4-grp">
-                                        <Col md={5} xs={5} className="sec4-r8">
-                                            <p>See How <br />Lightboard <br />Works</p>
-                                            <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
-                                        </Col>
-                                        <Col md={7} xs={7}>
-                                            <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </Col>
-                            <Col md="3">
-                                <div className="sec4-div">
-                                    <Row><img className="icon" src="../assets/img/sec4-img-icon1.svg" alt="Redefining Learning With Light-board" /></Row>
-                                    <Row><h5>Domain-specific <br />capstone project</h5></Row>
-                                    <Row className="sec4-grp">
-                                        <Col md={5} xs={5} className="sec4-r8">
-                                            <p>See How <br />Lightboard <br />Works</p>
-                                            <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
-                                        </Col>
-                                        <Col md={7} xs={7}>
-                                            <img className="sec4-img2" src="../assets/img/sec4-img.png" alt="sec4-img2" />
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </Col>
-                            <Col md="3">
-                                <div className="sec4-div">
-                                    <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
-                                    <Row><h5>Small Group (5-25) <br />Focused Learning</h5></Row>
-                                    <Row className="sec4-grp">
-                                        <Col md={5} xs={5} className="sec4-r8">
-                                            <p>See How <br />Lightboard <br />Works</p>
-                                            <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
-                                        </Col>
-                                        <Col md={7} xs={7}>
-                                            <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
-                                        </Col>
-                                    </Row>
-                                </div>
+                            <Col md="9">
+                                <Slider {...settings}>
+                                    <Col md="3">
+                                        <div className="sec4-div">
+                                            <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                            <Row><h5>Safe and Secure<br />No Fee Traps</h5></Row>
+                                            <Row className="sec4-grp">
+                                                <Col md={5} xs={5} className="sec4-r8">
+                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                                </Col>
+                                                <Col md={7} xs={7}>
+                                                    <img className="sec4-img2" src="../assets/img/sec4-img1.png" alt="sec4-img2" />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                    <Col md="3">
+                                        <div className="sec4-div">
+                                            <Row><img className="icon" src="../assets/img/sec4-img-icon1.svg" alt="Redefining Learning With Light-board" /></Row>
+                                            <Row><h5>Certificate and <br />Reference Guarantee </h5></Row>
+                                            <Row className="sec4-grp">
+                                                <Col md={5} xs={5} className="sec4-r8">
+                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                                </Col>
+                                                <Col md={7} xs={7}>
+                                                    <img className="sec4-img2" src="../assets/img/sec4-img3.png" alt="sec4-img2" />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                    <Col md="3">
+                                        <div className="sec4-div">
+                                            <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                            <Row><h5>1 to 1 Personalized
+                                                <br />Education</h5></Row>
+                                            <Row className="sec4-grp">
+                                                <Col md={5} xs={5} className="sec4-r8">
+                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                                </Col>
+                                                <Col md={7} xs={7}>
+                                                    <img className="sec4-img2" src="../assets/img/sec4-img5.png" alt="sec4-img2" />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                    <Col md="3">
+                                        <div className="sec4-div">
+                                            <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                            <Row><h5>Redefining Learning
+                                                <br />With Light-board</h5></Row>
+                                            <Row className="sec4-grp">
+                                                <Col md={5} xs={5} className="sec4-r8">
+                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                                </Col>
+                                                <Col md={7} xs={7}>
+                                                    <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                    <Col md="3">
+                                        <div className="sec4-div">
+                                            <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                            <Row><h5>Domain-specific
+                                                <br />capstone project</h5></Row>
+                                            <Row className="sec4-grp">
+                                                <Col md={5} xs={5} className="sec4-r8">
+                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                                </Col>
+                                                <Col md={7} xs={7}>
+                                                    <img className="sec4-img2" src="../assets/img/sec4-img.png" alt="sec4-img2" />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                    <Col md="3">
+                                        <div className="sec4-div">
+                                            <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                            <Row><h5>Small Group (5-25)
+                                                <br />Focused Learning </h5></Row>
+                                            <Row className="sec4-grp">
+                                                <Col md={5} xs={5} className="sec4-r8">
+                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                                </Col>
+                                                <Col md={7} xs={7}>
+                                                    <img className="sec4-img2" src="../assets/img/sec4-img6.png" alt="sec4-img2" />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                </Slider>
                             </Col>
                         </Row>
                     </Container>
                 </section>
                 <section>
+                    <img className="sec5-shade-1" src="../assets/img/triangle.png" />
+
                     <Container className="sec5">
+
                         <Row>
                             <Col md={4}>
                                 <Row md={12}>
-                                    <h3>The Coach & <br />Coding Enablers</h3>
+                                    <h3 className='sec5-h3'>The Coach & <br />Coding Enablers</h3>
                                 </Row>
                                 <Row md={12}>
                                     <p>The online education platform that empowers learning in every student and prepare them for data science, machine learning, and AI job market.</p>
@@ -275,14 +372,14 @@ const Home = () => {
                                 <img src="../assets/img/brain-ai.svg" />
                                 <p>The Coach teach you what you need to learn, He will also guide you to your right path</p>
                             </Col>
-                            <Col md={3}>
+                            <Col md={3} className='z-index'>
                                 <img className="r-p-img" src="../assets/img/rahul-pink.png" alt="rahul rai" />
-                                <LinkContainer to="/learnmore"><Button className="btn-blue sec5-btn">Read About Us</Button></LinkContainer>
+                                <LinkContainer to="/learnmore"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Learn More</span> <img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer>
                             </Col>
                         </Row>
                         <Row>
                             <Col md={3} className="sec5-div3">
-                                <p><strong>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix on to the coding world</p>
+                                <p><strong style={{ fontSize: "1.2rem" }}>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix on to the coding world</p>
                             </Col>
                             <Col md={{ span: 5, offset: 4 }} sm={10}><img src="../assets/img/theCoach4.png" width="100%" /></Col>
                         </Row>
@@ -302,6 +399,7 @@ const Home = () => {
                         </Row>
                         <Row className="sec5-coding">CODING ENABLERS</Row>
                     </Container>
+                    <div className="sec5-cir"></div>
                 </section>
                 <section className="sec6">
                     <Container>
@@ -325,7 +423,7 @@ const Home = () => {
                                 <Row><h4>Student <br />Feedbacks.</h4></Row>
                                 <Row><p>Our Students are proudly rendering <br />their service in the following companies</p></Row>
                                 <br />
-                                <Row className="sec5-btn-row"><Col><Button className="btn-blue sec5-btn">Join the Gang</Button></Col></Row>
+                                <Row className="sec5-btn-row"><Col><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></Col></Row>
                             </Col>
                             <Col md={{ offset: 1 }} >
                                 <Row className="review-row">
@@ -390,7 +488,7 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </div>
-                                <div className="review-1 review-vid" style={{ backgroundImage: "url(" + "../assets/img/course1.jpg" + ")" }}>
+                                <div className="review-0 review-vid" style={{ backgroundImage: "url(" + "../assets/img/ok.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
@@ -420,8 +518,7 @@ const Home = () => {
                             </Col>
                             <Col>
 
-                                <div className="review-1">
-                                    <p className="review-p">The ultimate learning experience with AIBrilliance,</p>
+                                <div className="review-0 review-vid" style={{ backgroundImage: "url(" + "../assets/img/okk.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
@@ -468,9 +565,9 @@ const Home = () => {
                     </Container>
                 </section>
 
-                <section>
+                <section style={{ paddingBottom: "35px" }}>
                     <Container className="sec8">
-                        <Row><p className="sec8-p">Where students whom I have taught datascience and machine learning are working:</p></Row>
+                        <Row><p className="sec8-p">“Student graduates of Dr. Rai are working for” in place of text currently before companies logos:</p></Row>
                         <Row className="sec8-logo">
                             <Col>
                                 <img src="../assets/img/brand5.jpg" />
@@ -505,7 +602,12 @@ const Home = () => {
                             </Col>
                         </Row>
                         <Row className="web-img-grp">
-                            {
+                            <Col md={6} lg={3} className="web-main-content">
+                                <h6>15th AUG 21, 11:00 EST</h6>
+                                <h4><br /></h4>
+                                <img className="webinar-img" src="../assets/img/webinar (1).png" />
+                            </Col>
+                            {/* {
                                 webinarLoading ? (<LoadingBox></LoadingBox>) :
                                     webinarError ? (<MessageBox>{webinarError}</MessageBox>) :
 
@@ -513,7 +615,7 @@ const Home = () => {
                                             return (
                                                 <Col md={6} lg={3} className="web-main-content">
                                                     <h6>15th AUG 21, 11:00 EST</h6>
-                                                    <h4>{web.name}<br/>{web.sub_name}</h4>
+                                                    <h4>{web.name}<br />{web.sub_name}</h4>
                                                     <img className="webinar-img" src={web.image} />
                                                 </Col>
                                             )
@@ -522,7 +624,7 @@ const Home = () => {
                                         )
 
 
-                            }
+                            } */}
 
                         </Row>
                     </Container>
@@ -533,8 +635,8 @@ const Home = () => {
                         <Row>
                             <Col className="sec11-details" md={6}>
                                 <Row className="sec11-para">
-                                    <h2>Corporate Training & Talent Partner Program</h2>
-                                    <p>Duration - 120 mins</p>
+                                    <h2 style={{ fontWeight: "900" }}>Corporate Training & Talent Partner Program</h2>
+                                    <p style={{ color: "grey" }}>Duration - 120 mins</p>
                                     <br />
                                     <Col md={10}>
                                         <p>High quality corporate data science and machine learning programs for upskilling the workforce are hard to find! We can deliver both in-person and online specialized courses to upskill corporate teams at specialized corporate rates.</p>
@@ -590,7 +692,7 @@ const Home = () => {
                 <section className="sec12">
                     <Container className="sec12-container">
                         <Row>
-                            <Col md={{ span: 3, offset: 1 }} className="sec12-help"><h3>How Can We <br />Help You ?</h3></Col>
+                            <Col md={{ span: 3, offset: 1 }} className="sec12-help"><h3>How Can We <br />Help You ?<img style={{ height: "60px" }} src='../assets/img/420.png' />  </h3>  </Col>
                             <Col md={{ offset: 1 }}>
                                 <form onSubmit={helpHandler}>
                                     <Row>
@@ -605,7 +707,8 @@ const Home = () => {
                                                 className="lp-form-arrow"
                                                 name="arrow-circle-right"
                                                 style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
-                                            /></button></p></Col>
+                                            /></button></p>
+                                        </Col>
                                     </Row>
                                 </form>
                             </Col>

@@ -39,7 +39,7 @@ export default function CourseDetails() {
             <div>
                 <Row className="main-cd" >
                     <Col md={1}
-                        xs={2}
+                        xs={0}
                         className="side-bar" >
                         <div className="sb-items" >
 
@@ -85,7 +85,7 @@ export default function CourseDetails() {
                             </Row>
                         </div >
                     </Col>
-                    <Col className="right-div" >
+                    <Col className="right-div"  >
                         <Row className="cd1 section"
                             id="cd1"
                             style={
@@ -93,7 +93,7 @@ export default function CourseDetails() {
                             } >
                             <Col md={12}
                                 className="cd1-breadcrumbs" >
-                                <h6 > Bootcamp & gt; Information Visualization & gt; Course Details </h6>
+                                <h6 > Bootcamp &gt; Information Visualization &gt; Course Details </h6>
 
                             </Col>
                             <Col className="cd1-play-btn" >
@@ -120,25 +120,62 @@ export default function CourseDetails() {
                                 }
                                 className="cd1-detail-bar" >
                                 <img src="../assets/img/cd-details-img.jpg" />
-                                <Row >
-                                    <Col > < p > Discounted Price </p></Col >
-                                    <Col > < p > Slots left </p></Col >
+                                <Row className="cd1-dtl-grp mt-4">
+                                    <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-left" > Discounted Price </p></Col >
+                                    <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-r8" > Slots left </p></Col >
                                 </Row>
-                                <Row >
+                                <Row className="cd1-dtl-grp">
                                     <Col className="price" >
-                                        <h2 > Free </h2> <p > $1200 .00 </p>
+                                        <h2 className='cd1-detail-free' > Free </h2> <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p>
                                     </Col >
-                                    <Col > < h3 > 8 / 25 </h3></Col >
+                                    <Col > < h3 className='cd1-detail-bar-h2 cd1-p-r8 mt-3 mb-0'> 8 / 25 </h3></Col >
                                 </Row>
                                 <Row >
                                     <Col md={12} >
-                                        <Button > Enroll Now </Button> </Col >
+                                        <Button className='cd1-detail-row-btn' > Enroll Now </Button> </Col >
                                 </Row>
                                 <Row >
                                     <Col >
-                                        <p > Batch Starting on 15 th Jun 21 </p> </Col >
+                                        <p className='cd1-detail-row-par' > Batch Starting on <h6 className="">15th Jun 21</h6></p>
+                                    </Col >
                                 </Row>
                             </Col >
+                        </Row>
+                        <Row className="mt-4 mb-4 mbl-cd1">
+                            <Col xs={5} className="mbl-cd1-img">
+                                <img src="../assets/img/cd-details-img.jpg" />
+                            </Col>
+
+                            <Col xs={6}>
+                                <Row>
+                                    <Col>
+                                        <Row>
+                                            <p>Discounted Price</p>
+                                        </Row>
+                                        <Row>
+                                            <Col><h2 className='cd1-detail-free' > Free </h2> <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p></Col>
+                                        </Row>
+                                    </Col>
+
+                                    <Col >
+                                        <Row>
+                                            <p className="cd1-p-r8">Slots left</p>
+                                        </Row>
+                                        <Row>
+                                            <p className="cd1-p-r8">8/25</p>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Button className='cd1-detail-row-btn' > Enroll Now </Button>
+                                </Row>
+                                <Row>
+                                    <p className='cd1-detail-row-par' > Batch Starting on <h6 className="">15th Jun 21</h6></p>
+                                </Row>
+                            </Col>
+                            <Col md={{ offset: 1 }} xs={0}>
+                            </Col>
+
                         </Row>
                         <Row className="cd2"
                             id="cd2" >
@@ -154,7 +191,7 @@ export default function CourseDetails() {
                                     <Col className="col-pd-0" >
                                         <Row className="" >
                                             <Col md="12" className="col-pd-0 cd2-prof-dsgn" > Author </Col>
-                                            <Col className="col-pd-0 cd2-prof-name" > Rahul Rai, CEO & #38; Founder, AIB</Col>
+                                            <Col className="col-pd-0 cd2-prof-name" > Rahul Rai, CEO &#38; Founder, AIB</Col>
                                         </Row>
                                     </Col>
                                 </Row>
@@ -162,6 +199,7 @@ export default function CourseDetails() {
                             <Row className="cd2-mouse" >
                                 <p className="cd2-more-details" > More Details < img src="../assets/img/cd2-mouse.png" /> </p>
                             </Row >
+
                         </Row>
                         <Row className="cd3 section" id="cd3" >
                             <Col md={7} >
@@ -347,7 +385,7 @@ export default function CourseDetails() {
 
                             </Col>
                             <Col md={{ span: 5, offset: 1 }} >
-                                    < ChatApp />
+                                < ChatApp />
                             </Col >
                         </Row>
                         <Row className="cd5 section" id="cd5" >
@@ -356,7 +394,7 @@ export default function CourseDetails() {
                                     <h2 className="cd5-header" > Scoring and Certificate </h2>
                                 </Row >
                                 <Row >
-                                    <Col md={1} >
+                                    <Col md={1} className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
@@ -366,11 +404,11 @@ export default function CourseDetails() {
                                         /> <div className="verticalLine" > </div>
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 > No’ of Modules </h5> <p > 4 Modules and 18 lessons </p> </Col >
+                                        <h5 className='cd5-h5'> No’ of Modules </h5> <p > 4 Modules and 18 lessons </p> </Col >
 
                                 </Row>
                                 <Row >
-                                    <Col md={1} >
+                                    <Col md={1}  className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
@@ -379,23 +417,23 @@ export default function CourseDetails() {
                                             } /> <div className="verticalLine" > </div>
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 > Quiz </h5> <p > 4 Modules and 18 lessons </p>
+                                        <h5 className='cd5-h5'> Quiz </h5> <p > 4 Modules and 18 lessons </p>
                                     </Col >
 
                                 </Row>
                                 <Row >
-                                    <Col md={1} >
+                                    <Col md={1}  className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
                                             style={
                                                 { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#43abfb' }
                                             } /> <div className="verticalLine" > </div> </Col > <Col className="cd5-det" >
-                                        <h5 > Quiz </h5> <p > 4 Modules and 18 lessons </p> </Col >
+                                        <h5 className='cd5-h5'> Quiz </h5> <p > 4 Modules and 18 lessons </p> </Col >
 
                                 </Row>
                                 <Row >
-                                    <Col md={1} >
+                                    <Col md={1}  className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
@@ -407,7 +445,7 @@ export default function CourseDetails() {
                                         </div>
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 > Mini Project </h5>
+                                        <h5 className='cd5-h5'> Mini Project </h5>
                                         <p > 4 Modules and 18 lessons </p>
                                         <Row >
                                             <div className="cd5-get-eva" >
@@ -425,7 +463,7 @@ export default function CourseDetails() {
 
                                 </Row>
                                 <Row >
-                                    <Col md={1} >
+                                    <Col md={1}  className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
@@ -435,7 +473,7 @@ export default function CourseDetails() {
                                         />
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 > Quiz </h5>
+                                        <h5 className='cd5-h5' > Quiz </h5>
                                         <p > 4 Modules and 18 lessons </p>
                                     </Col >
 

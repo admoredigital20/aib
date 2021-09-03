@@ -6,8 +6,10 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@zoomus/websdk": "^1.9.8",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "crypto": "^1.0.1",
     "firebase": "^8.10.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
@@ -18,8 +20,10 @@
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

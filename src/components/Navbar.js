@@ -1,15 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Navbar, Nav, Modal, Button, Form, Row, Col } from "react-bootstrap"
 import Signin from './Signin';
 
 const Navbar1 = () => {
 
+    const [logo, setLogo] = useState("../assets/img/main-logo.svg")
+
+    const handleResize = () => {
+        if (window.innerWidth < 1000) {
+            setLogo("../assets/img/main-logo-black.png")
+        } else {
+            setLogo("../assets/img/main-logo.svg")
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", handleResize)
+    })
+
 
     return (
         <Navbar expand="lg" className="nav1">
             <Container>
-                <LinkContainer to="/"><img className="logo" src="../assets/img/main-logo.svg" alt="ai brilliance logo" /></LinkContainer>
+                <LinkContainer to="/"><img className="logo" src={logo} alt="ai brilliance logo" /></LinkContainer>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -18,14 +32,14 @@ const Navbar1 = () => {
                         <LinkContainer to="/literature"><Nav.Link>Literature</Nav.Link></LinkContainer>
                         <LinkContainer to="/events"><Nav.Link>Events</Nav.Link></LinkContainer>
                         <LinkContainer to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
-                        <Signin/>
+                        <Signin />
                     </Nav>
                 </Navbar.Collapse>
             </Container>
 
 
 
-            
+
         </Navbar>
 
     );

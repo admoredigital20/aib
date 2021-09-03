@@ -5,7 +5,9 @@ import Home from "./components/Home";
 import CourseDetails from "./components/CourseDetails";
 import FullCourse from "./components/FullCourse";
 import LearnMore from "./components/LearnMore";
-import Literature from "./components/CourseDiv";
+import ZoomPage from "./components/ZoomPage";
+import Cookies from "./components/Cookies";
+
 
 function App() {
   return (
@@ -25,6 +27,13 @@ function App() {
             <Route path="/learnmore">
               <LearnMore />
             </Route>
+            <Route path="/zoompage">
+              <ZoomPage />
+            </Route>
+            <Route path="/cookies">
+              <Cookies />
+            </Route>
+          
           </Switch>
         </div>
       </Router>
