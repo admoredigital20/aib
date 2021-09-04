@@ -683,6 +683,10 @@ code {
     color: #fff;
 }
 
+.header1-container .header1-btn2 img {
+    width: 35px;
+}
+
 .header1-container .header1-btn3 {
     max-width: max-content;
     cursor: pointer;
@@ -744,8 +748,8 @@ code {
 }
 
 .course-card {
-    height: 19rem;
-    width: 13rem;
+    height: 18.5rem;
+    width: 13.5rem;
     border-radius: 0.5rem 3rem 0.5rem 0.5rem;
     background-size: cover;
     position: relative;
@@ -1244,7 +1248,7 @@ code {
     font-size: 0.8rem;
     position: absolute;
     margin-left: -2rem;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     background-color: #433530;
     color: #fff;
     padding: 0.4rem;
@@ -1255,7 +1259,7 @@ code {
 .sec10 .web-img-grp h4 {
     position: absolute;
     margin-left: -2rem;
-    margin-top: 4rem;
+    margin-top: 4.8rem;
     color: #fff;
     font-size: 1.3rem;
     text-align: left;
@@ -1320,6 +1324,16 @@ code {
 
 .sec11 .sec11-para {
     color: #fff;
+}
+
+.sec11 .sec11-para .sec11-para-p {
+    font-weight: 100;
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+.sec11 .sec11-para h2 {
+    font-weight:500;
 }
 
 .sec11 .sec11-details {
@@ -1421,8 +1435,8 @@ code {
 }
 
 .main-cd .sb-item {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
     cursor: pointer;
     --bs-gutter-x: 0rem;
 }
@@ -1435,7 +1449,7 @@ code {
     height: 350px;
     --bs-gutter-x: 0rem;
     margin-left: -0.6rem;
-    background-size: cover;
+    background-size: contain;
 }
 
 .main-cd .cd1 .cd1-breadcrumbs {
@@ -1455,10 +1469,17 @@ code {
     text-align: center;
     width: 65px;
     margin-top: 0.7rem;
+    font-weight: 300;
+    margin-left: 5px;
 }
 
 .cd1 .cd1-play-btn {
     margin-left: 2.6rem;
+}
+
+.cd1 .cd1-play-btn img {
+    width: 5rem;
+
 }
 
 .cd1-detail-bar {
@@ -1469,6 +1490,7 @@ code {
     width: 22%;
     border-radius: 1rem;
     text-align: center;
+    margin-left: 62.333333%;
 }
 
 .cd1-detail-row .btn {
@@ -1507,14 +1529,24 @@ code {
 }
 
 .cd2 .cd2-heading {
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.cd2 .cd2-dtl-p {
+    color: #646464;
+    font-size: 15px;
 }
 
 .cd2-prof-details {
     color: #00072c;
     align-items: center;
     --bs-gutter-x: 0rem;
+}
+
+.cd2-prof-details .prof-pic {
+    margin-right: 0.5rem;
 }
 
 .cd2-prof-name {
@@ -1669,12 +1701,12 @@ code {
 }
 
 .cd4 .cd4-coach-name {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .cd4 .cd4-coach-name1 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -1779,6 +1811,8 @@ code {
     background-color: #e6f4ff;
     border-radius: 0.5rem;
     padding: 1rem;
+    padding-left: 2rem;
+    margin-left: -15px;
 }
 
 .cd5-get-eva .fa-user:before {
@@ -2259,7 +2293,6 @@ code {
 
 .cd1-p-r8 {
     text-align: right;
-
 }
 
 .cd1-detail-free {
@@ -2736,3 +2769,56 @@ code {
 .z-index{
     z-index: 10;
 }
+@media screen and (min-device-width: 990px) and (max-device-width: 1111px){
+    .sec5 .sec5-coach{
+        display: none;
+    }
+    .sec5 .sec5-btn{
+        margin-left: 7rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main-cd .cd1{
+        background-size: cover;
+    }
+
+}
+.talk-img{
+    width: 116px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    background-color: #fff;
+    padding: 9px;
+    margin-top: -30px;
+}
+
+.cd5-baby {
+    width: 50px;
+    height: 50px;
+    z-index: 9;
+}
+
+@media screen and (min-device-width: 990px) and (max-device-width: 1413px){
+
+    .coach-padding{
+    padding-left: 32px;
+}
+}
+
+@media screen and (min-device-width: 1340px) and (max-device-width: 1455px) {
+    .header1-container .ai-op{
+        margin-top:-18px ;
+    }
+}
+@media screen and (min-device-width: 1210px) and (max-device-width: 1339px) {
+    .header1-container .ai-op{
+        margin-top:4px ;
+    }
+}
+@media screen and (min-device-width: 1000px) and (max-device-width: 1200px) {
+    .header1-container .ai-op{
+        margin-top:-50px ;
+    }
+}
+

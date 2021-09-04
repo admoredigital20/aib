@@ -22,7 +22,7 @@ function SignIn({ auth, user }) {
                 <ChatUI user={userInfo} />
             </>
             :
-            <h3>Please SignIn to Chat</h3>
+            <div></div>
             }
         </div>
     )

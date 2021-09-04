@@ -182,12 +182,15 @@ const Home = () => {
                                             <p>Highest quality content in hands-on and project-based model delivered in online synchronous/asynchronous mode.</p>
                                             <Row className="header1-btn-grp">
                                                 <Col className="header1-btn1">Find your course !</Col>
-                                                <Col className="header1-btn2"><FontAwesome
-                                                    className="header1-play-circle"
-                                                    name="play-circle"
-                                                    size="3x"
-                                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                                /></Col>
+                                                <Col className="header1-btn2">
+                                                    {/* <FontAwesome
+                                                        className="header1-play-circle"
+                                                        name="play-circle"
+                                                        size="3x"
+                                                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                                    /> */}
+                                                    <img src="../assets/img/play-btn.png" />
+                                                </Col>
                                                 <Col className="header1-btn3">Play Demo</Col>
                                             </Row>
                                         </Col>
@@ -195,11 +198,13 @@ const Home = () => {
                                 </Col>
                                 <Col><img className="header1-img" src="../assets/img/header1-img1.png" alt="ai brilliance header zoom image" /></Col>
                             </Row>
+                          
                         </Container>
                         <Row className="ai-op">
                             <img src="../assets/img/ai-op.svg" alt="ai brilliance" />
                         </Row>
                     </div>
+                   
                 </section>
                 <CourseDiv />
 
@@ -215,7 +220,7 @@ const Home = () => {
                             {bootcampLoading ? <LoadingBox></LoadingBox> :
                                 bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
                                     :
-                                    <>{bootcamps.results.data.slice(0, 2).map(data => {
+                                    <>{bootcamps.results.status_code==="200" ? bootcamps.results.data.slice(0, 2).map(data => {
                                         return (
 
                                             <Col key={data.id} md={6} sm={12}>
@@ -234,7 +239,7 @@ const Home = () => {
                                                 </div>
                                             </Col>
                                         )
-                                    })}
+                                    }):<h1>no data</h1>}
 
                                     </>
                             }
@@ -604,7 +609,7 @@ const Home = () => {
                         <Row className="web-img-grp">
                             <Col md={6} lg={3} className="web-main-content">
                                 <h6>15th AUG 21, 11:00 EST</h6>
-                                <h4><br /></h4>
+                                <h4>Master in Python <br />Coding and more</h4>
                                 <img className="webinar-img" src="../assets/img/webinar (1).png" />
                             </Col>
                             {/* {
@@ -639,13 +644,13 @@ const Home = () => {
                                     <p style={{ color: "grey" }}>Duration - 120 mins</p>
                                     <br />
                                     <Col md={10}>
-                                        <p>High quality corporate data science and machine learning programs for upskilling the workforce are hard to find! We can deliver both in-person and online specialized courses to upskill corporate teams at specialized corporate rates.</p>
+                                        <p className="sec11-para-p">High quality corporate data science and machine learning programs for upskilling the workforce are hard to find! We can deliver both in-person and online specialized courses to upskill corporate teams at specialized corporate rates.</p>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col md={6}>
                                 <img className="mg-main-img" src="../assets/img/mg (4).png" />
-                                <img className="sec11-play-img" src="../assets/img/play-btn.png" />
+                                <img className="sec11-play-img" src="../assets/img/play-btn1.png" />
                             </Col>
                         </Row>
                         <Row className="mg-all-vid">
@@ -653,7 +658,7 @@ const Home = () => {
                                 <div className="mg-sgt-vid">
                                     <img src="../assets/img/mg (1).png" />
                                     <div className="sec11-div-play">
-                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn.png" />
+                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn1.png" />
                                     </div>
                                     <Col md={8}>
                                         <h5>Corporate Training & Talent Partner Program</h5>
@@ -665,7 +670,7 @@ const Home = () => {
                                 <div className="mg-sgt-vid">
                                     <img src="../assets/img/mg (2).png" />
                                     <div className="sec11-div-play">
-                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn.png" />
+                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn1.png" />
                                     </div>
                                     <Col md={8}>
                                         <h5>Empowering Women in Data Science</h5>
@@ -677,7 +682,7 @@ const Home = () => {
                                 <div className="mg-sgt-vid">
                                     <img src="../assets/img/mg (3).png" />
                                     <div className="sec11-div-play">
-                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn.png" />
+                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn1.png" />
                                     </div>
                                     <Col md={8}>
                                         <h5>Experienced Teaching

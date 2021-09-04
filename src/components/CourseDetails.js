@@ -47,7 +47,7 @@ export default function CourseDetails() {
                                 <a href="#cd1" >
                                     < Col className="sb-active cd1-div" >
                                         <img className="sb-item"
-                                            src="../assets/img/sidebar-img-1.png" />
+                                            src="../assets/img/sidebar-img-1.png" style={{width:"25px"}} />
                                     </Col>
                                 </a >
                             </Row>
@@ -55,7 +55,7 @@ export default function CourseDetails() {
                                 <a href="#cd3" >
                                     < Col className="cd3-div" >
                                         <img className="sb-item"
-                                            src="../assets/img/sidebar-img-2.png" />
+                                            src="../assets/img/sidebar-img-2.png" style={{width:"25px"}}  />
                                     </Col>
                                 </a >
                             </Row>
@@ -63,7 +63,7 @@ export default function CourseDetails() {
                                 <a href="#cd4" >
                                     < Col className="cd4-div" >
                                         <img className="sb-item"
-                                            src="../assets/img/sidebar-img-3.png" />
+                                            src="../assets/img/sidebar-img-3.png" style={{width:"25px"}} />
                                     </Col>
                                 </a >
                             </Row>
@@ -71,7 +71,7 @@ export default function CourseDetails() {
                                 <a href="#cd5" >
                                     < Col className="cd5-div" >
                                         <img className="sb-item"
-                                            src="../assets/img/sidebar-img-4.png" />
+                                            src="../assets/img/sidebar-img-4.png" style={{width:"25px"}} />
                                     </Col>
                                 </a >
                             </Row>
@@ -79,7 +79,7 @@ export default function CourseDetails() {
                                 <a href="#cd6" >
                                     < Col className="cd6-div" >
                                         <img className="sb-item"
-                                            src="../assets/img/sidebar-img-5.png" />
+                                            src="../assets/img/sidebar-img-5.png" style={{width:"25px"}} />
                                     </Col>
                                 </a >
                             </Row>
@@ -98,13 +98,17 @@ export default function CourseDetails() {
                             </Col>
                             <Col className="cd1-play-btn" >
                                 <Row >
-                                    < FontAwesome className="header1-play-circle"
+                                    {/* < FontAwesome className="header1-play-circle"
                                         name="play-circle"
                                         size="5x"
                                         style={
                                             { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#43abfb' }
                                         }
-                                    />
+                                    /> */}
+                                    <Col>
+                                        <img src="../assets/img/Play@2x.png" />
+                                    </Col>
+
                                 </Row >
                                 <Col >
                                     <h6 className="cd1-header-h6" > Couse <br /> Preview </h6>
@@ -112,13 +116,7 @@ export default function CourseDetails() {
                             </Col>
                         </Row >
                         <Row className="cd1-detail-row" >
-                            <Col md={
-                                { span: 3, offset: 7 }
-                            }
-                                xs={
-                                    { span: 5, offset: 5 }
-                                }
-                                className="cd1-detail-bar" >
+                            <Col md={{ span: 3, offset: 7 }} xs={{ span: 5, offset: 5 }} className="cd1-detail-bar" >
                                 <img src="../assets/img/cd-details-img.jpg" />
                                 <Row className="cd1-dtl-grp mt-4">
                                     <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-left" > Discounted Price </p></Col >
@@ -181,7 +179,7 @@ export default function CourseDetails() {
                             id="cd2" >
                             <Col md={4}
                                 className="cd2-details" >
-                                <h1 className="cd2-heading" > Information Visualization: <br /> Using Python </h1> <p > In this course we’ ll introduce you to the essentials of the Python language, development culture, and important parts of the Python standard library.This course will help you develop the foundation you need to work on any Python project </p>
+                                <h1 className="cd2-heading" > Information Visualization: <br /> Using Python </h1> <p className="cd2-dtl-p"> In this course we’ ll introduce you to the essentials of the Python language, development culture, and important parts of the Python standard library.This course will help you develop the foundation you need to work on any Python project </p>
                                 <Row className="cd2-prof-details" >
                                     <Col className="col-pd-0 mw-mc" >
                                         <img src="../assets/img/Rectangle-WS.png"
@@ -352,9 +350,9 @@ export default function CourseDetails() {
                                     <Col md={3}
                                         className="cd4-pic-div" >
                                         <img src="../assets/img/coach-dp.png" />
-                                        <h6 className="cd4-talk" > Talk to Coach </h6>
+                                        <img className='talk-img' src='../assets/img/talk.png'/>
                                     </Col >
-                                    <Col >
+                                    <Col className='coach-padding'>
                                         <h4 className="cd4-coach-name" > Dr.Rahul Rai </h4>
                                         <h4 className="cd4-coach-name1" > AI Coach </h4>
                                         <div className="cd4-dtls-bottom" >
@@ -408,7 +406,7 @@ export default function CourseDetails() {
 
                                 </Row>
                                 <Row >
-                                    <Col md={1}  className="cd5-tick">
+                                    <Col md={1} className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
@@ -422,7 +420,7 @@ export default function CourseDetails() {
 
                                 </Row>
                                 <Row >
-                                    <Col md={1}  className="cd5-tick">
+                                    <Col md={1} className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
@@ -433,7 +431,7 @@ export default function CourseDetails() {
 
                                 </Row>
                                 <Row >
-                                    <Col md={1}  className="cd5-tick">
+                                    <Col md={1} className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
@@ -449,10 +447,11 @@ export default function CourseDetails() {
                                         <p > 4 Modules and 18 lessons </p>
                                         <Row >
                                             <div className="cd5-get-eva" >
-                                                <FontAwesome className="header1-play-circle"
+                                                {/* <FontAwesome className="header1-play-circle"
                                                     name="user"
                                                     size="2x"
-                                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#43abfb' }} />
+                                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#43abfb' }} /> */}
+                                                    <img className="cd5-baby" src="../assets/img/cd-baby.png" alt="" />
                                                 <div className="get-eva-det" >
                                                     <h6 > Get Evaluated! </h6> <p > During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes </p>
                                                 </div >
@@ -463,7 +462,7 @@ export default function CourseDetails() {
 
                                 </Row>
                                 <Row >
-                                    <Col md={1}  className="cd5-tick">
+                                    <Col md={1} className="cd5-tick">
                                         <FontAwesome className="header1-play-circle"
                                             name="check-circle"
                                             size="3x"
