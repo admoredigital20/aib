@@ -198,13 +198,13 @@ const Home = () => {
                                 </Col>
                                 <Col><img className="header1-img" src="../assets/img/header1-img1.png" alt="ai brilliance header zoom image" /></Col>
                             </Row>
-                          
+
                         </Container>
                         <Row className="ai-op">
                             <img src="../assets/img/ai-op.svg" alt="ai brilliance" />
                         </Row>
                     </div>
-                   
+
                 </section>
                 <CourseDiv />
 
@@ -220,7 +220,7 @@ const Home = () => {
                             {bootcampLoading ? <LoadingBox></LoadingBox> :
                                 bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
                                     :
-                                    <>{bootcamps.results.status_code==="200" ? bootcamps.results.data.slice(0, 2).map(data => {
+                                    <>{bootcamps.results.status_code === "200" ? bootcamps.results.data.slice(0, 2).map(data => {
                                         return (
 
                                             <Col key={data.id} md={6} sm={12}>
@@ -239,7 +239,7 @@ const Home = () => {
                                                 </div>
                                             </Col>
                                         )
-                                    }):<h1>no data</h1>}
+                                    }) : <h1>no data</h1>}
 
                                     </>
                             }
@@ -388,6 +388,27 @@ const Home = () => {
                             </Col>
                             <Col md={{ span: 5, offset: 4 }} sm={10}><img src="../assets/img/theCoach4.png" width="100%" /></Col>
                         </Row>
+                        <div className="tick-div">
+                            <Row>
+                                <Col className="tick-line" md={{ span: 9, offset: 1 }}>
+                                    <hr />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="sec5-tick-all" md={{ span: 1, offset: 1 }}>
+                                    <img src="../assets/img/tick.png" />
+                                </Col>
+                                <Col className="sec5-tick-all" md={{ span: 1, offset: 2 }}>
+                                    <img src="../assets/img/tick.png" />
+                                </Col>
+                                <Col className="sec5-tick sec5-tick-all" md={{ span: 1, offset: 1 }}>
+                                    <img src="../assets/img/tick.png" />
+                                </Col>
+                                <Col className="sec5-tick sec5-tick-all" md={{ span: 1, offset: 1 }}>
+                                    <img src="../assets/img/tick.png" />
+                                </Col>
+                            </Row>
+                        </div>
                         <Row className="sec5-div4">
                             <Col xs={6} sm={3} className="div4-col">
                                 <h6>Environment <br />Setup</h6>

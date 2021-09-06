@@ -7,6 +7,8 @@ import FullCourse from "./components/FullCourse";
 import LearnMore from "./components/LearnMore";
 import ZoomPage from "./components/ZoomPage";
 import Cookies from "./components/Cookies";
+import CdPayment from "./components/CdPayment";
+
 
 
 function App() {
@@ -32,6 +34,9 @@ function App() {
             </Route>
             <Route path="/cookies">
               <Cookies />
+            </Route>
+            <Route path="/payment">
+              <CdPayment />
             </Route>
           
           </Switch>

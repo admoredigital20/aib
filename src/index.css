@@ -477,6 +477,7 @@ code {
     position: fixed;
     width: 100%;
     background: #fff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
 .navbar .logo {
@@ -914,10 +915,11 @@ code {
 }
 
 .btn-blue {
-    background-color: #589AF1;
-    border-color: #589AF1;
+    background-color: #43abfb;
+    border-color: #43abfb;
     border-radius: 0.4rem;
     width: 132px;
+    padding-bottom: 10px;
 
 }
 
@@ -1042,6 +1044,28 @@ code {
     font-size: 1.5rem;
     font-weight: bolder;
     color: #555555;
+}
+
+.sec5 .tick-div {
+    top: 35px;
+    position: relative;
+}
+
+.sec5-tick {
+    margin-left: 14.333333%;  
+}
+
+.sec5-tick-all {
+    z-index: 99;
+}
+
+.sec5-tick-all img {
+    width: 40px;
+}
+
+.sec5 .tick-line {
+    top: 38px;
+    position: relative;
 }
 
 .sec6 {
@@ -2184,6 +2208,8 @@ code {
     .sec5 .sec5-coding {
         display: none;
     }
+
+
     .upcoming-bc-mobile {
         margin-top: 20px;
     }
@@ -2565,12 +2591,17 @@ code {
 }
 .zoom-sec1{
     margin-top: 50px;
-    font-weight: bolder;
-    color:#fc8b78 ; 
-    font-family: SemplicitaPro;
+    
 }
-.zoom-sec1-p{
+
+.zoom-sec1 h2{
     font-weight: 600;
+    color:#fc8b78 ;
+}
+
+.zoom-sec1-p{
+    font-weight: 400;
+    font-size: 20px;
 
 }
 .zoom-sec2-btn{
@@ -2596,9 +2627,63 @@ code {
 .zoom-sec2-btn-active{
     background-color: #36a1fb;
 }
+
 .zoom-para{
     font-weight: 600;
+    margin-bottom: 0;
 }
+
+.zoom-para-div {
+    align-self: center;
+}
+
+.zoom-para-div p {
+    margin-bottom: 0;
+}
+
+.zoom-p-r8 {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.zoom-rf {
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    color:#3562b9;
+}
+
+.zoom-refresh {
+    text-shadow: rgb(0 0 0 / 10%) 0px 1px 0px;
+    color: rgb(88, 154, 241);
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
 .zoom-bottom-image{
     height: 150px;
     border-radius: 50%;
@@ -2606,6 +2691,7 @@ code {
 }
 .zoom-bottom{
    text-align-last: center;
+   margin-top: 5rem;
 }
 .zoom-bottom-h2{
     font-weight: 600;
@@ -2766,6 +2852,7 @@ code {
     right: 0px;
     margin-top: -7rem;
 }
+
 .z-index{
     z-index: 10;
 }
@@ -2822,3 +2909,168 @@ code {
     }
 }
 
+
+.cdp-sec1 {
+    background-color: #f5faff;
+    min-height: 100vh;
+}
+
+.cd-payment .cdp-col1 {
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+
+.cd-payment .cd1-breadcrumbs h6 {
+    font-family: Semplicita Pro;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #646464;
+}
+
+.cdp-sec1 .cdp-os {
+    margin-top: 30px;
+}
+
+.cdp-sec1 .cdp-os h5 {
+    color: #535353;
+    font-weight: 800;
+}
+
+
+.cdp-sec1 .Course-Name h4 {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.cdp-sec1 .cdp-price {
+    text-align: right;
+}
+
+.cdp-sec1 .cdp-price h5 {
+    font-weight: 800;
+}
+
+
+
+.cdp-hr {
+    height: 2px !important;
+    position: relative;
+    top: -10px;
+}
+
+.dbl-zero {
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.cdp-cn h4{
+    font-weight: 800;
+}
+
+.cdp-cn h5{
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.cdp-radio {
+    background-color: #f0f5ff;
+    padding: 1.5rem;
+    padding-left: 2.5rem;
+    border-radius: 15px;
+    margin-top: 4rem;
+}
+
+.cdp-radio .cdp-batch {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.cdp-radio-btn {
+    margin-top: 25px;
+}
+.cdp-radio .form-check .form-check-input {
+    margin-left: -2.5em;
+}
+
+.cdp-active {
+    background-color: #fff !important;
+    border: solid 2px #3194e0;
+}
+
+.cdp-radio2 {
+    background-color: #f0f5ff;
+    padding: 1.5rem;
+    padding-left: 2.5rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+.cdp-radio2 .cdp-batch {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.cdp-radio2 .form-check .form-check-input {
+    margin-left: -2.5em;
+}
+
+.cdp-slot {
+    color: #646464;
+}
+
+
+.cd-payment .cdp-col2 {
+    margin-top: 8rem;
+    padding: 50px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+
+.cpn-input input {
+    background: #f0f5ff;
+    color: #272c34;
+    line-height: 2;
+}
+
+.cpn-apply-btn {
+    width: 100%;
+    background: #43abfb;
+    border: none;
+    line-height: 2;
+}
+
+
+
+.cdp-col2-hr hr {
+    background: #a8b9cc;
+}
+
+.cdp-box-price {
+    text-align: right;
+    color: #646464;
+    font-weight: 600;
+}
+
+.cdp-box-name {
+    color: #646464;
+    font-size: 16px;
+}
+
+.cdp-green-price {
+    color: 
+    #05be8c;
+}
+
+.cdp-box-total {
+    color: #3f4c58;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cdp-modules {
+    font-size: 15px;
+}

@@ -415,7 +415,7 @@ export default function CourseDetails() {
                                             } /> <div className="verticalLine" > </div>
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 className='cd5-h5'> Quiz </h5> <p > 4 Modules and 18 lessons </p>
+                                        <h5 className='cd5-h5'> Quiz </h5> <p >Multiple Choice questions </p>
                                     </Col >
 
                                 </Row>
@@ -427,7 +427,7 @@ export default function CourseDetails() {
                                             style={
                                                 { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#43abfb' }
                                             } /> <div className="verticalLine" > </div> </Col > <Col className="cd5-det" >
-                                        <h5 className='cd5-h5'> Quiz </h5> <p > 4 Modules and 18 lessons </p> </Col >
+                                        <h5 className='cd5-h5'> Mini Project </h5> <p > Each Module will have a Mini Project </p> </Col >
 
                                 </Row>
                                 <Row >
@@ -443,17 +443,14 @@ export default function CourseDetails() {
                                         </div>
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 className='cd5-h5'> Mini Project </h5>
-                                        <p > 4 Modules and 18 lessons </p>
+                                        <h5 className='cd5-h5'> Major Project </h5>
+                                        <p > Talk to your coach on what industry <br/>you prefer for your career </p>
                                         <Row >
-                                            <div className="cd5-get-eva" >
-                                                {/* <FontAwesome className="header1-play-circle"
-                                                    name="user"
-                                                    size="2x"
-                                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#43abfb' }} /> */}
+                                            <div className="cd5-get-eva">
                                                     <img className="cd5-baby" src="../assets/img/cd-baby.png" alt="" />
                                                 <div className="get-eva-det" >
-                                                    <h6 > Get Evaluated! </h6> <p > During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes </p>
+                                                    <h6> Get Evaluated! </h6>
+                                                    <p> During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes </p>
                                                 </div >
                                             </div>
                                         </Row >
@@ -472,8 +469,8 @@ export default function CourseDetails() {
                                         />
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 className='cd5-h5' > Quiz </h5>
-                                        <p > 4 Modules and 18 lessons </p>
+                                        <h5 className='cd5-h5' > Certificate and Recommendation</h5>
+                                        <p > Receive an industry recognized certificate and personal recommendation from our coach </p>
                                     </Col >
 
                                 </Row>
