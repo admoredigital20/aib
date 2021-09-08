@@ -9,6 +9,16 @@ function HomeSlider() {
     const [programList, setProgramList] = useState([{ img: `${bg1}`, id: 1, title1: "Corporate Training & Talent Partner Program", para2: "", para1: "The number of women in the data science field, especially minority women, is low compared to men. Let’s reverse that trend! AIBrilliance offers tuition discounts for women pursuing our programs. Are you interested in applying? Please get in touch!" }, { img: `${bg2}`, id: 2, title1: "Empowering Women in Data Science", para2: "Also act as a talent partner to find you the right data science and machine learning scientists who graduate from our programs, suited to your requirements", para1: "High quality corporate data science and machine learning programs for upskilling the workforce are hard to find! We can deliver both in-person and online specialized courses to upskill corporate teams at specialized corporate rates. " }, { img: `${bg3}`, id: 3, title1: "Corporate Training & Talent Partner Program", para1: "The number of women in the data science field, especially minority women, is low compared to men. Let’s reverse that trend! AIBrilliance offers tuition discounts for women pursuing our programs. Are you interested in applying? Please get in touch!" }])
     const [displaying, setDisplaying] = useState({ img: `${bg1}`, id: 1, title1: "Corporate Training & Talent Partner Program", para2: "", para1: "The number of women in the data science field, especially minority women, is low compared to men. Let’s reverse that trend! AIBrilliance offers tuition discounts for women pursuing our programs. Are you interested in applying? Please get in touch!" })
     const buttonRef = useRef("accept-button");
+
+    const [timeup, setTimeup] = useState(1)
+
+    function sliderTime() {
+        setTimeout(function () {
+            setTimeup(timeup + 1)
+            console.log(timeup);
+        }, 10000);
+    }
+
     useEffect(() => {
 
         programList.forEach((element, i) => {
@@ -20,7 +30,8 @@ function HomeSlider() {
                 , i * 3000);
             console.log("inside");
         });
-    }, []);
+        sliderTime()
+    }, [timeup]);
 
     return (
 
@@ -45,7 +56,6 @@ function HomeSlider() {
             <div className="content">
                 <h1>{displaying.title1}</h1>
                 <br />
-                <br />
                 <p>{displaying.para1}</p>
                 <p>{displaying.para2}</p>
                 <div className="slider-input-div">
@@ -55,7 +65,7 @@ function HomeSlider() {
                             <input type="email" className="home-slider-input" placeholder="enter your email id @ this space" /><FontAwesome
                                 size="2x"
                                 name="arrow-circle-right"
-                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',marginLeft:'1rem',color:'#589af1' }}
+                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
                             />
                         </Col>
                     </Row>

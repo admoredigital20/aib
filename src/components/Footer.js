@@ -11,18 +11,26 @@ export default function Footer() {
                         <img className="logo ft-logo" src="../assets/img/main-logo.svg" alt="ai brilliance logo" />
                         <p className="ft-follow">Follow us on </p>
                         <div>
-                            <FontAwesome
+                            <a href="https://www.facebook.com/AIBrilliance"><FontAwesome
                                 name="facebook-square"
                                 size="2x"
-                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} />
-                            <FontAwesome
+                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
+                            <a href="https://www.instagram.com/ai_brilliance/"><FontAwesome
                                 name="instagram"
                                 size="2x"
-                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} />
-                            <FontAwesome
-                                name="twitter-square"
+                                href=''
+                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
+                            <a href="https://twitter.com/?lang=en"><FontAwesome
+                                name="twitter"
                                 size="2x"
-                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} />
+                                href=''
+                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
+                            <a href="https://www.linkedin.com/company/aibrilliance/"><FontAwesome
+                                name="linkedin"
+                                size="2x"
+                                href=''
+                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
+                           
                         </div>
                     </Col>
                     <Col className="ft-link" md={{ span: 1, offset: 1 }}>

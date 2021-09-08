@@ -1,0 +1,182 @@
+import React,{useState} from 'react'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Col, Container, Row } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
+
+
+export default function AiSlider() {
+
+
+    const settings = {
+        customPaging: function (i) {
+            return (
+                <a>
+                    <img className="ai-photo-dot" src={`../assets/img/aislider${i + 1}.png`} />
+                </a>
+            );
+        },
+        dots: true,
+        dotsClass: "slick-dots slick-thumb",
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 2000,
+        fade: true,
+        adaptiveHeight: false
+    };
+
+    return (
+        <div>
+            
+            <Slider {...settings}>
+                <div className="slider-all">
+                    <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider1.png")`, backgroundSize: "cover" }}>
+                        {/* <img src="../assets/img/aislider1.png" /> */}
+                        <Container className="ai-slider-content">
+                            <Row>
+                                <Col lg={6} md={12}>
+                                    <h2>Corporate Training & <br />Talent Partner Program</h2>
+                                </Col>
+                            </Row>
+                            <Row className="ai-slider-p">
+                                <Col lg={6} md={12}>
+                                    <p>High quality corporate data science and machine learning programs for upskilling the workforce are hard to find! We can deliver both in-person and online specialized courses to upskill corporate teams at specialized corporate rates.</p>
+                                    <p>Also act as a talent partner to find you the right data science and machine learning scientists who graduate from our programs, suited to your requirements.</p>
+                                </Col>
+                            </Row>
+                            <Row className="slider-email">
+                                <Col md={6} sm={6} lg={4}>
+                                    <Row>
+                                        <h6 class="home-slider-h6">Want to know more ?</h6>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={12} className="slider-col">
+                                            <input type="email" className="home-slider-input1" placeholder="enter your email id @ this space" /><FontAwesome
+                                                size="2x"
+                                                name="arrow-circle-right"
+                                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
+                                            />
+                                        </Col>
+                                    </Row>
+                                </Col>
+                                <Col md={6}>
+                                    <Row>
+                                        <Col>
+                                            <img />
+                                        </Col>
+                                        <Col>
+
+                                        </Col>
+                                        <Col>
+
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                </div>
+                <div className="slider-all">
+                    <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider2.png")`, backgroundSize: "cover" }}>
+                        {/* <img src="../assets/img/aislider1.png" /> */}
+                        <Container className="ai-slider-content">
+                            <Row>
+                                <Col lg={6} md={12}>
+                                    <h2>Empowering Women in Data Science</h2>
+                                </Col>
+                            </Row>
+                            <Row className="ai-slider-p">
+                                <Col lg={6} md={12}>
+                                    <p>The number of women in the data science field, especially minority women, is low compared to men. Let’s reverse that trend! AIBrilliance offers tuition discounts for women pursuing our programs. Are you interested in applying? Please get in touch!</p>
+                                    <div className="empty-p"></div>
+                                </Col>
+                            </Row>
+                            <Row className="slider-email">
+                                <Col md={6} sm={6} lg={4}>
+                                    <Row>
+                                        <h6 class="home-slider-h6">Want to know more ?</h6>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={12} className="slider-col">
+                                            <input type="email" className="home-slider-input1" placeholder="enter your email id @ this space" /><FontAwesome
+                                                size="2x"
+                                                name="arrow-circle-right"
+                                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
+                                            />
+                                        </Col>
+                                    </Row>
+                                </Col>
+                                <Col md={6}>
+                                    <Row>
+                                        <Col>
+                                            <img />
+                                        </Col>
+                                        <Col>
+
+                                        </Col>
+                                        <Col>
+
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                </div>
+                <div className="slider-all">
+                    <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider3.png")`, backgroundSize: "cover" }}>
+                        {/* <img src="../assets/img/aislider1.png" /> */}
+                        <Container className="ai-slider-content">
+                            <Row>
+                                <Col lg={6} md={12}>
+                                    <h2>Empowering Women in Data Science</h2>
+                                </Col>
+                            </Row>
+                            <Row className="ai-slider-p">
+                                <Col lg={6} md={12}>
+                                    <p>The number of women in the data science field, especially minority women, is low compared to men. Let’s reverse that trend! AIBrilliance offers tuition discounts for women pursuing our programs. Are you interested in applying? Please get in touch!</p>
+                                </Col>
+                            </Row>
+                            <Row className="slider-email">
+                                <Col md={6} sm={6} lg={4}>
+                                    <Row>
+                                        <h6 class="home-slider-h6">Want to know more ?</h6>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={12} className="slider-col">
+                                            <input type="email" className="home-slider-input1" placeholder="enter your email id @ this space" /><FontAwesome
+                                                size="2x"
+                                                name="arrow-circle-right"
+                                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
+                                            />
+                                        </Col>
+                                    </Row>
+                                </Col>
+                                <Col md={6}>
+                                    <Row>
+                                        <Col>
+                                            <img />
+                                        </Col>
+                                        <Col>
+
+                                        </Col>
+                                        <Col>
+
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                </div>
+
+            </Slider>
+        </div>
+    )
+}
+

@@ -29,10 +29,11 @@ export default function FullCourse() {
     useEffect(() => {
         if (!loading) {
             if (!error) {
-                console.log(courses.results.data);
+                console.log(courses.results.data,'full');
                 setItems(courses.results.data)
             }
         }
+        
     }, [courses])
 
 
@@ -45,7 +46,6 @@ export default function FullCourse() {
     const filterItem = (categItem) => {
         const updatedItems = courses.results.data.filter((curElem) => {
             return curElem.course_type == categItem
-
 
         })
         setItems(updatedItems)
@@ -125,8 +125,6 @@ export default function FullCourse() {
                                             )
                                         })}</>
                                 )}
-
-
                     </Row>
                 </div>
             </div>

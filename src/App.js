@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-modal-video/css/modal-video.min.css';
 
 import Home from "./components/Home";
 import CourseDetails from "./components/CourseDetails";

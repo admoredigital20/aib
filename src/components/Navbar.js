@@ -28,8 +28,8 @@ const Navbar1 = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <LinkContainer to="/bootcamp"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
-                        <LinkContainer to="/literature"><Nav.Link>Literature</Nav.Link></LinkContainer>
+                        <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
+                        <LinkContainer to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
                         <LinkContainer to="/events"><Nav.Link>Events</Nav.Link></LinkContainer>
                         <LinkContainer to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
                         <Signin />

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Col, Row, Accordion, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import ChatApp from '../chat/ChatApp'
 import CdNav from './CdNav'
 
@@ -130,7 +131,7 @@ export default function CourseDetails() {
                                 </Row>
                                 <Row >
                                     <Col md={12} >
-                                        <Button className='cd1-detail-row-btn' > Enroll Now </Button> </Col >
+                                       <Link to='/payment'> <Button className='cd1-detail-row-btn' > Enroll Now </Button> </Link> </Col > 
                                 </Row>
                                 <Row >
                                     <Col >

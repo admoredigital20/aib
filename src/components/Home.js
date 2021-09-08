@@ -14,6 +14,11 @@ import CourseDiv from './CourseDiv';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import ModalVideo from 'react-modal-video'
+import AiSlider from './AiSlider';
+import Webinar from './Webinar';
+
+
 var FontAwesome = require('react-fontawesome')
 
 
@@ -23,12 +28,14 @@ const Home = () => {
     const [email, setEmail] = useState('')
     const [query, setQuery] = useState('')
 
+    const [isOpen, setOpen] = useState(false)
+
 
     const bootcampList = useSelector(state => state.bootcampList)
     const { loading: bootcampLoading, error: bootcampError, bootcamps } = bootcampList
 
-    const webinarList = useSelector(state => state.webinarList)
-    const { loading: webinarLoading, error: webinarError, webinar } = webinarList
+    // const webinarList = useSelector(state => state.webinarList)
+    // const { loading: webinarLoading, error: webinarError, webinar } = webinarList
 
     const help = useSelector(state => state.help)
     const { loading: loadingHelp, error: errorHelp, helpQuery } = help
@@ -39,7 +46,8 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(listBootcamp())
-        dispatch(webinarCourse())
+        // dispatch(webinarCourse())
+        
     }, [dispatch])
 
 
@@ -181,14 +189,7 @@ const Home = () => {
                                             <p>Learn from the best. Experienced online educators and comprehensive curriculum.</p>
                                             <p>Highest quality content in hands-on and project-based model delivered in online synchronous/asynchronous mode.</p>
                                             <Row className="header1-btn-grp">
-                                                <Col className="header1-btn1">Find your course !</Col>
                                                 <Col className="header1-btn2">
-                                                    {/* <FontAwesome
-                                                        className="header1-play-circle"
-                                                        name="play-circle"
-                                                        size="3x"
-                                                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                                    /> */}
                                                     <img src="../assets/img/play-btn.png" />
                                                 </Col>
                                                 <Col className="header1-btn3">Play Demo</Col>
@@ -220,7 +221,8 @@ const Home = () => {
                             {bootcampLoading ? <LoadingBox></LoadingBox> :
                                 bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
                                     :
-                                    <>{bootcamps.results.status_code === "200" ? bootcamps.results.data.slice(0, 2).map(data => {
+                                    <>
+                                    { bootcamps.results.data.slice(0, 2).map(data => {
                                         return (
 
                                             <Col key={data.id} md={6} sm={12}>
@@ -239,7 +241,7 @@ const Home = () => {
                                                 </div>
                                             </Col>
                                         )
-                                    }) : <h1>no data</h1>}
+                                    })}
 
                                     </>
                             }
@@ -441,6 +443,8 @@ const Home = () => {
                         </Row>
                         <Row><p className="hww-p">{hwwContent}</p></Row>
                     </Container>
+
+                    <hr className="hww-hr" />
                 </section>
                 <section className="sec7">
                     <Container>
@@ -449,7 +453,7 @@ const Home = () => {
                                 <Row><h4>Student <br />Feedbacks.</h4></Row>
                                 <Row><p>Our Students are proudly rendering <br />their service in the following companies</p></Row>
                                 <br />
-                                <Row className="sec5-btn-row"><Col><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></Col></Row>
+                                <Row className="sec5-btn-row"><Col><LinkContainer to="/fullcourse"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer></Col></Row>
                             </Col>
                             <Col md={{ offset: 1 }} >
                                 <Row className="review-row">
@@ -514,7 +518,8 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </div>
-                                <div className="review-0 review-vid" style={{ backgroundImage: "url(" + "../assets/img/ok.png" + ")", backgroundColor: "none" }}>
+                                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="RkrLAtu28M8" onClose={() => setOpen(false)} />
+                                <div className="review-0 review-vid" onClick={() => setOpen(true)} style={{ backgroundImage: "url(" + "../assets/img/ok.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
@@ -526,6 +531,7 @@ const Home = () => {
                                             </Row>
                                         </Col>
                                     </Row>
+
                                 </div>
                                 <div className="review-1">
                                     <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
@@ -551,7 +557,7 @@ const Home = () => {
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rail</Col>
                                                 <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
                                             </Row>
                                         </Col>
@@ -594,30 +600,42 @@ const Home = () => {
                 <section style={{ paddingBottom: "35px" }}>
                     <Container className="sec8">
                         <Row><p className="sec8-p">“Student graduates of Dr. Rai are working for” in place of text currently before companies logos:</p></Row>
+                        <Container>
                         <Row className="sec8-logo">
                             <Col>
-                                <img src="../assets/img/brand5.jpg" />
+                                <img src="../assets/img/brand1.png" />
                             </Col>
                             <Col>
-                                <img src="../assets/img/brand4.jpg" />
+                                <img src="../assets/img/brand2.png" />
                             </Col>
                             <Col>
-                                <img src="../assets/img/brand3.jpg" />
+                                <img src="../assets/img/brand3.png" />
                             </Col>
-                            <Col>
-                                <img src="../assets/img/brand2.jpg" />
-                            </Col>
-                            <Col>
-                                <img src="../assets/img/brand1.jpg" />
-                            </Col>
-
                         </Row>
+                        <Row className="sec8-logo">
+                            <Col>
+                                <img src="../assets/img/brand4.png" />
+                            </Col>
+                            <Col>
+                                <img src="../assets/img/brand5.png" />
+                            </Col>
+                            <Col>
+                                <img src="../assets/img/brand6.png" />
+                            </Col>
+                        </Row>
+                        </Container>
                     </Container>
                 </section>
                 <section className="sec9">
-                    <HomeSlider />
+                    <AiSlider />
                 </section>
-                <section className="sec10">
+
+
+                   <Webinar/>
+
+
+
+                {/* <section className="sec10">
                     <Container>
                         <Row><h2 className="sec10-h2">Webinars</h2></Row>
                         <Row className="justify-content-md-center">
@@ -633,7 +651,7 @@ const Home = () => {
                                 <h4>Master in Python <br />Coding and more</h4>
                                 <img className="webinar-img" src="../assets/img/webinar (1).png" />
                             </Col>
-                            {/* {
+                            {
                                 webinarLoading ? (<LoadingBox></LoadingBox>) :
                                     webinarError ? (<MessageBox>{webinarError}</MessageBox>) :
 
@@ -650,11 +668,11 @@ const Home = () => {
                                         )
 
 
-                            } */}
+                            }
 
                         </Row>
                     </Container>
-                </section>
+                </section> */}
                 <section className="sec11">
                     <Container>
                         <Row><h2 className="sec11-h2">Media Gallery</h2></Row>

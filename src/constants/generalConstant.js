@@ -1,4 +1,4 @@
-export  const LH = "http://3.109.5.41"
+export  const LH = "http://192.241.138.220"
 
 
 export  const BOOTCAMP_LIST_REQUEST = "BOOTCAMP_LIST_REQUEST"
