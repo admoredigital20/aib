@@ -738,8 +738,8 @@ code {
 }
 
 .sec2 .course-cat-active {
-    background-color: #17529F;
-    color: #fff;
+    background-color: #17529F !important;
+    color: #fff !important;
 }
 
 .all-course-card {
@@ -1150,6 +1150,7 @@ code {
 .sec7 .review-1 .prof-name {
     font-family: Semplicita Pro;
     font-size: 0.7rem;
+    font-weight: 800;
     color: #000000;
 }
 
@@ -1214,12 +1215,15 @@ code {
 
 .sec7 .review-vid {
     background-size: cover;
-    height: 10rem;
+    height: 12rem;
     cursor: pointer;
+    position: relative;
 }
 
 .sec7 .review-vid .prof-details {
-    margin-top: 5rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
 }
 
 .sec8 {
@@ -2602,9 +2606,10 @@ code {
     margin-left: 12px;
 }
 
+/* 
 .zoom-sec1 {
     margin-top: 50px;
-}
+} */
 
 .zoom-sec1 h2 {
     font-weight: 600;
@@ -3209,7 +3214,6 @@ code {
     height: 600px;
 }
 
-
 @media screen and (max-width: 1200px) {
     .ai-photo-dot {
         width: 166px;
@@ -3224,14 +3228,132 @@ code {
         display: none;
     }
 }
+
 @media screen and (max-width: 770px) {
     .sec5-tick-all {
-   
-    display: none;
+        display: none;
+    }
+    .home-slider-input1 {
+        width: 50%;
+    }
 }
-.home-slider-input1{
-    width: 50%;
+
+.web1-img {
+    width: 100%;
 }
+
+.web1-content {
+    position: absolute;
+    top: 8px;
+    left: 16px;
 }
-@media screen and (max-width:)
-.ai-slider-p p
+
+.web1-content h6 {
+    font-size: 0.8rem;
+    width: fit-content;
+    background-color: #433530;
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    border-radius: 10px;
+    box-shadow: inset 0px 3px 6px #000000;
+}
+
+.web1-content h4 {
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: left;
+    width: 80%;
+}
+
+.web1-main {
+    position: relative;
+}
+
+.webinar-btn {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.webinar-btn:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.sec-10-modal .modal-dialog {
+    max-width: 80%;
+}
+
+.mg-btm-div {
+    text-align: center;
+    margin: 20px;
+}
+
+.mg-btm-div img {
+    width: 100%;
+}
+
+.mg-content {
+    background-color: #000;
+    bottom: -5rem;
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+
+.mg-play-img {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.mg-play-img img {
+    width: 75PX;
+    position: absolute;
+    left: 50%;
+    top: 1.5rem;
+    transform: translate(-50%, 50%);
+}
+
+.sec11 .slick-dots {
+    text-align: center;
+    bottom: auto;
+    right: auto;
+}
+
+.web1-row {
+    --bs-gutter-x: 6rem;
+}
+.web1-col {
+    margin-bottom: 1.5rem;
+}
+
+.sec10 .course-cat-active {
+    background-color: #17529F;
+    color: #fff;
+}
+
+.sec10 .all-course-cat {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.sec10 .course-cat h5 {
+    margin-bottom: 0;
+    padding: 15px 30px 15px 30px;
+    font-size: 1rem;
+    
+    border-radius: 10px;
+}
+
+.sec10 .course-cat {
+    max-width: max-content;
+    background-color: #f7f7f7;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #363131;
+    cursor: pointer;
+}

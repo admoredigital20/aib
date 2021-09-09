@@ -78,7 +78,7 @@ export default function FullCourse() {
                             <h4>Discover</h4>
                         </Col>
                         <Col className="all-course-cat">
-                            <div className="course-cat  course-cat-active" onClick={(e) => { setItems(courses.results.data); activeBtn(e) }} ><h5>All</h5></div>
+                            <div className="course-cat course-cat-active" onClick={(e) => { setItems(courses.results.data); activeBtn(e) }} ><h5>All</h5></div>
                             <div className="course-cat" onClick={(e) => { filterItem('Free'); activeBtn(e) }} ><h5>Free</h5></div>
                             <div className="course-cat" onClick={(e) => { filterItem('Paid'); activeBtn(e) }}><h5>Paid</h5></div>
                         </Col>

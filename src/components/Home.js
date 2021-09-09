@@ -17,9 +17,16 @@ import Slider from "react-slick";
 import ModalVideo from 'react-modal-video'
 import AiSlider from './AiSlider';
 import Webinar from './Webinar';
+import MediaGallery from './MediaGallery';
+
+
+
+
 
 
 var FontAwesome = require('react-fontawesome')
+
+
 
 
 
@@ -47,13 +54,16 @@ const Home = () => {
     useEffect(() => {
         dispatch(listBootcamp())
         // dispatch(webinarCourse())
-        
+
     }, [dispatch])
 
 
     useEffect(() => {
         console.log(bootcamps);
     }, [])
+
+    const userSignin = useSelector(state => state.userSignin)
+    const { loading, error, userInfo } = userSignin
 
 
     // How we work
@@ -133,6 +143,8 @@ const Home = () => {
     const imgHandlerout5 = () => {
         setHwwImg5(hwwImg5)
     }
+
+
 
 
 
@@ -222,26 +234,26 @@ const Home = () => {
                                 bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
                                     :
                                     <>
-                                    { bootcamps.results.data.slice(0, 2).map(data => {
-                                        return (
+                                        {bootcamps.results.data.slice(0, 2).map(data => {
+                                            return (
 
-                                            <Col key={data.id} md={6} sm={12}>
-                                                <div className="upcoming-bc" style={{ backgroundImage: "url(" + data.image + ")" }}>
-                                                    <div className="ub-bg-overlay">
-                                                        <Row className="ub-details">
-                                                            <Col>
-                                                                <h4>{data.name}: </h4><h6>{data.sub_name}</h6>
-                                                            </Col>
-                                                            <Col className="txt-r8">
-                                                                <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
-                                                                <Row className="ub-date">{data.date}</Row>
-                                                            </Col>
-                                                        </Row>
+                                                <Col key={data.id} md={6} sm={12}>
+                                                    <div className="upcoming-bc" style={{ backgroundImage: "url(" + data.image + ")" }}>
+                                                        <div className="ub-bg-overlay">
+                                                            <Row className="ub-details">
+                                                                <Col>
+                                                                    <h4>{data.name}: </h4><h6>{data.sub_name}</h6>
+                                                                </Col>
+                                                                <Col className="txt-r8">
+                                                                    <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
+                                                                    <Row className="ub-date">{data.date}</Row>
+                                                                </Col>
+                                                            </Row>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </Col>
-                                        )
-                                    })}
+                                                </Col>
+                                            )
+                                        })}
 
                                     </>
                             }
@@ -249,6 +261,36 @@ const Home = () => {
                         </Row>
                     </Container>
                 </section>
+                {/* <Container>
+                    <Row className="web1-row">
+                        <Col className="web1-col" md={6} lg={3} sm={6}>
+                            <div className="web1-main">
+                                <img className="web1-img" src='../assets/img/webinar(1).png' />
+                                <div className="web1-content">
+                                    <br />
+                                    <h6>15th AUG 21, 11:00 EST</h6>
+                                    <br />
+                                    <h4>AI and robotics to clean the oceans</h4>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col className="web1-col" md={6} lg={3} sm={6}>
+                            <div>
+                                <img className="web1-img" src='../assets/img/webinar(1).png' />
+                            </div>
+                        </Col>
+                        <Col className="web1-col" md={6} lg={3} sm={6}>
+                            <div>
+                                <img className="web1-img" src='../assets/img/webinar(1).png' />
+                            </div>
+                        </Col>
+                        <Col className="web1-col" md={6} lg={3} sm={6}>
+                            <div>
+                                <img className="web1-img" src='../assets/img/webinar(1).png' />
+                            </div>
+                        </Col>
+                    </Row>
+                </Container> */}
                 <section className="sec4">
                     <Container>
                         <Row>
@@ -453,7 +495,16 @@ const Home = () => {
                                 <Row><h4>Student <br />Feedbacks.</h4></Row>
                                 <Row><p>Our Students are proudly rendering <br />their service in the following companies</p></Row>
                                 <br />
-                                <Row className="sec5-btn-row"><Col><LinkContainer to="/fullcourse"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer></Col></Row>
+                                <Row className="sec5-btn-row"><Col>
+                                    {userInfo ?
+                                        <>
+                                            <LinkContainer to="/fullcourse"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer>
+                                        </>
+                                        :
+                                        <LinkContainer to="/bootcamp"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer>
+                                    }
+
+                                </Col></Row>
                             </Col>
                             <Col md={{ offset: 1 }} >
                                 <Row className="review-row">
@@ -461,25 +512,25 @@ const Home = () => {
                                         <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
                                         <Row className="prof-details">
                                             <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                                <img src="../assets/img/testi-1.png" className="prof-pic" alt="prof-pic" />
                                             </Col>
                                             <Col className="col-pd-0">
                                                 <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                    <Col md="12" className="col-pd-0 prof-name">Terry Smith</Col>
+                                                    <Col className="col-pd-0 prof-dsgn">Product Analyst</Col>
                                                 </Row>
                                             </Col>
                                         </Row>
                                     </div>
-                                    <div className="review-2">
-                                        <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
+                                    <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="RkrLAtu28M8" onClose={() => setOpen(false)} />
+                                    <div className="review-0 review-vid" onClick={() => setOpen(true)} style={{ backgroundImage: "url(" + "../assets/img/okk.png" + ")", backgroundColor: "none" }}>
                                         <Row className="prof-details">
                                             <Col className="col-pd-0 mw-mc">
                                                 <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
                                             </Col>
                                             <Col className="col-pd-0">
                                                 <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rail</Col>
                                                     <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
                                                 </Row>
                                             </Col>
@@ -489,12 +540,12 @@ const Home = () => {
                                         <p className="review-p">The ultimate learning experience with AIBrilliance,</p>
                                         <Row className="prof-details">
                                             <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                                <img src="../assets/img/testi-2.png" className="prof-pic" alt="prof-pic" />
                                             </Col>
                                             <Col className="col-pd-0">
                                                 <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                    <Col md="12" className="col-pd-0 prof-name">Sandra Watkins</Col>
+                                                    <Col className="col-pd-0 prof-dsgn">Data Analyst</Col>
                                                 </Row>
                                             </Col>
                                         </Row>
@@ -549,8 +600,8 @@ const Home = () => {
                                 </div>
                             </Col>
                             <Col>
-
-                                <div className="review-0 review-vid" style={{ backgroundImage: "url(" + "../assets/img/okk.png" + ")", backgroundColor: "none" }}>
+                                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="RkrLAtu28M8" onClose={() => setOpen(false)} />
+                                <div className="review-0 review-vid" onClick={() => setOpen(true)} style={{ backgroundImage: "url(" + "../assets/img/okkk.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
@@ -601,28 +652,28 @@ const Home = () => {
                     <Container className="sec8">
                         <Row><p className="sec8-p">“Student graduates of Dr. Rai are working for” in place of text currently before companies logos:</p></Row>
                         <Container>
-                        <Row className="sec8-logo">
-                            <Col>
-                                <img src="../assets/img/brand1.png" />
-                            </Col>
-                            <Col>
-                                <img src="../assets/img/brand2.png" />
-                            </Col>
-                            <Col>
-                                <img src="../assets/img/brand3.png" />
-                            </Col>
-                        </Row>
-                        <Row className="sec8-logo">
-                            <Col>
-                                <img src="../assets/img/brand4.png" />
-                            </Col>
-                            <Col>
-                                <img src="../assets/img/brand5.png" />
-                            </Col>
-                            <Col>
-                                <img src="../assets/img/brand6.png" />
-                            </Col>
-                        </Row>
+                            <Row className="sec8-logo">
+                                <Col>
+                                    <img src="../assets/img/brand1.png" />
+                                </Col>
+                                <Col>
+                                    <img src="../assets/img/brand2.png" />
+                                </Col>
+                                <Col>
+                                    <img src="../assets/img/brand3.png" />
+                                </Col>
+                            </Row>
+                            <Row className="sec8-logo">
+                                <Col>
+                                    <img src="../assets/img/brand4.png" />
+                                </Col>
+                                <Col>
+                                    <img src="../assets/img/brand5.png" />
+                                </Col>
+                                <Col>
+                                    <img src="../assets/img/brand6.png" />
+                                </Col>
+                            </Row>
                         </Container>
                     </Container>
                 </section>
@@ -631,7 +682,7 @@ const Home = () => {
                 </section>
 
 
-                   <Webinar/>
+                <Webinar />
 
 
 
@@ -673,66 +724,7 @@ const Home = () => {
                         </Row>
                     </Container>
                 </section> */}
-                <section className="sec11">
-                    <Container>
-                        <Row><h2 className="sec11-h2">Media Gallery</h2></Row>
-                        <Row>
-                            <Col className="sec11-details" md={6}>
-                                <Row className="sec11-para">
-                                    <h2 style={{ fontWeight: "900" }}>Corporate Training & Talent Partner Program</h2>
-                                    <p style={{ color: "grey" }}>Duration - 120 mins</p>
-                                    <br />
-                                    <Col md={10}>
-                                        <p className="sec11-para-p">High quality corporate data science and machine learning programs for upskilling the workforce are hard to find! We can deliver both in-person and online specialized courses to upskill corporate teams at specialized corporate rates.</p>
-                                    </Col>
-                                </Row>
-                            </Col>
-                            <Col md={6}>
-                                <img className="mg-main-img" src="../assets/img/mg (4).png" />
-                                <img className="sec11-play-img" src="../assets/img/play-btn1.png" />
-                            </Col>
-                        </Row>
-                        <Row className="mg-all-vid">
-                            <Col md={4}>
-                                <div className="mg-sgt-vid">
-                                    <img src="../assets/img/mg (1).png" />
-                                    <div className="sec11-div-play">
-                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn1.png" />
-                                    </div>
-                                    <Col md={8}>
-                                        <h5>Corporate Training & Talent Partner Program</h5>
-                                    </Col>
-                                    <p>Duration - 120 mins</p>
-                                </div>
-                            </Col>
-                            <Col md={4}>
-                                <div className="mg-sgt-vid">
-                                    <img src="../assets/img/mg (2).png" />
-                                    <div className="sec11-div-play">
-                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn1.png" />
-                                    </div>
-                                    <Col md={8}>
-                                        <h5>Empowering Women in Data Science</h5>
-                                    </Col>
-                                    <p>Duration - 120 mins</p>
-                                </div>
-                            </Col>
-                            <Col md={4}>
-                                <div className="mg-sgt-vid">
-                                    <img src="../assets/img/mg (3).png" />
-                                    <div className="sec11-div-play">
-                                        <img className="sec11-play-btn-in" src="../assets/img/play-btn1.png" />
-                                    </div>
-                                    <Col md={8}>
-                                        <h5>Experienced Teaching
-                                            Policies</h5>
-                                    </Col>
-                                    <p>Duration - 120 mins</p>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Container>
-                </section>
+                <MediaGallery />
                 <section className="sec12">
                     <Container className="sec12-container">
                         <Row>

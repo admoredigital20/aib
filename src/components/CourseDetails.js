@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useLocation } from "react-router-dom";
 import { Col, Row, Accordion, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ChatApp from '../chat/ChatApp'
@@ -7,6 +8,12 @@ import CdNav from './CdNav'
 var FontAwesome = require('react-fontawesome')
 
 export default function CourseDetails() {
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
 
 
     useEffect(() => {

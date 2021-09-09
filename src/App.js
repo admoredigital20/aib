@@ -10,6 +10,8 @@ import ZoomPage from "./components/ZoomPage";
 import Cookies from "./components/Cookies";
 import CdPayment from "./components/CdPayment";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 function App() {

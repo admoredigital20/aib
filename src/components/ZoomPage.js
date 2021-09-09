@@ -9,10 +9,10 @@ function ZoomPage() {
     return (
         <div>
             <Container>
-                <Row className='zoom-sec1 mb-3'>
+                {/* <Row className='zoom-sec1 mb-3'>
                     <h2>Industrial Applications -1</h2>
-                </Row>
-                <Row className='zoom-sec1-p'>
+                </Row> */}
+                <Row className='zoom-sec1-p mt-5'>
                     <p>Webinar 4.0 of Data Science, ML & AI:  Applications and <br />Opportunities Series</p>
                 </Row>
             </Container>
