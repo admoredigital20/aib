@@ -56,15 +56,15 @@ function Webinar() {
 
     const btnPast = () => {
         const upcoming = document.getElementById("upc")
-        upcoming.classList.remove("course-cat-active")
+        upcoming.classList.remove("course-cat-active1")
     }
 
     const activeBtn = (e) => {
-        var elems = document.querySelector(".course-cat-active");
+        var elems = document.querySelector(".course-cat-active1");
         if (elems !== null) {
-            elems.classList.remove("course-cat-active");
+            elems.classList.remove("course-cat-active1");
         }
-        e.target.classList.add("course-cat-active")
+        e.target.classList.add("course-cat-active1")
     }
 
     return (
@@ -75,7 +75,7 @@ function Webinar() {
                         <Row className="justify-content-md-center">
                             <Col className="all-course-cat mb-5">
                                 <div className="course-cat" onClick={(e) => { setItems(webinar.results.data); activeBtn(e); btnPast(); }} ><h5 className=''>All</h5></div>
-                                <div className="course-cat"  onClick={(e) => { filterItem('Next'); activeBtn(e) }} ><h5 id="upc" className="course-cat-active">Upcoming</h5></div>
+                                <div className="course-cat"  onClick={(e) => { filterItem('Next'); activeBtn(e) }} ><h5 id="upc" className="course-cat-active1">Upcoming</h5></div>
                                 <div className="course-cat" onClick={(e) => { filterItem('Completed'); activeBtn(e); btnPast(); }}><h5 className=''>Past</h5></div>
                             </Col>
                         </Row>

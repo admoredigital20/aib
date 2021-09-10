@@ -782,6 +782,11 @@ body {
     color: #fff !important;
 }
 
+.sec2 .course-cat-active1 {
+    background-color: #17529F !important;
+    color: #fff !important;
+}
+
 .all-course-card {
     margin-top: 3rem;
     display: flex;
@@ -2104,7 +2109,7 @@ body {
     background-color: #17529F;
     color: #fff;
 }
-.fc-containerr .course-cat-active {
+.fc-containerr .course-cat-active1 {
     background-color: #17529F;
     color: #fff;
 }
@@ -3330,6 +3335,11 @@ body {
 }
 
 .sec10 .course-cat-active {
+    background-color: #17529F;
+    color: #fff;
+}
+
+.sec10 .course-cat-active1 {
     background-color: #17529F;
     color: #fff;
 }
