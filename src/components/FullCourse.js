@@ -99,7 +99,7 @@ export default function FullCourse() {
                                             const { id, name, sub_name, course_image, course_type, course_code, author_image, author_name, author_position } = elem;
                                             return (
 
-                                                <Col md="3" key={id} className="all-course-card">
+                                                <Col md="3" key={id} className="all-course-card ">
                                                     <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
                                                         <div className="free-course">{course_type}</div>
                                                         <div className="course-detail">

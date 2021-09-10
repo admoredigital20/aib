@@ -52,24 +52,31 @@ function Webinar() {
 
     }
 
-    const activeBtn = (e) => {
+    
 
+    const btnPast = () => {
+        const upcoming = document.getElementById("upc")
+        upcoming.classList.remove("course-cat-active")
+    }
+
+    const activeBtn = (e) => {
         var elems = document.querySelector(".course-cat-active");
         if (elems !== null) {
             elems.classList.remove("course-cat-active");
         }
         e.target.classList.add("course-cat-active")
     }
+
     return (
         <div>
             <section className="sec10">
                 <Container>
                     <Row><h2 className="sec10-h2">Webinars</h2></Row>
                         <Row className="justify-content-md-center">
-                            <Col className="all-course-cat">
-                                <div className="course-cat" onClick={(e) => { setItems(webinar.results.data); activeBtn(e) }} ><h5>All</h5></div>
-                                <div className="course-cat" onClick={(e) => { filterItem('Next'); activeBtn(e) }} ><h5 className="course-cat-active">Upcoming</h5></div>
-                                <div className="course-cat" onClick={(e) => { filterItem('Completed'); activeBtn(e) }}><h5>Past</h5></div>
+                            <Col className="all-course-cat mb-5">
+                                <div className="course-cat" onClick={(e) => { setItems(webinar.results.data); activeBtn(e); btnPast(); }} ><h5 className=''>All</h5></div>
+                                <div className="course-cat"  onClick={(e) => { filterItem('Next'); activeBtn(e) }} ><h5 id="upc" className="course-cat-active">Upcoming</h5></div>
+                                <div className="course-cat" onClick={(e) => { filterItem('Completed'); activeBtn(e); btnPast(); }}><h5 className=''>Past</h5></div>
                             </Col>
                         </Row>
 
@@ -97,26 +104,21 @@ function Webinar() {
                                         const { id, date, image, name, webinar_link, status, time } = elem;
                                         return (
                                             <>
-                                                <Col className="web1-col" md={6} lg={3} sm={6}>
+                                                <Col className="web1-col mt-4" md={4} lg={4} sm={6}>
                                                     <button className="webinar-btn" variant="light" onClick={handleShow}>
                                                         <div className="web1-main">
                                                             <img className="web1-img" src={image} />
                                                             <div className="web1-content">
                                                                 <br />
-                                                                <h6>15th AUG 21, 11:00 EST</h6>
-                                                                <h4>{name}</h4>
+                                                                <h6>{date}</h6>
                                                             </div>
                                                         </div>
                                                     </button>
                                                 </Col>
 
                                             </>
-
                                         )
-                                    }
-                                    )
-                        }
-
+                                    })}
                     </Row>
 
                 </Container>

@@ -241,7 +241,7 @@ const Home = () => {
                                                     <div className="upcoming-bc" style={{ backgroundImage: "url(" + data.image + ")" }}>
                                                         <div className="ub-bg-overlay">
                                                             <Row className="ub-details">
-                                                                <Col>
+                                                                <Col lg={8} md={8}>
                                                                     <h4>{data.name}: </h4><h6>{data.sub_name}</h6>
                                                                 </Col>
                                                                 <Col className="txt-r8">
@@ -261,36 +261,6 @@ const Home = () => {
                         </Row>
                     </Container>
                 </section>
-                {/* <Container>
-                    <Row className="web1-row">
-                        <Col className="web1-col" md={6} lg={3} sm={6}>
-                            <div className="web1-main">
-                                <img className="web1-img" src='../assets/img/webinar(1).png' />
-                                <div className="web1-content">
-                                    <br />
-                                    <h6>15th AUG 21, 11:00 EST</h6>
-                                    <br />
-                                    <h4>AI and robotics to clean the oceans</h4>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className="web1-col" md={6} lg={3} sm={6}>
-                            <div>
-                                <img className="web1-img" src='../assets/img/webinar(1).png' />
-                            </div>
-                        </Col>
-                        <Col className="web1-col" md={6} lg={3} sm={6}>
-                            <div>
-                                <img className="web1-img" src='../assets/img/webinar(1).png' />
-                            </div>
-                        </Col>
-                        <Col className="web1-col" md={6} lg={3} sm={6}>
-                            <div>
-                                <img className="web1-img" src='../assets/img/webinar(1).png' />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container> */}
                 <section className="sec4">
                     <Container>
                         <Row>
