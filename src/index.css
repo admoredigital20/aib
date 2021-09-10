@@ -3407,3 +3407,32 @@ body {
 .sec10 .fc-container {
     position: relative;
 }
+
+
+.ai-op1 {
+    position: absolute;
+}
+
+.ai-op1 img {
+    position: relative;
+    bottom: 7rem;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .ai-op1 img {
+        bottom: 5rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .ai-op1 img {
+        bottom: 3rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ai-op1 img {
+        bottom: 2rem;
+    }
+}

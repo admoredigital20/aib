@@ -213,12 +213,13 @@ const Home = () => {
                             </Row>
 
                         </Container>
-                        <Row className="ai-op">
-                            <img src="../assets/img/ai-op.svg" alt="ai brilliance" />
-                        </Row>
+
                     </div>
 
                 </section>
+                <Row className="ai-op1">
+                    <img src="../assets/img/ai-op.svg" alt="ai brilliance" />
+                </Row>
                 <CourseDiv />
 
                 <section>
@@ -654,46 +655,6 @@ const Home = () => {
 
                 <Webinar />
 
-
-
-                {/* <section className="sec10">
-                    <Container>
-                        <Row><h2 className="sec10-h2">Webinars</h2></Row>
-                        <Row className="justify-content-md-center">
-                            <Col className="sec10-btn">
-                                <Button className="btn-white">All</Button>
-                                <Button className="btn-blue">Upcoming</Button>
-                                <Button className="btn-white">Past</Button>
-                            </Col>
-                        </Row>
-                        <Row className="web-img-grp">
-                            <Col md={6} lg={3} className="web-main-content">
-                                <h6>15th AUG 21, 11:00 EST</h6>
-                                <h4>Master in Python <br />Coding and more</h4>
-                                <img className="webinar-img" src="../assets/img/webinar (1).png" />
-                            </Col>
-                            {
-                                webinarLoading ? (<LoadingBox></LoadingBox>) :
-                                    webinarError ? (<MessageBox>{webinarError}</MessageBox>) :
-
-                                        webinar.results.data.map(web => {
-                                            return (
-                                                <Col md={6} lg={3} className="web-main-content">
-                                                    <h6>15th AUG 21, 11:00 EST</h6>
-                                                    <h4>{web.name}<br />{web.sub_name}</h4>
-                                                    <img className="webinar-img" src={web.image} />
-                                                </Col>
-                                            )
-                                        }
-
-                                        )
-
-
-                            }
-
-                        </Row>
-                    </Container>
-                </section> */}
                 <MediaGallery />
                 <section className="sec12">
                     <Container className="sec12-container">
