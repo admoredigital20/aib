@@ -3363,7 +3363,7 @@ body {
 
 
 .ai-op1 {
-    position: absolute;
+    height: 10px;
     --bs-gutter-x: 0;
 }
 
