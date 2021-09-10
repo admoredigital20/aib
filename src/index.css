@@ -3364,12 +3364,12 @@ body {
 
 .ai-op1 {
     position: absolute;
+    --bs-gutter-x: 0;
 }
 
 .ai-op1 img {
     position: relative;
     bottom: 7rem;
-    --bs-gutter-x: 0;
 }
 
 
