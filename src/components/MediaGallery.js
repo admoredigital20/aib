@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Slider from 'react-slick';
 
+import ModalVideo from 'react-modal-video';
+
+
+
+
+
 
 export default function MediaGallery() {
+
+    const [isOpen, setOpen] = useState(false)
 
     const settings = {
         dots: true,
@@ -59,10 +67,13 @@ export default function MediaGallery() {
                         <img className="sec11-play-img" src="../assets/img/play-btn1.png" />
                     </Col>
                 </Row>
+                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="TQ76JqaNbAM" onClose={() => setOpen(false)} />
                 <Row >
                     <Slider {...settings}>
-                        <Col md={4}>
-                            <div className="mg-btm-div">
+                        
+                        <Col md={4} >
+                        
+                            <div className="mg-btm-div" onClick={() => setOpen(true)}>
                                 <div className="mg-play-img">
                                     <img src="../assets/img/play-btn1.png" />
                                 </div>
@@ -71,10 +82,10 @@ export default function MediaGallery() {
                                 <div className="mg-content">
                                     <Row>
                                         <Col lg={10}>
-                                            <h5>Corporate Training & Talent Partner Program</h5>
+                                            <h5>Applications and Opportunities Webinar 1: MEDLEY</h5>
                                         </Col>
                                     </Row>
-                                    <p>Duration - 120 mins</p>
+                                    <p>Duration - 58 mins</p>
                                 </div>
                             </div>
                         </Col>

@@ -500,15 +500,26 @@ body {
     padding-right: 2rem !important;
     padding-left: 2rem !important;
     font-weight: 500;
+    /* color: #fff !important; */
 }
 
 .nav1 .navbar-nav a {
-    color: #fff !important;
+    color: #fff ;
+}
+.nav1 .navbar-nav a:hover {
+    color: #fff !important ;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+..navbar-light .navbar-nav .nav-link:hover{
+    color: white !important;
 }
 
 .nav2 .navbar-nav .nav-link {
     color: #000;
 }
+
 
 .nav2 {
     margin-top: 0;
@@ -782,6 +793,11 @@ body {
     color: #fff !important;
 }
 
+.sec2 .course-cat-active1 {
+    background-color: #17529F !important;
+    color: #fff !important;
+}
+
 .all-course-card {
     margin-top: 3rem;
     display: flex;
@@ -789,8 +805,8 @@ body {
 }
 
 .course-card {
-    height: 18.5rem;
-    width: 13.5rem;
+    height: 19.5rem;
+    width: 14.5rem;
     border-radius: 0.5rem 3rem 0.5rem 0.5rem;
     background-size: cover;
     position: relative;
@@ -1027,7 +1043,28 @@ body {
 .sec5 {
     margin-top: 7rem;
 }
-
+.sec5-par{
+    font-size: 19px;
+    line-height: 1.66;
+    color: #646464;
+    font-weight: 400;
+}
+@media screen and (min-width: 1000px){
+    .py-img{
+        margin-left: 16px;
+        
+    }
+}
+.circle{
+    position: absolute;
+    left: 0;
+    height: 222px;
+}
+.circlee{
+    position: absolute;
+    right: 0;
+    margin-top: -64px;
+}
 .sec5 .sec5-coach {
     position: absolute;
     font-size: 6rem;
@@ -1035,6 +1072,12 @@ body {
     color: #1B3138;
     opacity: 0.02;
     padding-left: 10rem;
+}
+.sec5-div3 img{
+    position: absolute;
+    height: 150px;
+    margin-left: 109px;
+    margin-top: -50px;
 }
 
 .sec5 .sec5-coding {
@@ -1062,16 +1105,19 @@ body {
 }
 
 .sec5 .py-img {
-    width: 3.5rem;
-    margin-top: 3.5rem;
+    width: 2.5rem;
+    /* margin-top: 3.5rem; */
 }
+
+
+
 
 .sec5 .r-p-img {
     width: 100%;
 }
 
 .sec5 .sec5-div4 {
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: flex;
     justify-content: stretch;
     text-align: center;
@@ -1084,7 +1130,7 @@ body {
 }
 
 .sec5 .tick-div {
-    top: 35px;
+    top: 20px;
     position: relative;
 }
 
@@ -1113,8 +1159,11 @@ body {
     text-align: center;
     z-index: 9;
     position: relative;
+    transition: transfrom 450ms;
 }
-
+.sec6-hover-img :hover{
+    transform: scale(1.08);
+}
 .sec6 h2 {
     text-align: center;
     font-family: Semplicita Pro;
@@ -1269,8 +1318,8 @@ body {
 }
 
 .sec8 .sec8-p {
-    font-size: 1.2rem;
-    font-weight: lighter;
+    font-size: 28px;
+    font-weight: 500;
     color: #5C5959;
     text-align: center;
 }
@@ -1976,6 +2025,7 @@ body {
 
 .lm3-content {
     margin-top: 5rem;
+    padding-left: 65px;
 }
 
 .lm3-content h2 {
@@ -2104,7 +2154,7 @@ body {
     background-color: #17529F;
     color: #fff;
 }
-.fc-containerr .course-cat-active {
+.fc-containerr .course-cat-active1 {
     background-color: #17529F;
     color: #fff;
 }
@@ -2622,6 +2672,11 @@ body {
 .sec5-h3 {
     font-weight: bold;
     font-size: 2rem;
+    line-height: 1.4;
+}
+.sec5-span{
+    font-weight: 700;
+    font-size: 1.3rem;
 }
 
 .sec4-h3 {
@@ -3285,6 +3340,7 @@ body {
 .mg-btm-div {
     text-align: center;
     margin: 20px;
+    cursor: pointer;
 }
 
 .mg-btm-div img {
@@ -3330,6 +3386,11 @@ body {
 }
 
 .sec10 .course-cat-active {
+    background-color: #17529F;
+    color: #fff;
+}
+
+.sec10 .course-cat-active1 {
     background-color: #17529F;
     color: #fff;
 }
@@ -3390,3 +3451,343 @@ body {
         bottom: 2rem;
     }
 }
+@media screen and (min-width: 765px) and (max-width: 990px){
+    .sec5 .py-img{
+        display: none;
+    }
+}
+.stdntgrdt-btm{
+    background: transparent linear-gradient(
+        90deg,#0C63A7  0%, #030303 100%) 0% 0% no-repeat padding-box;
+        height: auto;
+}
+.stdntgrdt-btm h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    color: white;
+    float: left;
+    padding: 26px;
+}
+.stdntgrdt-pding{
+    padding: 28px;
+}
+.stdntgrdt-pding .btn-blue{
+    width: 150px;
+}
+.hire-main{
+    height: 100vh;
+    /* background-color: grey; */
+}
+
+.hirestudent{
+    height: auto;
+}
+.hirestudent-first{ 
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+}
+.hirestudent-second{
+  backdrop-filter: blur(14px);
+  background-color: #1e2246;
+}
+.hirestudent{
+    width: 60%;
+    margin: auto;
+    
+}
+.hirestudent h1{
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: 0.37px;
+    text-align: left;
+    color: #43abfb;
+}
+.hirestudent p{
+  
+    line-height: 1.41;
+    letter-spacing: 0.22px;
+
+    color: #191919;
+}
+.hirestudent-div{
+        height: auto;   
+        margin-top: 60px;
+        background-color: #43abfb;
+        border-radius: 12px;
+}
+.div-conatiner{
+    padding-bottom: 14px;
+}
+.hirestudent-div p{
+    font-size: 17px;
+    font-weight: 600;
+    font-stretch: normal; 
+    line-height: 1.35;
+    letter-spacing: 0.2px;
+    color: #fff;
+    padding-top: 19px;
+    margin: 0 ;
+}
+.hirestudent-div p1{
+    font-size: 0.8rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: 0.18px;
+  text-align: left;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.hirestudent-first hr {
+    margin: 2rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+    height: 1px;
+    width: 100%;
+    height: 0;
+    opacity: 0.20;
+    border: solid 0.6px #707070;
+}
+.hirestudent-cntnr2 h1{
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+.hirestudent-cntnr2 p{
+    font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8b8b8b;
+}
+.hirestudent-cntnr2 hr{
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    margin: 0;
+    color: #8b8b8b;
+}
+.hirestudent{
+    border-radius: 12px;
+    padding-top: 25px;
+}
+.hirestudent-second p{
+    font-size: 1rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    margin-top: 30px;
+}
+.hire .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2.5;
+    color: #212529;
+    background-color: #edf2f8;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 11px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.hire .mb-3 {
+    /* margin-bottom: 1rem!important; */
+    padding-top: 18px;
+}
+.hire .signin-btn{
+    padding: 10px;
+}
+
+@media screen and (max-width: 1400px){
+    .hire .form-control{
+        font-size: 0.8rem;
+    }
+    .hire .signin-btn{
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+.hirestudent h1{
+    font-size: 1.2rem;
+}
+.hirestudent-div p1{
+    font-size: 0.7rem;
+}
+.hirestudent-div p{
+    font-size: 15px;
+}
+.hirestudent-cntnr2 h1{
+    font-size: 1rem;
+}
+}
+@media screen and (max-width:1240) {
+    .hire .form-control{
+       font-size: 0.6rem;
+    }
+}
+@media screen and (max-width:1000px){
+    .hirestudent-first{
+        width: 100%;
+    }
+}
+/* .modal-body{
+    display: inline !important;
+} */
+.hire-main{
+    display: initial;
+}
+
+@media screen and (max-width:770px){
+    .circlee{
+        display: none;
+    }
+    .circle{
+        display: none;
+    }
+    .sec5-div3 img{
+        display: none;
+    }
+}
+
+/* html {
+    scrollbar-width: normal;
+    scrollbar-color: #777 #555;
+  }
+
+  html::-webkit-scrollbar {
+    width: 1vw;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background-color: #7775;
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+  }
+
+  html::-webkit-scrollbar-track {
+    background-color: #5555;
+  }
+
+  html::-webkit-scrollbar-track:hover {
+    background-color: #555;
+  } */
+  .modal-body{
+      padding-bottom:30px ;
+  }
+
+  .learnmore-first{
+      color: white;
+      padding-top: 80px;
+  }
+  .learnmore-first h2{
+    font-size: 29px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
+  .learnmore-first h1{
+    font-size: 2rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ededed;
+  }
+  .learnmore-first p{
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ededed;
+  }
+  .learnmore-first p1{
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ededed;
+    opacity: 0.60;
+  }
+  .box-down{
+      padding-top: 80px;
+  }
+  .box-down-2{
+      padding-top: 80px;
+  }
+  .box-down h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    /* text-align: right; */
+    color: #000;
+  }
+  .box-down-2 h1{
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    font-size: 1.5rem;
+  }
+  .social-media img{
+      height: 80px;
+      padding-top: 20px;
+  }
+  .grail{
+      height: 85px;
+  }
+  .university{
+      height: 175px;
+  }
+  .social-media a{
+      text-decoration: none;
+  }

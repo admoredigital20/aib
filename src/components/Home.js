@@ -18,6 +18,7 @@ import ModalVideo from 'react-modal-video'
 import AiSlider from './AiSlider';
 import Webinar from './Webinar';
 import MediaGallery from './MediaGallery';
+import HireSection from './HireSection';
 
 
 
@@ -35,7 +36,7 @@ const Home = () => {
     const [email, setEmail] = useState('')
     const [query, setQuery] = useState('')
 
-    const [isOpen, setOpen] = useState(false)
+    const [isOpen, setOpen] = useState(false);
 
 
     const bootcampList = useSelector(state => state.bootcampList)
@@ -50,6 +51,10 @@ const Home = () => {
     console.log(bootcamps);
 
     const dispatch = useDispatch()
+
+    function truncate(str,n) {
+        return str?.length>n?str.substr(0,n-1)+ "...." :str
+    }
 
     useEffect(() => {
         dispatch(listBootcamp())
@@ -68,11 +73,12 @@ const Home = () => {
 
     // How we work
 
-    var hww1 = "Select from the best available course from a list of free or paid, Get enrolled to a batch to get started"
-    var hww2 = "white"
-    var hww3 = "black"
-    var hww4 = "green"
-    var hww5 = "red"
+    var hww1 = "Select from the available courses from a list of free or paid courses. For paid courses, enroll in abatch to start learning in synchronous mode. Free courses are offered in asynchronous mode(material posted online)."
+    
+    var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction by the coach occurring at a set time. Students are required to  log in and participate in class at a specific time each week."
+    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition,set weekly office hours (different from live lectures) to ask coding and mini-project related questions."
+    var hww4 = " Complete a set of Python-based mini projects related to instruction material and a major project related to your choice of domain. Certificate:"
+    var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once acertificate is issued, we also provide a personalized referral for job-related referral inquiries."
 
     const [hwwContent, setHwwContent] = useState(`${hww1}`)
     const contentHandler = (e) => {
@@ -204,7 +210,7 @@ const Home = () => {
                                                 <Col className="header1-btn2">
                                                     <img src="../assets/img/play-btn.png" />
                                                 </Col>
-                                                <Col className="header1-btn3">Play Demo</Col>
+                                                <Col className="header1-btn3">Introduction</Col>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -220,6 +226,7 @@ const Home = () => {
                 <Row className="ai-op1">
                     <img src="../assets/img/ai-op.svg" alt="ai brilliance" />
                 </Row>
+
                 <CourseDiv />
 
                 <section>
@@ -243,11 +250,11 @@ const Home = () => {
                                                         <div className="ub-bg-overlay">
                                                             <Row className="ub-details">
                                                                 <Col lg={8} md={8}>
-                                                                    <h4>{data.name}: </h4><h6>{data.sub_name}</h6>
+                                                                    <h4>{data.name}: </h4><h6>{truncate(data.sub_name,60)}</h6>
                                                                 </Col>
                                                                 <Col className="txt-r8">
                                                                     <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
-                                                                    <Row className="ub-date">{data.date}</Row>
+                                                                    {/* <Row className="ub-date">{data.date}</Row> */}
                                                                 </Col>
                                                             </Row>
                                                         </div>
@@ -381,16 +388,16 @@ const Home = () => {
                                     <h3 className='sec5-h3'>The Coach & <br />Coding Enablers</h3>
                                 </Row>
                                 <Row md={12}>
-                                    <p>The online education platform that empowers learning in every student and prepare them for data science, machine learning, and AI job market.</p>
+                                    <p className='sec5-par mt-1'>The online education platform that empowers learning in every student and prepare them for data science, machine learning, and AI job market.</p>
                                 </Row>
-                                <Row>
+                                {/* <Row>
                                     <img className="py-img" src="../assets/img/Icon-simple-python.svg" />
-                                </Row>
+                                </Row> */}
                             </Col>
                             <Col md={{ span: 3, offset: 2 }} className="sec5-div2">
                                 <h6 className="sec5-coach">COACH</h6>
                                 <img src="../assets/img/brain-ai.svg" />
-                                <p>The Coach teach you what you need to learn, He will also guide you to your right path</p>
+                                <p className='sec5-par'><span className='sec5-span'> The Coach </span> teach you what you need to learn, He will also guide you to your right path</p>
                             </Col>
                             <Col md={3} className='z-index'>
                                 <img className="r-p-img" src="../assets/img/rahul-pink.png" alt="rahul rai" />
@@ -399,9 +406,13 @@ const Home = () => {
                         </Row>
                         <Row>
                             <Col md={3} className="sec5-div3">
-                                <p><strong style={{ fontSize: "1.2rem" }}>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix on to the coding world</p>
+                                <p className='sec5-par'><strong style={{ fontSize: "1.2rem" }}>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix on to the coding world</p>
+                                <img className='coding-enblr-img' src="../assets/img/coding-enbler.png" />
                             </Col>
-                            <Col md={{ span: 5, offset: 4 }} sm={10}><img src="../assets/img/theCoach4.png" width="100%" /></Col>
+                            <Col md={{  offset: 3 }}>
+                               <img className="py-img" src="../assets/img/Icon-simple-python.svg" />
+                            </Col>
+                            <Col className='sec5-coch-img' md={{ span: 5 }} sm={10}><img src="../assets/img/theCoach4.png" width="100%" /></Col>
                         </Row>
                         <div className="tick-div">
                             <Row>
@@ -422,6 +433,7 @@ const Home = () => {
                                 <Col className="sec5-tick sec5-tick-all" md={{ span: 1, offset: 1 }}>
                                     <img src="../assets/img/tick.png" />
                                 </Col>
+
                             </Row>
                         </div>
                         <Row className="sec5-div4">
@@ -437,8 +449,17 @@ const Home = () => {
                             <Col xs={6} sm={3}>
                                 <h6>Domain Specific <br />Capstone Project</h6>
                             </Col>
+                            <Col>
+                             <img className='circle' src="../assets/img/Ellipse 49.png" /> 
+                             <img className='circlee' src="../assets/img/Ellipse49.png" /> 
+                             {/* <div className='circle' ></div>  */}
+                             </Col>
                         </Row>
-                        <Row className="sec5-coding">CODING ENABLERS</Row>
+                        <Row className="sec5-coding">
+                           CODING ENABLERS 
+                         
+                            </Row>
+                            
                     </Container>
                     <div className="sec5-cir"></div>
                 </section>
@@ -480,15 +501,15 @@ const Home = () => {
                             <Col md={{ offset: 1 }} >
                                 <Row className="review-row">
                                     <div className="review-1">
-                                        <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
+                                        <p className="review-p">I am finishing up my first semester as a graduate student, and so far your course has been by far my favorite class I've ever enrolled in. The research you showcased in our latest lecture was in line with the kind of work I hope to achieve during my time in academia</p>
                                         <Row className="prof-details">
                                             <Col className="col-pd-0 mw-mc">
                                                 <img src="../assets/img/testi-1.png" className="prof-pic" alt="prof-pic" />
                                             </Col>
                                             <Col className="col-pd-0">
                                                 <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Terry Smith</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">Product Analyst</Col>
+                                                    <Col md="12" className="col-pd-0 prof-name">Alex Krolicki</Col>
+                                                    <Col className="col-pd-0 prof-dsgn">Student</Col>
                                                 </Row>
                                             </Col>
                                         </Row>
@@ -527,14 +548,14 @@ const Home = () => {
                                 <div className="rev-half">
                                 </div>
                                 <div className="review-2">
-                                    <p className="review-p">The ultimate learning experience with AIBrilliance,</p>
+                                    <p className="review-p">Just Awesome! Defines it !!!</p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
-                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                            <img src="../assets/img/testi-2.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Sandra Watkins</Col>
                                                 <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
                                             </Row>
                                         </Col>
@@ -555,16 +576,16 @@ const Home = () => {
                                     </Row>
 
                                 </div>
-                                <div className="review-1">
-                                    <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
+                                <div className="review-2">
+                                    <p className="review-p">The ultimate learning experience with AIBrilliance, provides the tools and skills to teach what you love. </p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
-                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                            <img src="../assets/img/testi-2.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Matthew Patel</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Data Analyst</Col>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -586,29 +607,29 @@ const Home = () => {
                                     </Row>
                                 </div>
                                 <div className="review-2">
-                                    <p className="review-p">The ultimate learning experience with AIBrilliance,</p>
+                                    <p className="review-p">Dr. Rai is an excellent teacher. His teaching abilities, skills to convey complex concepts easily, and the organized method for providing empty slides at the beginning of the class to take down notes during the course is extremely helpful  </p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Vinayak Khade</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Student</Col>
                                             </Row>
                                         </Col>
                                     </Row>
                                 </div>
-                                <div className="review-1">
-                                    <p className="review-p">Whether you work in machine learning or finance, or are pursuing a career in web development or data science, Python is one of the most important skills you can learn.</p>
+                                <div className="review-2">
+                                    <p className="review-p">I very much enjoyed the deep learning course that you taught. Thank you for the knowledge </p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Nitin Madhok</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Student</Col>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -619,36 +640,10 @@ const Home = () => {
                     </Container>
                 </section>
 
-                <section style={{ paddingBottom: "35px" }}>
-                    <Container className="sec8">
-                        <Row><p className="sec8-p">“Student graduates of Dr. Rai are working for” in place of text currently before companies logos:</p></Row>
-                        <Container>
-                            <Row className="sec8-logo">
-                                <Col>
-                                    <img src="../assets/img/brand1.png" />
-                                </Col>
-                                <Col>
-                                    <img src="../assets/img/brand2.png" />
-                                </Col>
-                                <Col>
-                                    <img src="../assets/img/brand3.png" />
-                                </Col>
-                            </Row>
-                            <Row className="sec8-logo">
-                                <Col>
-                                    <img src="../assets/img/brand4.png" />
-                                </Col>
-                                <Col>
-                                    <img src="../assets/img/brand5.png" />
-                                </Col>
-                                <Col>
-                                    <img src="../assets/img/brand6.png" />
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Container>
-                </section>
-                <section className="sec9">
+               <HireSection/>
+
+
+               <section className="sec9">
                     <AiSlider />
                 </section>
 

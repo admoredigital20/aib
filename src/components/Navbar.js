@@ -2,9 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Navbar, Nav, Modal, Button, Form, Row, Col } from "react-bootstrap"
 import Signin from './Signin';
+import { withRouter } from 'react-router';
 
-const Navbar1 = () => {
+const Navbar1 = (history) => {
 
+
+    // console.log(history,'his');
+
+    const getclr=(curr)=>{
+        if(history.location.pathname === curr){
+            
+            return "#43abfb"
+            
+            
+        }
+    }
     const [logo, setLogo] = useState("../assets/img/main-logo.svg")
 
     const handleResize = () => {
@@ -28,10 +40,10 @@ const Navbar1 = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
-                        <LinkContainer to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
-                        <LinkContainer to="/events"><Nav.Link>Events</Nav.Link></LinkContainer>
-                        <LinkContainer to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color: getclr('/')}} to="/"><Nav.Link >Home</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color: getclr('/fullcourse')}} to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color: getclr('/events')}} to="/events"><Nav.Link>Events</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color: getclr('/aboutus')}} to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
                         <Signin />
                     </Nav>
                 </Navbar.Collapse>
@@ -45,4 +57,4 @@ const Navbar1 = () => {
     );
 }
 
-export default Navbar1;
+export default withRouter(Navbar1) ;

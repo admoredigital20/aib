@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useLocation } from "react-router-dom";
-import { Col,  Row } from 'react-bootstrap'
+import { Col,  Container,  Row } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 import Footer from './Footer'
 import Navbar1 from './Navbar'
@@ -19,29 +19,74 @@ export default function LearnMore() {
             <div className="lm-header" style={{ backgroundImage: "url(" + "../assets/img/lm-header.png" + ")" }}>
                 <div className="lm-all-rows">
                     <Row className="justify-content-md-center">
-                        <Col md={3}>
-                            <img className="lm-header-img" src="../assets/img/rahul-blue1.png" />
+                        <Col md={{ span: 4,  }} className='learnmore-first'>
+                           
+                           <Row  >
+                        
+                              <h2 >HELLO, </h2>
+                               
+                           </Row>
+                           <Row>
+                              <h1>I am Dr. Rahul Rai</h1>
+                           </Row>
+                           <Row>
+                               <p>Dean’s Distinguished Professor at Clemson University</p> 
+                           </Row>
+                           <Row>
+                               <p1>Greenville, South Carolina, United States</p1>
+                           </Row>
+                           <Row>
+                               <Col className='social-media'>
+                                 <a href="https://www.linkedin.com/company/aibrilliance/"><img src='../assets/img/linikedin.png' /></a> 
+                                 <a href="https://www.facebook.com/AIBrilliance">  <img src='../assets/img/facebook.png' /></a>
+                                 <a href="https://www.instagram.com/ai_brilliance/"> <img src='../assets/img/ig.png' /></a>
+                               </Col>
+                           </Row>
+                         
                         </Col>
+                        <Col md={{span:4}} >
+                            <img className="lm-header-img" src="../assets/img/learn-more.png" />
+                        </Col>
+                        
 
                     </Row>
-                    <Row className="justify-content-md-center">
+                    {/* <Row className="justify-content-md-center">
                         <Col md={4} ><h1 className="lm-header-h1">Hello, I am Dr. Rahul Rai</h1></Col>
                     </Row>
                     <Row className="justify-content-md-center">
                         <Col className="lm-header-h5" md={5}><h5>Dean’s Distinguished Professor at Clemson University Greenville, South Carolina, United States</h5></Col>
-                    </Row>
+                    </Row> */}
                 </div>
             </div>
             <Row className="justify-content-md-center lm2">
                 <Col md={8} className="lm2-col">
-                    <Row>
+                    {/* <Row>
                         <Col><p className="lm2-p1">He directs the Geometric Reasoning and Artificial Intelligence Lab (GRAIL). He earned his doctoral degree in Mechanical Engineering from The University of Texas at Austin USA in 2006 in sequential sampling that is popularly known as “Active Learning” in the machine learning domain. </p></Col>
-                    </Row>
+                    </Row> */}
                     <Row>
                         <Col><p className="lm2-p2">Data Science & Machine Learning | Artificial Intelligence | Diagnostics & Prognostics | Computer Vision & Autonomous Systems | Digital Manufacturing
                             & Design | Geometric & Shape Reasoning | AR/VR/XR | Applied Ontology</p></Col>
                     </Row>
+                 
                 </Col>
+
+                <Row className='box-down'>
+                    <Col md={{ span: 4, offset: 2 }}>
+                          <img className='grail' src='../assets/img/grail.png' />
+                    </Col>
+                    <Col md={{ span: 4 }}>
+                      <h1>He directs the Geometric Reasoningand Artificial Intelligence Lab (GRAIL)</h1>
+                    </Col>
+                </Row>
+                <Row className='box-down-2'>
+                   <Col md={{ span: 4, offset: 2 }}>
+                      <h1>He earned his doctoral degree in Mechanical Engineering from The University of Texas at Austin USA in 2006 Sequential sampling that is popularly known as “Active Learning” in the machine learning domain. </h1>
+                    </Col>
+                    <Col md={{ span: 3, offset: 2 }}>
+                    <img className='university' src='../assets/img/university.png' />
+                    </Col>
+                   
+                </Row>
             </Row>
             <Row className="lm3-div">
                 <Row className="lm3">

@@ -9,11 +9,19 @@ import MessageBox from '../components/MessageBox'
 import Signin from './Signin';
 
 
-const CdNav = (props) => {
-
-
-
-
+const CdNav = (history) => {
+    useEffect(()=>{
+        console.log(history,"isthri"); 
+    })
+   
+   
+    const getclr=(curr)=>{
+        if(history.location === curr){          
+            return "#43abfb"
+            
+                    
+        }
+    }
 
 
 
@@ -25,8 +33,10 @@ const CdNav = (props) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
-                        <LinkContainer to="/literature"><Nav.Link>Literature</Nav.Link></LinkContainer>
+                        <LinkContainer style={{backgroundColor:getclr('/')}} to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
+                        <LinkContainer   to="#"><Nav.Link>Events</Nav.Link></LinkContainer>
+                        <LinkContainer  to="#"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
+                        <LinkContainer   to="#"><Nav.Link>About Us</Nav.Link></LinkContainer>
                         <Signin/>
                     </Nav>
                 </Navbar.Collapse>
