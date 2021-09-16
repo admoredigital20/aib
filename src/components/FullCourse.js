@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 import CdNav from './CdNav'
@@ -104,7 +104,7 @@ export default function FullCourse() {
                                             return (
 
                                                 <Col md="3" key={id} className="all-course-card ">
-                                                    <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
+                                                 <Link to='/bootcamp'>    <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
                                                         <div className="free-course">{course_type}</div>
                                                         <div className="course-detail">
                                                             <h5>{name} :</h5><span>{truncate(sub_name,30)}</span>
@@ -121,10 +121,12 @@ export default function FullCourse() {
                                                                         <Col md="12" className="col-pd-0 prof-name">{author_name}</Col>
                                                                         <Col className="col-pd-0 prof-dsgn">{author_position}</Col>
                                                                     </Row>
+                                                                    
                                                                 </Col>
                                                             </Row>
                                                         </div>
                                                     </div>
+                                                    </Link>
                                                 </Col>
                                             )
                                         })}</>

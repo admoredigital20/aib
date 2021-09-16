@@ -14,6 +14,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AboutUs from "./components/AboutUs";
 import HireStudent from "./components/HireStudent";
+import ContactUs from "./components/ContactUs";
 
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
             </Route>
             <Route path='/hirestudent'>
               <HireStudent/>
+            </Route>
+            <Route path='/contactus'>
+              <ContactUs/>
             </Route>
           
           </Switch>

@@ -10,13 +10,11 @@ function HireSection() {
     const handleShow = () => setShow(true);
     return (
         <div>
-            <Modal className="sec-10-modal" show={show} onHide={handleClose}>
+            <Modal className="sec-10-modal sec-10-modal2" show={show} onHide={handleClose}>
 
                 <Modal.Body>
-                    <Modal.Header closeButton>
-                       
-                    </Modal.Header>
-                    <HireStudent  />
+                   
+                    <HireStudent state={handleClose} />
                 </Modal.Body>
 
             </Modal>
@@ -46,13 +44,11 @@ function HireSection() {
                                 <img src="../assets/img/brand6.png" />
                             </Col>
                         </Row>
-                        <Row className='stdntgrdt-btm'>
-                            <Col md={2}>
-
-                            </Col>
-                            <Col md={5}>
+                        <Row className='stdntgrdt-btm'style={{ backgroundImage: "url(" + "../assets/img/hire.png" + ")" ,}}>
+                            
+                            <Col className="hire-center" md={{ span: 3, offset: 4 }}>
                                 <h3>Get free access to the best talent, No placement fees involved. </h3>
-                                {/* <p>We are proud of our prod</p> */}
+                                <p>"We are proud of our prouduct"</p>
                             </Col>
                             <Col className='stdntgrdt-pding' md={{ span: 3, offset: 2 }}>
                                <Button className="btn-blue sec5-btn" onClick={handleShow}><span className='sec4-btn-tiltle'>Hire Our Student</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>

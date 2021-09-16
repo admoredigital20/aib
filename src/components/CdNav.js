@@ -7,16 +7,18 @@ import { Link, Redirect } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
 import Signin from './Signin';
+import { withRouter } from 'react-router';
 
 
 const CdNav = (history) => {
+
     useEffect(()=>{
         console.log(history,"isthri"); 
     })
    
    
     const getclr=(curr)=>{
-        if(history.location === curr){          
+        if(history.location.pathname === curr){          
             return "#43abfb"
             
                     
@@ -35,7 +37,7 @@ const CdNav = (history) => {
                     <Nav className="ms-auto">
                         <LinkContainer style={{backgroundColor:getclr('/')}} to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
                         <LinkContainer   to="#"><Nav.Link>Events</Nav.Link></LinkContainer>
-                        <LinkContainer  to="#"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color: getclr('/fullcourse')}} to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
                         <LinkContainer   to="#"><Nav.Link>About Us</Nav.Link></LinkContainer>
                         <Signin/>
                     </Nav>
@@ -46,4 +48,4 @@ const CdNav = (history) => {
     );
 }
 
-export default CdNav;
+export default withRouter(CdNav);

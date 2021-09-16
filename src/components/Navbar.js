@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 const Navbar1 = (history) => {
 
 
-    // console.log(history,'his');
+    console.log(history,'his');
 
     const getclr=(curr)=>{
         if(history.location.pathname === curr){

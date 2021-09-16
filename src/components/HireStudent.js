@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, Modal, Row } from 'react-bootstrap'
 
-function HireStudent() {
+function HireStudent(props) {
+    
 
     
    
@@ -28,7 +29,8 @@ function HireStudent() {
                       <p className="mt-3">Is there any placement cost?</p>
                   </Container>
                </Col>
-               <Col MD={5} className='hirestudent-second'>
+               <Col MD={5} className='hirestudent-second' style={{ backgroundImage: "url(" + "../assets/img/contactus.png" + ")" }}>
+               <a onClick={()=>props.state()} className='close' >X</a>  
                  <Container>
                      <p>Enter the following details,To learn about hiring a student from AIBrilliance</p>
 

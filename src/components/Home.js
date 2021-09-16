@@ -19,6 +19,8 @@ import AiSlider from './AiSlider';
 import Webinar from './Webinar';
 import MediaGallery from './MediaGallery';
 import HireSection from './HireSection';
+import HireStudent from './HireStudent';
+import { Link } from 'react-router-dom';
 
 
 
@@ -37,6 +39,12 @@ const Home = () => {
     const [query, setQuery] = useState('')
 
     const [isOpen, setOpen] = useState(false);
+    const [isOpen1, setOpen1] = useState(false);
+    const [isOpen2, setOpen2] = useState(false);
+
+    const [isOpen3, setOpen3] = useState(false);
+    const [isOpen4, setOpen4] = useState(false);
+    const [isOpen5, setOpen5] = useState(false);
 
 
     const bootcampList = useSelector(state => state.bootcampList)
@@ -151,6 +159,7 @@ const Home = () => {
     }
 
 
+    const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
 
 
 
@@ -269,12 +278,17 @@ const Home = () => {
                         </Row>
                     </Container>
                 </section>
+
+                <section>
+                    {/* {sidebarIsOpen && <HireStudent state={setSidebarIsOpen}/> }P */}
+                   
+                </section>
                 <section className="sec4">
                     <Container>
                         <Row>
                             <Col md="3" className="make-us-diff">
                                 <h3 className='sec4-h3'>What makes us Different</h3>
-                                <Button className="btn-blue"><span className='sec4-btn-tiltle'>Read About Us</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
+                                <Button onClick={()=>setSidebarIsOpen(true)} className="btn-blue"><span className='sec4-btn-tiltle'>Read About Us</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
                             </Col>
                             <Col md="9">
                                 <Slider {...settings}>
@@ -493,7 +507,7 @@ const Home = () => {
                                             <LinkContainer to="/fullcourse"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer>
                                         </>
                                         :
-                                        <LinkContainer to="/bootcamp"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer>
+                                        <LinkContainer to="/fullcourse"><Button className="btn-blue sec5-btn"><span className='sec4-btn-tiltle'>Join the Gang</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></LinkContainer>
                                     }
 
                                 </Col></Row>
@@ -501,7 +515,7 @@ const Home = () => {
                             <Col md={{ offset: 1 }} >
                                 <Row className="review-row">
                                     <div className="review-1">
-                                        <p className="review-p">I am finishing up my first semester as a graduate student, and so far your course has been by far my favorite class I've ever enrolled in. The research you showcased in our latest lecture was in line with the kind of work I hope to achieve during my time in academia</p>
+                                        <p className="review-p">I am finishing up my first semester as a graduate student, and so far your course has been by far my favorite class I've ever enrolled in. <br /> <br /> The research you showcased in our latest lecture was in line with the kind of work I hope to achieve during my time in academia</p>
                                         <Row className="prof-details">
                                             <Col className="col-pd-0 mw-mc">
                                                 <img src="../assets/img/testi-1.png" className="prof-pic" alt="prof-pic" />
@@ -514,58 +528,56 @@ const Home = () => {
                                             </Col>
                                         </Row>
                                     </div>
-                                    <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="RkrLAtu28M8" onClose={() => setOpen(false)} />
-                                    <div className="review-0 review-vid" onClick={() => setOpen(true)} style={{ backgroundImage: "url(" + "../assets/img/okk.png" + ")", backgroundColor: "none" }}>
+                                    <ModalVideo channel='youtube' autoplay isOpen={isOpen5} videoId="AbEBC3XZ6zs" onClose={() => setOpen5(false)} />
+                                    <div className="review-0 review-vid" onClick={() => setOpen5(true)} style={{ backgroundImage: "url(" + "../assets/img/chandan.png" + ")", backgroundColor: "none",height:"15rem" }}>
                                         <Row className="prof-details">
                                             <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                                <img src="../assets/img/chandan.png" className="prof-pic" alt="prof-pic" />
                                             </Col>
                                             <Col className="col-pd-0">
                                                 <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Rahul Rail</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                    <Col md="12" className="col-pd-0 prof-name">Chandan Kumar</Col>
+                                                    <Col className="col-pd-0 prof-dsgn">Student</Col>
                                                 </Row>
+                                              
                                             </Col>
+                                          
                                         </Row>
+                                       
                                     </div>
-                                    <div className="review-1">
-                                        <p className="review-p">The ultimate learning experience with AIBrilliance,</p>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/testi-2.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Sandra Watkins</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">Data Analyst</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
+                                    
+                                  
+                    
                                 </Row>
+                                
+                                {/* <div className="rev-last">
+                                 </div> */}
+                            
+                                
                             </Col>
+                            
                             <Col>
                                 <div className="rev-half">
                                 </div>
                                 <div className="review-2">
-                                    <p className="review-p">Just Awesome! Defines it !!!</p>
+                                    <p className="review-p">Dr. Rai is an excellent teacher. He has teaching abilities, skills to convey complex concepts easily,</p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/testi-2.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Sandra Watkins</Col>
-                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Vinayak </Col>
+                                                <Col className="col-pd-0 prof-dsgn">Khade</Col>
                                             </Row>
                                         </Col>
                                     </Row>
                                 </div>
-                                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="RkrLAtu28M8" onClose={() => setOpen(false)} />
-                                <div className="review-0 review-vid" onClick={() => setOpen(true)} style={{ backgroundImage: "url(" + "../assets/img/ok.png" + ")", backgroundColor: "none" }}>
+                                <ModalVideo channel='youtube' autoplay isOpen={isOpen4} videoId="RkrLAtu28M8" onClose={() => setOpen4(false)} />
+                                <div className="review-0 review-vid" onClick={() => setOpen4(true)} style={{ backgroundImage: "url(" + "../assets/img/ok.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
-                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                            <img src="../assets/img/ok.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
@@ -577,23 +589,23 @@ const Home = () => {
 
                                 </div>
                                 <div className="review-2">
-                                    <p className="review-p">The ultimate learning experience with AIBrilliance, provides the tools and skills to teach what you love. </p>
+                                    <p className="review-p">I very much enjoyed the deep learning course that you taught. Thank you for the knowledge </p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/testi-2.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Matthew Patel</Col>
-                                                <Col className="col-pd-0 prof-dsgn">Data Analyst</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Nitin </Col>
+                                                <Col className="col-pd-0 prof-dsgn">Madhok</Col>
                                             </Row>
                                         </Col>
                                     </Row>
                                 </div>
                             </Col>
                             <Col>
-                                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="RkrLAtu28M8" onClose={() => setOpen(false)} />
-                                <div className="review-0 review-vid" onClick={() => setOpen(true)} style={{ backgroundImage: "url(" + "../assets/img/okkk.png" + ")", backgroundColor: "none" }}>
+                                <ModalVideo channel='youtube' autoplay isOpen={isOpen3} videoId="2mhv9gTzLf8" onClose={() => setOpen3(false)} />
+                                <div className="review-0 review-vid" onClick={() => setOpen3(true)} style={{ backgroundImage: "url(" + "../assets/img/okkk.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
                                             <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
@@ -606,7 +618,22 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </div>
-                                <div className="review-2">
+
+                                <ModalVideo channel='youtube' autoplay isOpen={isOpen2} videoId="5PQQf2bGhFM" onClose={() => setOpen2(false)} />
+                                <div className="review-0 review-vid" onClick={() => setOpen2(true)} style={{ backgroundImage: "url(" + "../assets/img/testimonial-5.png" + ")", backgroundColor: "none" }}>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/testimonial-5.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name">Ryan Nguyen</Col>
+                                                <Col className="col-pd-0 prof-dsgn">ABCD</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
+                                {/* <div className="review-2">
                                     <p className="review-p">Dr. Rai is an excellent teacher. His teaching abilities, skills to convey complex concepts easily, and the organized method for providing empty slides at the beginning of the class to take down notes during the course is extremely helpful  </p>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
@@ -619,21 +646,21 @@ const Home = () => {
                                             </Row>
                                         </Col>
                                     </Row>
-                                </div>
-                                <div className="review-2">
-                                    <p className="review-p">I very much enjoyed the deep learning course that you taught. Thank you for the knowledge </p>
-                                    <Row className="prof-details">
-                                        <Col className="col-pd-0 mw-mc">
-                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
-                                        </Col>
-                                        <Col className="col-pd-0">
-                                            <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Nitin Madhok</Col>
-                                                <Col className="col-pd-0 prof-dsgn">Student</Col>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                </div>
+                                </div> */}
+                                <ModalVideo channel='youtube' autoplay isOpen={isOpen1} videoId="d-1kORu7fwo" onClose={() => setOpen1(false)} />
+                                    <div className="review-0 review-vid" onClick={() => setOpen1(true)} style={{ backgroundImage: "url(" + "../assets/img/okk.png" + ")", backgroundColor: "none" }}>
+                                        <Row className="prof-details">
+                                            <Col className="col-pd-0 mw-mc">
+                                                <img src="../assets/img/okk.png" className="prof-pic" alt="prof-pic" />
+                                            </Col>
+                                            <Col className="col-pd-0">
+                                                <Row>
+                                                    <Col md="12" className="col-pd-0 prof-name">Ryan</Col>
+                                                    <Col className="col-pd-0 prof-dsgn">Nygun</Col>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                    </div>
 
                             </Col>
                         </Row>
@@ -644,7 +671,7 @@ const Home = () => {
 
 
                <section className="sec9">
-                    <AiSlider />
+                    <AiSlider id='aislider' />
                 </section>
 
 
@@ -674,6 +701,33 @@ const Home = () => {
                                     </Row>
                                 </form>
                             </Col>
+                        </Row>
+                    </Container>
+                </section>
+
+                <section className='home-faq'>
+                    <Container>
+                        <Row>
+                           <Col  className='home-faq-left'>
+                                 <h1> >  Who should take an Online Course?</h1>
+                                 <h1> >  How do I select a course?</h1>
+                                 <h1> >  Are there prerequisites or language requirements?</h1>
+                                 <h1> >  I am a high school student, can I join?</h1>
+                                 <h1> >  Can I take more than one course at a time?</h1>
+                               <Link to='/aboutus'>  <h>See More....</h>     </Link>                 
+                           </Col>
+                           <Col className='faq-right'>
+                          <Row>
+                            <Col className='faq-img-1'> 
+                                 <img src="../assets/img/FAQ.png" alt="" />
+                            </Col>
+                             <Col className='faq-img-2'>
+                                    <img src="../assets/img/youngwomen.png" alt="" />
+                            </Col>
+                          </Row>   
+                           
+                           
+                           </Col>
                         </Row>
                     </Container>
                 </section>
