@@ -117,8 +117,8 @@ export default function Signin() {
                     </Row>
                     <Row className="mdl-social-grp">
                         <Col md={4} xs={4}><img className="mdl-footer-social" src="../assets/img/Google-logo.png" alt="google logo" /></Col>
-                        <Col md={4} xs={4}><img className="mdl-footer-social" src="../assets/img/Google-logo.png" alt="google logo" /></Col>
-                        <Col md={4} xs={4}><img className="mdl-footer-social" src="../assets/img/Google-logo.png" alt="google logo" /></Col>
+                        <Col md={4} xs={4}><img className="mdl-footer-social2" src="../assets/img/facebook.png" alt="google logo" /></Col>
+                        <Col md={4} xs={4}><img className="mdl-footer-social2" src="../assets/img/ig.png" alt="google logo" /></Col>
                     </Row>
                 </Modal.Footer>
             </Modal>
@@ -159,8 +159,8 @@ export default function Signin() {
                     </Row>
                     <Row className="mdl-social-grp">
                         <Col md={4} xs={4}><img className="mdl-footer-social" src="../assets/img/Google-logo.png" alt="google logo" /></Col>
-                        <Col md={4} xs={4}><img className="mdl-footer-social" src="../assets/img/Google-logo.png" alt="google logo" /></Col>
-                        <Col md={4} xs={4}><img className="mdl-footer-social" src="../assets/img/Google-logo.png" alt="google logo" /></Col>
+                        <Col md={4} xs={4}><img className="mdl-footer-social2" src="../assets/img/facebook.png" alt="google logo" /></Col>
+                        <Col md={4} xs={4}><img className="mdl-footer-social2" src="../assets/img/ig.png" alt="google logo" /></Col>
                     </Row>
                     <Row>
                         <p className="recaptcha1">By signing up you agree to AIBrilliance Terms of Service and Privacy Policy. This page is protected by reCAPTCHA and is subject to Google’s Terms of Service and Privacy Policy.</p>

@@ -110,9 +110,9 @@ export default function LearnMore() {
                                     <h6>Course Preview</h6></div>
                             </Col>
                             <Col>
-                                <h4>21,500 + Students</h4>
+                                <h4>17,000 + Students</h4>
                                 <p className="lm3-course">Course:</p>
-                                <h6>Intelligent Machining</h6>
+                                <h6>Advanced Manufacturing Process Analysis</h6>
                                 <div className="icon-div">
                                     <FontAwesome
                                         className="play-circle"

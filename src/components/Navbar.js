@@ -3,10 +3,17 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Navbar, Nav, Modal, Button, Form, Row, Col } from "react-bootstrap"
 import Signin from './Signin';
 import { withRouter } from 'react-router';
+import { useHistory } from 'react-router-dom'
+
+
+
 
 const Navbar1 = (history) => {
+    let history1=useHistory();
 
-
+   const redirect=()=>{
+      history1.push('/')
+   }
     console.log(history,'his');
 
     const getclr=(curr)=>{
@@ -33,17 +40,19 @@ const Navbar1 = (history) => {
 
 
     return (
-        <Navbar expand="lg" className="nav1">
+        <Navbar expand="lg" className="nav1 ">
             <Container>
                 <LinkContainer to="/"><img className="logo" src={logo} alt="ai brilliance logo" /></LinkContainer>
 
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav ok" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <LinkContainer style={{color: getclr('/')}} to="/"><Nav.Link >Home</Nav.Link></LinkContainer>
+                    <Nav className="ms-auto ">
+                        {/* <LinkContainer style={{color: getclr('/')}} to=""><Nav.Link >Home</Nav.Link></LinkContainer> */}
+                        <LinkContainer style={{color: getclr('/')}} onClick={redirect} to="#"><Nav.Link>Home</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/fullcourse')}} to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/events')}} to="/events"><Nav.Link>Events</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/aboutus')}} to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color: getclr('/faq')}} to="/faq"><Nav.Link>FAQ</Nav.Link></LinkContainer>
                         <Signin />
                     </Nav>
                 </Navbar.Collapse>

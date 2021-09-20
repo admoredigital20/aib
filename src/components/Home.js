@@ -60,13 +60,14 @@ const Home = () => {
 
     const dispatch = useDispatch()
 
-    function truncate(str,n) {
-        return str?.length>n?str.substr(0,n-1)+ "...." :str
+    function truncate(str, n) {
+        return str?.length > n ? str.substr(0, n - 1) + "...." : str
     }
 
     useEffect(() => {
         dispatch(listBootcamp())
         // dispatch(webinarCourse())
+        window.scrollTo(0, 0);
 
     }, [dispatch])
 
@@ -81,16 +82,23 @@ const Home = () => {
 
     // How we work
 
-    var hww1 = "Select from the available courses from a list of free or paid courses. For paid courses, enroll in abatch to start learning in synchronous mode. Free courses are offered in asynchronous mode(material posted online)."
-    
-    var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction by the coach occurring at a set time. Students are required to  log in and participate in class at a specific time each week."
-    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition,set weekly office hours (different from live lectures) to ask coding and mini-project related questions."
-    var hww4 = " Complete a set of Python-based mini projects related to instruction material and a major project related to your choice of domain. Certificate:"
-    var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once acertificate is issued, we also provide a personalized referral for job-related referral inquiries."
+    var hww1 = "Select from the available courses from a list of free or paid courses.For paid courses, enroll in abatch to start learning in synchronous mode."
+    var hww12 = "Free courses are offered in asynchronous mode (material posted online)."
+
+    var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction by the coach occurring at a set time."
+    var hww22 = "  Students are required to  log in and participate in class at a specific time each week."
+    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition,set weekly office hours (different from live lectures). To ask coding and mini-project ,"
+    var hww33 = "related questions In addition set weekly office hours (different from live lectures) to ask coding and mini-project related questions."
+    var hww4 = " Complete a set of Python-based mini projects related to instruction material and a major project "
+    var hww44 = "  related to your choice of domain"
+    var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once acertificate is issued, we also provide a personalized referral "
+    var hww55 = "for job-related referral inquiries. Once acertificate is issued, we also provide a personalized referral for job-related referral inquiries."
 
     const [hwwContent, setHwwContent] = useState(`${hww1}`)
-    const contentHandler = (e) => {
+    const [hwwContent1, setHwwContent1] = useState(`${hww12}`)
+    const contentHandler = (e, a) => {
         setHwwContent(e);
+        setHwwContent1(a);
     }
 
     const helpHandler = (e) => {
@@ -102,20 +110,20 @@ const Home = () => {
         console.log(helpQuery, 'help');
     }
 
-    var hwwImg1 = "../assets/img/hww-b-w (1).png"
+    var hwwImg1 = "../assets/img/hww-clr (1).png"
     var hwwImg12 = "../assets/img/hww-clr (1).png"
 
-    var hwwImg2 = "../assets/img/hww-b-w (2).png"
+    var hwwImg2 = "../assets/img/hww-clr (2).png"
     var hwwImg22 = "../assets/img/hww-clr (2).png"
 
-    var hwwImg3 = "../assets/img/hww-b-w (3).png"
-    var hwwImg32 = "../assets/img/hww-clr (3).png"
+    var hwwImg3 = "../assets/img/qw.png"
+    var hwwImg32 = "../assets/img/qw.png"
 
-    var hwwImg4 = "../assets/img/hww-b-w (4).png"
+    var hwwImg4 = "../assets/img/hww-clr (4).png"
     var hwwImg42 = "../assets/img/hww-clr (4).png"
 
-    var hwwImg5 = "../assets/img/hww-b-w (5).png"
-    var hwwImg52 = "../assets/img/hww-clr (5).png"
+    var hwwImg5 = "../assets/img/qwe.png"
+    var hwwImg52 = "../assets/img/qwe.png"
 
     const [hwwImgState, setHwwImg] = useState(hwwImg1)
     const [hwwImgState2, setHwwImg2] = useState(hwwImg2)
@@ -200,12 +208,38 @@ const Home = () => {
     };
 
 
+    const [bnrImg, setBnrImg] = useState(false)
+
+    const bnrFun = () => {
+        setBnrImg(true)
+    }
+    const bnrFunOut = () => {
+        setBnrImg(false)
+    }
+
+    const [bnrImg2, setBnrImg2] = useState(false)
+
+    const bnrFun2 = () => {
+        setBnrImg2(true)
+    }
+    const bnrFunOut2 = () => {
+        setBnrImg2(false)
+    }
+
+    const [bnrImg3, setBnrImg3] = useState(false)
+
+    const bnrFun3 = () => {
+        setBnrImg3(true)
+    }
+    const bnrFunOut3 = () => {
+        setBnrImg3(false)
+    }
 
     return (
         <>
             <Navbar1 />
             <div className="main">
-                <section className="header1" style={{ backgroundImage: "url(" + "../assets/img/header1.png" + ")" }} >
+                <section className="header1 banner-img" style={{ backgroundImage: "url(" + "../assets/img/header2.png" + ")" }} >
                     <div className="header1-container">
                         <Container>
                             <Row>
@@ -224,17 +258,65 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </Col>
-                                <Col><img className="header1-img" src="../assets/img/header1-img1.png" alt="ai brilliance header zoom image" /></Col>
+
+                                <Col>
+                                    {/* <Row className="fr-row">
+                                        <Col>
+                                            {bnrImg ? <>
+                                                <img className="firsttext" src="../assets/img/firsttext.png" alt="" />
+                                            </> :
+                                                <>
+                                                    <div className="firsttext"></div>
+                                                </>
+                                            }
+                                        </Col>
+                                        <Col className="fr-col">
+                                            <img className="firstround" onMouseOver={bnrFun} onMouseOut={bnrFunOut} src="../assets/img/1round.png" alt="" />
+                                        </Col>
+                                    </Row> */}
+                                    <Row>
+
+                                        {/* <Col className="tr-col" md={1}>
+                                            <img className="thirdround" onMouseOver={bnrFun3} onMouseOut={bnrFunOut3} src="../assets/img/3round.png" alt="" />
+                                        </Col>
+                                        <Col>
+                                            {bnrImg3 ? <>
+                                                <img className="firsttext" src="../assets/img/firsttext3.png" alt="" />
+                                            </> :
+                                                <>
+                                                    <div className="firsttext"></div>
+                                                </>
+                                            }
+
+                                        </Col> */}
+
+                                        <img className="header1-img" src="../assets/img/header1-img2.png" alt="ai brilliance header zoom image" />
+                                        {/* <Col md={1}>
+                                            <img className="secondround" onMouseOver={bnrFun2} onMouseOut={bnrFunOut2} src="../assets/img/2round.png" alt="" />
+                                        </Col>
+                                        <Col>
+                                            {bnrImg2 ? <>
+                                                <img className="firsttext" src="../assets/img/firsttext2.png" alt="" />
+                                            </> :
+                                                <>
+                                                    <div className="firsttext"></div>
+                                                </>
+                                            }
+
+                                        </Col> */}
+                                    </Row>
+                                </Col>
                             </Row>
+
 
                         </Container>
 
                     </div>
 
                 </section>
-                <Row className="ai-op1">
+                {/* <Row className="ai-op1">
                     <img src="../assets/img/ai-op.svg" alt="ai brilliance" />
-                </Row>
+                </Row> */}
 
                 <CourseDiv />
 
@@ -259,7 +341,7 @@ const Home = () => {
                                                         <div className="ub-bg-overlay">
                                                             <Row className="ub-details">
                                                                 <Col lg={8} md={8}>
-                                                                    <h4>{data.name}: </h4><h6>{truncate(data.sub_name,60)}</h6>
+                                                                    <h4>{data.name}: </h4><h6>{truncate(data.sub_name, 60)}</h6>
                                                                 </Col>
                                                                 <Col className="txt-r8">
                                                                     <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
@@ -281,14 +363,14 @@ const Home = () => {
 
                 <section>
                     {/* {sidebarIsOpen && <HireStudent state={setSidebarIsOpen}/> }P */}
-                   
+
                 </section>
                 <section className="sec4">
                     <Container>
                         <Row>
                             <Col md="3" className="make-us-diff">
                                 <h3 className='sec4-h3'>What makes us Different</h3>
-                                <Button onClick={()=>setSidebarIsOpen(true)} className="btn-blue"><span className='sec4-btn-tiltle'>Read About Us</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
+                                <Button onClick={() => setSidebarIsOpen(true)} className="btn-blue"><span className='sec4-btn-tiltle'>Read About Us</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
                             </Col>
                             <Col md="9">
                                 <Slider {...settings}>
@@ -423,8 +505,8 @@ const Home = () => {
                                 <p className='sec5-par'><strong style={{ fontSize: "1.2rem" }}>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix on to the coding world</p>
                                 <img className='coding-enblr-img' src="../assets/img/coding-enbler.png" />
                             </Col>
-                            <Col md={{  offset: 3 }}>
-                               <img className="py-img" src="../assets/img/Icon-simple-python.svg" />
+                            <Col md={{ offset: 3 }}>
+                                <img className="py-img" src="../assets/img/Icon-simple-python.svg" />
                             </Col>
                             <Col className='sec5-coch-img' md={{ span: 5 }} sm={10}><img src="../assets/img/theCoach4.png" width="100%" /></Col>
                         </Row>
@@ -464,16 +546,16 @@ const Home = () => {
                                 <h6>Domain Specific <br />Capstone Project</h6>
                             </Col>
                             <Col>
-                             <img className='circle' src="../assets/img/Ellipse 49.png" /> 
-                             <img className='circlee' src="../assets/img/Ellipse49.png" /> 
-                             {/* <div className='circle' ></div>  */}
-                             </Col>
+                                <img className='circle' src="../assets/img/Ellipse 49.png" />
+                                <img className='circlee' src="../assets/img/Ellipse49.png" />
+                                {/* <div className='circle' ></div>  */}
+                            </Col>
                         </Row>
                         <Row className="sec5-coding">
-                           CODING ENABLERS 
-                         
-                            </Row>
-                            
+                            CODING ENABLERS
+
+                        </Row>
+
                     </Container>
                     <div className="sec5-cir"></div>
                 </section>
@@ -483,13 +565,14 @@ const Home = () => {
                             <h2>How We Work ?</h2>
                         </Row>
                         <Row className="sec6-hover-img">
-                            <Col><img onMouseOver={() => { contentHandler(hww1); imgHandler(); }} onMouseOut={imgHandlerout} className="hww-img" src={hwwImgState} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww2); imgHandler2(); }} onMouseOut={imgHandlerout2} className="hww-img" src={hwwImgState2} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww3); imgHandler3(); }} onMouseOut={imgHandlerout3} className="hww-img" src={hwwImgState3} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww4); imgHandler4(); }} onMouseOut={imgHandlerout4} className="hww-img" src={hwwImgState4} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww5); imgHandler5(); }} onMouseOut={imgHandlerout5} className="hww-img" src={hwwImgState5} /></Col>
+                            <Col><img onMouseOver={() => { contentHandler(hww1, hww12); imgHandler(); }} onMouseOut={imgHandlerout} className="hww-img" src={hwwImgState} /></Col>
+                            <Col><img onMouseOver={() => { contentHandler(hww2, hww22); imgHandler2(); }} onMouseOut={imgHandlerout2} className="hww-img" src={hwwImgState2} /></Col>
+                            <Col><img onMouseOver={() => { contentHandler(hww3, hww33); imgHandler3(); }} onMouseOut={imgHandlerout3} className="hww-img" src={hwwImgState3} /></Col>
+                            <Col><img onMouseOver={() => { contentHandler(hww4, hww44); imgHandler4(); }} onMouseOut={imgHandlerout4} className="hww-img" src={hwwImgState4} /></Col>
+                            <Col><img onMouseOver={() => { contentHandler(hww5, hww55); imgHandler5(); }} onMouseOut={imgHandlerout5} className="hww-img" src={hwwImgState5} /></Col>
                         </Row>
-                        <Row><p className="hww-p">{hwwContent}</p></Row>
+                        <Row><p className="hww-p">{hwwContent} <br />{hwwContent1}</p></Row>
+                        {/* <Row><p className="hww-p"></p></Row> */}
                     </Container>
 
                     <hr className="hww-hr" />
@@ -529,7 +612,7 @@ const Home = () => {
                                         </Row>
                                     </div>
                                     <ModalVideo channel='youtube' autoplay isOpen={isOpen5} videoId="AbEBC3XZ6zs" onClose={() => setOpen5(false)} />
-                                    <div className="review-0 review-vid" onClick={() => setOpen5(true)} style={{ backgroundImage: "url(" + "../assets/img/chandan.png" + ")", backgroundColor: "none",height:"15rem" }}>
+                                    <div className="review-0 review-vid" onClick={() => setOpen5(true)} style={{ backgroundImage: "url(" + "../assets/img/chandan.png" + ")", backgroundColor: "none", height: "15rem" }}>
                                         <Row className="prof-details">
                                             <Col className="col-pd-0 mw-mc">
                                                 <img src="../assets/img/chandan.png" className="prof-pic" alt="prof-pic" />
@@ -539,23 +622,23 @@ const Home = () => {
                                                     <Col md="12" className="col-pd-0 prof-name">Chandan Kumar</Col>
                                                     <Col className="col-pd-0 prof-dsgn">Student</Col>
                                                 </Row>
-                                              
+
                                             </Col>
-                                          
+
                                         </Row>
-                                       
+
                                     </div>
-                                    
-                                  
-                    
+
+
+
                                 </Row>
-                                
+
                                 {/* <div className="rev-last">
                                  </div> */}
-                            
-                                
+
+
                             </Col>
-                            
+
                             <Col>
                                 <div className="rev-half">
                                 </div>
@@ -577,12 +660,12 @@ const Home = () => {
                                 <div className="review-0 review-vid" onClick={() => setOpen4(true)} style={{ backgroundImage: "url(" + "../assets/img/ok.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
-                                            <img src="../assets/img/ok.png" className="prof-pic" alt="prof-pic" />
+                                            <img src="../assets/img/alexander.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rai</Col>
-                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Alexandar</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Krolicki</Col>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -608,7 +691,7 @@ const Home = () => {
                                 <div className="review-0 review-vid" onClick={() => setOpen3(true)} style={{ backgroundImage: "url(" + "../assets/img/okkk.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
-                                            <img src="../assets/img/Rectangle-WS.png" className="prof-pic" alt="prof-pic" />
+                                            <img src="../assets/img/ryan.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
@@ -623,12 +706,12 @@ const Home = () => {
                                 <div className="review-0 review-vid" onClick={() => setOpen2(true)} style={{ backgroundImage: "url(" + "../assets/img/testimonial-5.png" + ")", backgroundColor: "none" }}>
                                     <Row className="prof-details">
                                         <Col className="col-pd-0 mw-mc">
-                                            <img src="../assets/img/testimonial-5.png" className="prof-pic" alt="prof-pic" />
+                                            <img src="../assets/img/darshil.png" className="prof-pic" alt="prof-pic" />
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Ryan Nguyen</Col>
-                                                <Col className="col-pd-0 prof-dsgn">ABCD</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Darshil</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Patel</Col>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -648,36 +731,36 @@ const Home = () => {
                                     </Row>
                                 </div> */}
                                 <ModalVideo channel='youtube' autoplay isOpen={isOpen1} videoId="d-1kORu7fwo" onClose={() => setOpen1(false)} />
-                                    <div className="review-0 review-vid" onClick={() => setOpen1(true)} style={{ backgroundImage: "url(" + "../assets/img/okk.png" + ")", backgroundColor: "none" }}>
-                                        <Row className="prof-details">
-                                            <Col className="col-pd-0 mw-mc">
-                                                <img src="../assets/img/okk.png" className="prof-pic" alt="prof-pic" />
-                                            </Col>
-                                            <Col className="col-pd-0">
-                                                <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Ryan</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">Nygun</Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
+                                <div className="review-0 review-vid" onClick={() => setOpen1(true)} style={{ backgroundImage: "url(" + "../assets/img/okk.png" + ")", backgroundColor: "none" }}>
+                                    <Row className="prof-details">
+                                        <Col className="col-pd-0 mw-mc">
+                                            <img src="../assets/img/dustin.png" className="prof-pic" alt="prof-pic" />
+                                        </Col>
+                                        <Col className="col-pd-0">
+                                            <Row>
+                                                <Col md="12" className="col-pd-0 prof-name"> Dustin</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Bielecki</Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </div>
 
                             </Col>
                         </Row>
                     </Container>
                 </section>
 
-               <HireSection/>
+                <HireSection />
 
 
-               <section className="sec9">
+                <section className="sec9">
                     <AiSlider id='aislider' />
                 </section>
 
 
                 <Webinar />
 
-                <MediaGallery />
+                {/* <MediaGallery /> */}
                 <section className="sec12">
                     <Container className="sec12-container">
                         <Row>
@@ -708,26 +791,26 @@ const Home = () => {
                 <section className='home-faq'>
                     <Container>
                         <Row>
-                           <Col  className='home-faq-left'>
-                                 <h1> >  Who should take an Online Course?</h1>
-                                 <h1> >  How do I select a course?</h1>
-                                 <h1> >  Are there prerequisites or language requirements?</h1>
-                                 <h1> >  I am a high school student, can I join?</h1>
-                                 <h1> >  Can I take more than one course at a time?</h1>
-                               <Link to='/aboutus'>  <h>See More....</h>     </Link>                 
-                           </Col>
-                           <Col className='faq-right'>
-                          <Row>
-                            <Col className='faq-img-1'> 
-                                 <img src="../assets/img/FAQ.png" alt="" />
+                            <Col className='home-faq-left'>
+                                <h1> >  Who should take an Online Course?</h1>
+                                <h1> >  How do I select a course?</h1>
+                                <h1> >  Are there prerequisites or language requirements?</h1>
+                                <h1> >  I am a high school student, can I join?</h1>
+                                <h1> >  Can I take more than one course at a time?</h1>
+                                <Link to='/faq'>  <h>See More....</h>     </Link>
                             </Col>
-                             <Col className='faq-img-2'>
-                                    <img src="../assets/img/youngwomen.png" alt="" />
+                            <Col className='faq-right'>
+                                <Row>
+                                    <Col className='faq-img-1'>
+                                        <img src="../assets/img/FAQ.png" alt="" />
+                                    </Col>
+                                    <Col className='faq-img-2'>
+                                        <img src="../assets/img/youngwomen.png" alt="" />
+                                    </Col>
+                                </Row>
+
+
                             </Col>
-                          </Row>   
-                           
-                           
-                           </Col>
                         </Row>
                     </Container>
                 </section>

@@ -40,17 +40,18 @@ function ContactUs(props) {
                  
                </Col>
                <Col MD={5} className='Contactus-second' style={{ backgroundImage: "url(" + "../assets/img/contactus.png" + ")" }}>
-                 <a className='close' onClick={()=>props.state()} >X</a>  
+                 <a class="fa fa-times close" onClick={()=>props.state()} ></a> 
+                 <i ></i> 
                  <Container style={{paddingTop:"20px"}}>
-                     <h1>Our Email</h1>
+                     <h1>Email</h1>
                      <p>rahul.rai@aibrilliance.com</p>
                  </Container>
                  <Container>
-                     <h1>Our Contact</h1>
+                     <h1>Contact</h1>
                      <p>+1512-921-9360</p>
                  </Container>
                  <Container>
-                     <h1>Our Office</h1>
+                     <h1>Office Location</h1>
                      <p>Fremont  <br />
                       <span className='contact-span'>  39152 Guardino Dr, <br />
                     Fremont, 94538, United States</span></p>

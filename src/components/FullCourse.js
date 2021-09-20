@@ -10,13 +10,22 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { listCourse } from '../actions/courseActions';
 import LoadingBox from './LoadingBox'
 import MessageBox from './MessageBox'
+import Footer from './Footer';
 
 
 export default function FullCourse() {
 
-
+    const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
     const courseList = useSelector((state) => state.courseList);
     const { loading, error, courses } = courseList;
+
+    const sidebarfun = () => {
+        if(sidebarIsOpen){
+            setSidebarIsOpen(false)
+        }else{
+            setSidebarIsOpen(true)
+        }
+    }
 
     const dispatch = useDispatch()
 
@@ -76,7 +85,7 @@ export default function FullCourse() {
             </div>
 
             <div className="fc-container">
-                <div className="container">
+                <div className="container fullcourse-padding">
                     <Row className="fc-btns-grp">
                         <Col className="fc-discover">
                             <h4>Discover</h4>
@@ -87,13 +96,27 @@ export default function FullCourse() {
                             <div className="course-cat" onClick={(e) => { filterItem('Paid'); activeBtn(e) }}><h5>Paid</h5></div>
                         </Col>
                         <Col className="all-course-cat">
-                            <div className="course-cat1"><h5>Advanced Filters &nbsp;<FontAwesome
+                            <div className="course-cat1" onClick={ sidebarfun} ><h5 >Advanced Filters &nbsp;<FontAwesome
                                 className="adv-fil"
-                                name="sort-up"
+                                name={!sidebarIsOpen? "sort-down":"sort-up"}
                                 style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                             /></h5></div>
                         </Col>
                     </Row>
+                   {sidebarIsOpen?(
+                         <Row className='advancedfilter'>
+                         <Col className="all-course-cat">
+                                 <div className="course-cat " ><h5>Coding</h5></div>
+                                 <div className="course-cat"  ><h5>R Programming</h5></div>
+                                 <div className="course-cat" ><h5>Big Data</h5></div>
+                                 <div className="course-cat " ><h5>AI</h5></div>
+                                 <div className="course-cat"  ><h5>Python</h5></div>
+                                 <div className="course-cat" ><h5>ML</h5></div>
+                             </Col>
+     
+                        </Row>
+                   ):""}
+                  
                     <Row>
                         {loading ? <LoadingBox></LoadingBox> :
                             error ? <MessageBox>{error}</MessageBox> :
@@ -104,7 +127,7 @@ export default function FullCourse() {
                                             return (
 
                                                 <Col md="3" key={id} className="all-course-card ">
-                                                 <Link to='/bootcamp'>    <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
+                                                 <Link to={{pathname: "/bootcamp",state: { cid: id },}}>    <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
                                                         <div className="free-course">{course_type}</div>
                                                         <div className="course-detail">
                                                             <h5>{name} :</h5><span>{truncate(sub_name,30)}</span>
@@ -133,7 +156,9 @@ export default function FullCourse() {
                                 )}
                     </Row>
                 </div>
+                <Footer/>
             </div>
+           
         </div>
     )
 }

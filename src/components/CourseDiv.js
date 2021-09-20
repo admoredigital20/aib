@@ -60,7 +60,7 @@ export default function CourseDiv() {
                                         return (
 
                                             <Col md="3" key={id} className="all-course-card">
-                                                <Link to='/bootcamp'> <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
+                                                <Link to={{pathname: "/bootcamp",state: { cid: id },}}> <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
                                                     <div className="free-course">{course_type}</div>
                                                     <div className="course-detail">
                                                         <h5>{name} :</h5><span>{truncate(sub_name,30)}</span>

@@ -12,9 +12,10 @@ import CdPayment from "./components/CdPayment";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import AboutUs from "./components/AboutUs";
 import HireStudent from "./components/HireStudent";
 import ContactUs from "./components/ContactUs";
+import Faq from "./components/Faq";
+import AboutUs from "./components/AboutUs";
 
 
 function App() {
@@ -23,9 +24,7 @@ function App() {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+            
             <Route path="/bootcamp">
               <CourseDetails />
             </Route>
@@ -44,8 +43,8 @@ function App() {
             <Route path="/payment">
               <CdPayment />
             </Route>
-            <Route path='/aboutus'>
-              <AboutUs/>
+            <Route path='/faq'>
+              <Faq/>
             </Route>
             <Route path='/hirestudent'>
               <HireStudent/>
@@ -53,7 +52,12 @@ function App() {
             <Route path='/contactus'>
               <ContactUs/>
             </Route>
-          
+            <Route path='/aboutus'>
+              <AboutUs/>
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
           </Switch>
         </div>
       </Router>

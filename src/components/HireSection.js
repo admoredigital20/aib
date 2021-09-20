@@ -20,7 +20,7 @@ function HireSection() {
             </Modal>
             <section style={{ paddingBottom: "35px" }}>
                 <Container className="sec8">
-                    <Row><p className="sec8-p">“Student graduates of Dr. Rai are working for” </p></Row>
+                    <Row><p className="sec8-p">Student graduates of Dr. Rai are working for </p></Row>
                     <Container>
                         <Row className="sec8-logo">
                             <Col>
@@ -45,12 +45,15 @@ function HireSection() {
                             </Col>
                         </Row>
                         <Row className='stdntgrdt-btm'style={{ backgroundImage: "url(" + "../assets/img/hire.png" + ")" ,}}>
+                            <Col md={4} xs={12}>
+
+                            </Col>
                             
-                            <Col className="hire-center" md={{ span: 3, offset: 4 }}>
+                            <Col className="hire-center" md={4} xs={12}>
                                 <h3>Get free access to the best talent, No placement fees involved. </h3>
                                 <p>"We are proud of our prouduct"</p>
                             </Col>
-                            <Col className='stdntgrdt-pding' md={{ span: 3, offset: 2 }}>
+                            <Col className='stdntgrdt-pding' md={4} xs={12}>
                                <Button className="btn-blue sec5-btn" onClick={handleShow}><span className='sec4-btn-tiltle'>Hire Our Student</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
                             </Col>
                         </Row>

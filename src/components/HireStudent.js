@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, Modal, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function HireStudent(props) {
     
@@ -24,13 +25,13 @@ function HireStudent(props) {
                   <hr/>
                   <Container className='hirestudent-cntnr2'>
                       <h1>Frequently Asked Questions</h1>
-                      <p>How does our placement process work?</p>
+                      <Link to='/faq'>   <p>How does our placement process work?</p> </Link>
                       <hr/>
-                      <p className="mt-3">Is there any placement cost?</p>
+                      <Link to='/faq'>  <p className="mt-3">Is there any placement cost?</p> </Link>
                   </Container>
                </Col>
                <Col MD={5} className='hirestudent-second' style={{ backgroundImage: "url(" + "../assets/img/contactus.png" + ")" }}>
-               <a onClick={()=>props.state()} className='close' >X</a>  
+               <a class="fa fa-times close" onClick={()=>props.state()} ></a> 
                  <Container>
                      <p>Enter the following details,To learn about hiring a student from AIBrilliance</p>
 
@@ -46,7 +47,7 @@ function HireStudent(props) {
                             <Form.Control id="email" placeholder="Phone Number *"  />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Control type="password" id="password" required placeholder="What your organization needs ? *"   />
+                            <Form.Control type="password" id="password" required placeholder="Your organization needs ? *"   />
                         </Form.Group>
                        
                         <Button className="signin-btn mt-4" type="submit">

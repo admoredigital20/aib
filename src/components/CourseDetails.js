@@ -1,20 +1,51 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from "react-router-dom";
 import { Col, Row, Accordion, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ChatApp from '../chat/ChatApp'
 import CdNav from './CdNav'
+import { useSelector } from 'react-redux';
+import { listCourse } from '../actions/courseActions';
+import { useDispatch } from 'react-redux';
 
 var FontAwesome = require('react-fontawesome')
 
-export default function CourseDetails() {
+export default function CourseDetails(props) {
+    const courseList = useSelector((state) => state.courseList);
+    const { loading, error, courses } = courseList;
+    const location = useLocation()
+    const cid = location.state?.cid
+    console.log(cid,"id cid");
+    
+  
 
+
+    // const course=courses.results.data.find(x=>x._id === props.match.params.id)
+    const dispatch= useDispatch()
     const { pathname } = useLocation();
 
     useEffect(() => {
       window.scrollTo(0, 0);
-    }, [pathname]);
+      dispatch(listCourse())
+      console.log(courses);
+    }, [pathname,dispatch]);
 
+    
+    const [sc, setSc] = useState([])
+
+    useEffect(() => {
+        if (!loading) {
+            if (!error) {
+                const IC = courses.results.data.filter(elm => {
+                    return elm.id == cid
+                })
+                setSc(IC[0])
+                console.log(sc.name,"ppp");
+
+            }
+        }
+        
+    }, [courses])
 
     useEffect(() => {
         const sections = document.querySelectorAll(".section");
@@ -101,7 +132,7 @@ export default function CourseDetails() {
                             } >
                             <Col md={12}
                                 className="cd1-breadcrumbs" >
-                                <h6 > Bootcamp &gt; Information Visualization &gt; Course Details </h6>
+                                <h6 > Bootcamp &gt;{sc.name}  </h6>
 
                             </Col>
                             <Col className="cd1-play-btn" >
@@ -132,13 +163,13 @@ export default function CourseDetails() {
                                 </Row>
                                 <Row className="cd1-dtl-grp">
                                     <Col className="price" >
-                                        <h2 className='cd1-detail-free' > Free </h2> <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p>
+                                        <h2 className='cd1-detail-free' > {sc.course_type}</h2> <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p>
                                     </Col >
                                     <Col > < h3 className='cd1-detail-bar-h2 cd1-p-r8 mt-3 mb-0'> 8 / 25 </h3></Col >
                                 </Row>
                                 <Row >
                                     <Col md={12} >
-                                       <Link to='/payment'> <Button className='cd1-detail-row-btn' > Enroll Now </Button> </Link> </Col > 
+                                       <Link to={{pathname: "/payment",state: { cid2: cid },}}> <Button className='cd1-detail-row-btn' > Enroll Now </Button> </Link> </Col > 
                                 </Row>
                                 <Row >
                                     <Col >
@@ -187,7 +218,7 @@ export default function CourseDetails() {
                             id="cd2" >
                             <Col md={4}
                                 className="cd2-details" >
-                                <h1 className="cd2-heading" > Information Visualization: <br /> Using Python </h1> <p className="cd2-dtl-p"> In this course we’ ll introduce you to the essentials of the Python language, development culture, and important parts of the Python standard library.This course will help you develop the foundation you need to work on any Python project </p>
+                                <h1 className="cd2-heading" > {sc.name} <br /> {sc.sub_name} </h1> <p className="cd2-dtl-p"> In this course we’ ll introduce you to the essentials of the Python language, development culture, and important parts of the Python standard library.This course will help you develop the foundation you need to work on any Python project </p>
                                 <Row className="cd2-prof-details" >
                                     <Col className="col-pd-0 mw-mc" >
                                         <img src="../assets/img/Rectangle-WS.png"
@@ -197,13 +228,13 @@ export default function CourseDetails() {
                                     <Col className="col-pd-0" >
                                         <Row className="" >
                                             <Col md="12" className="col-pd-0 cd2-prof-dsgn" > Author </Col>
-                                            <Col className="col-pd-0 cd2-prof-name" > Rahul Rai, CEO &#38; Founder, AIB</Col>
+                                            <Col className="col-pd-0 cd2-prof-name" > {sc.author_name},   {sc.author_position}</Col>
                                         </Row>
                                     </Col>
                                 </Row>
                             </Col>
                             <Row className="cd2-mouse" >
-                                <p className="cd2-more-details" > More Details < img src="../assets/img/cd2-mouse.png" /> </p>
+                                <p className="cd2-more-details" > More Details < img src={sc.author_image} /> </p>
                             </Row >
 
                         </Row>

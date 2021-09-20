@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { Accordion, Col, Container, Row } from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useLocation } from 'react-router';
+import { LinkContainer } from 'react-router-bootstrap';
 import Footer from './Footer';
 import Navbar1 from './Navbar';
 
@@ -15,275 +15,184 @@ function AboutUs() {
         <div>
             <Navbar1 />
 
-            <section className="header2" style={{ backgroundImage: "url(" + "../assets/img/aboutus.png" + ")" }} >
+            <section className="header2 about-us-header" style={{ backgroundImage: "url(" + "../assets/img/aboutus.png" + ")" }} >
                 <div className="header1-container">
                     <Container>
-                        <Row>
-                            <h2>FAQ</h2>
-                            <h1>FAQ</h1>
+                        <Row className='about-us'>
+                            <Col md={5}>
+                                <h1>We are <span style={{ color: "#43abfb" }}> on a Mission </span>to Empower Your Learning</h1>
+                            </Col>
+                            <Col md={{offset:1,span:6}}>
+                            <img src="../assets/img/mg (4).png" alt="" />
+                           </Col>
 
                         </Row>
-
                     </Container>
-
                 </div>
-
             </section>
 
-            <section className='faq'>
+            <section className=''>
+                <div className='about-us-2'>
+                    <Container>
+                        <Row>
+                          <Col className='about-us-2-blue' md={{ span: 5 }}>
+                            <h2>Mission</h2>
+                            <p>AIBrilliance’s mission is to deliver high-quality data science, machine learning, and AI education content at affordable prices to empower learners worldwide to upskill themselves.</p>
+                         </Col>
+                        <Col md={{offset:1,span:4}}>
+                            <img src="../assets/img/mg (3).png" alt="" />
+                        </Col>
+                        </Row>
+                    </Container>
+                </div>
+            </section>
+
+
+            <section className='about-us-3'>
+                <Container>
+                    <Row className='about-us-3-row'>
+                        <Col md={3}>
+                            <h1>What makes us Different</h1>
+                        </Col>
+                        <Col md={9} className='about-us-3-padding'>
+                            <Row>
+                                <Col xs={12} sm={6} md={4}>
+                                    <div className="sec4-div">
+                                        <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                        <Row><h5>Safe and Secure<br />No Fee Traps</h5></Row>
+                                        <Row className="sec4-grp">
+                                            <Col md={5} xs={5} className="sec4-r8">
+                                                <p>See How <br />Lightboard <br />Works</p>
+                                                <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                            </Col>
+                                            <Col md={7} xs={7}>
+                                                <img className="sec4-img2" src="../assets/img/sec4-img1.png" alt="sec4-img2" />
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                                <Col xs={12} sm={6} md={4}>
+                                    <div className="sec4-div">
+                                        <Row><img className="icon" src="../assets/img/sec4-img-icon1.svg" alt="Redefining Learning With Light-board" /></Row>
+                                        <Row><h5>Certificate and <br />Reference Guarantee </h5></Row>
+                                        <Row className="sec4-grp">
+                                            <Col md={5} xs={5} className="sec4-r8">
+                                                <p>See How <br />Lightboard <br />Works</p>
+                                                <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                            </Col>
+                                            <Col md={7} xs={7}>
+                                                <img className="sec4-img2" src="../assets/img/sec4-img3.png" alt="sec4-img2" />
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                                <Col xs={12} sm={6} md={4}>
+                                    <div className="sec4-div">
+                                        <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                        <Row><h5>1 to 1 Personalized
+                                            <br />Education</h5></Row>
+                                        <Row className="sec4-grp">
+                                            <Col md={5} xs={5} className="sec4-r8">
+                                                <p>See How <br />Lightboard <br />Works</p>
+                                                <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                            </Col>
+                                            <Col md={7} xs={7}>
+                                                <img className="sec4-img2" src="../assets/img/sec4-img5.png" alt="sec4-img2" />
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={12} sm={6} md={4}>
+                                    <div className="sec4-div">
+                                        <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                        <Row><h5>Redefining Learning
+                                            <br />With Light-board</h5></Row>
+                                        <Row className="sec4-grp">
+                                            <Col md={5} xs={5} className="sec4-r8">
+                                                <p>See How <br />Lightboard <br />Works</p>
+                                                <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                            </Col>
+                                            <Col md={7} xs={7}>
+                                                <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                                <Col xs={12} sm={6} md={4}>
+                                    <div className="sec4-div">
+                                        <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                        <Row><h5>Domain-specific
+                                            <br />capstone project</h5></Row>
+                                        <Row className="sec4-grp">
+                                            <Col md={5} xs={5} className="sec4-r8">
+                                                <p>See How <br />Lightboard <br />Works</p>
+                                                <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                            </Col>
+                                            <Col md={7} xs={7}>
+                                                <img className="sec4-img2" src="../assets/img/sec4-img.png" alt="sec4-img2" />
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                                <Col xs={12} sm={6} md={4}>
+                                    <div className="sec4-div">
+                                        <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
+                                        <Row><h5>Small Group (5-25)
+                                            <br />Focused Learning </h5></Row>
+                                        <Row className="sec4-grp">
+                                            <Col md={5} xs={5} className="sec4-r8">
+                                                <p>See How <br />Lightboard <br />Works</p>
+                                                <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
+                                            </Col>
+                                            <Col md={7} xs={7}>
+                                                <img className="sec4-img2" src="../assets/img/sec4-img6.png" alt="sec4-img2" />
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                            </Row>
+
+                        </Col>
+
+                    </Row>
+                </Container>
+            </section>
+
+
+            <section className='about-us-4'>
                 <Container>
                     <Row >
-                        <h1>This is the summary of the product, It will say something about the mission/purpose or goal of the project as well as have other content like this one</h1>
-                    </Row>
-
-                    <Row className='faq-left'>
-                        <Col md={7}>
-                            <h1>Course Related</h1>
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Who should take an Online Course?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-                            <Accordion className='padding-aqccordation' defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Who should take an Online Course?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>How do I select a course?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Are there prerequisites or language requirements?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>I am a high school student, can I join?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Can I take more than one course at a time?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-
+                        <Col className='about-us-4-h1' md={4} sm={6}>
+                             <h1>Dr. Rahul Rai</h1>
+                             <p>CEO and Founder of AIBrilliance</p>
+                             <LinkContainer to="/learnmore"><Button className="btn-blue btn-white sec5-btn"><span className='sec4-btn-tiltle'>Learn More</span> <img className='sec4-img' src='../assets/img/right.png'></img></Button></LinkContainer>
                         </Col>
-
-                        <Col md={{span:4 ,offset:1}} className='faq-right'>
-                        <h1>Categories</h1>
-                        <Row className='categories'>
-                             <Col >
-                                <p3>Course Related</p3>
-                             </Col>
-                              <Col md={{span:1 ,offset:1}} className='nmbr'>
-                                 04
-                              </Col>
-                           </Row>
-                           <Row className='categories'>
-                             <Col >
-                                <p3>Registration Related</p3>
-                             </Col>
-                              <Col md={{span:1 ,offset:1}} className='nmbr'>
-                                 02
-                              </Col>
-                           </Row>
-                           <Row className='categories'>
-                             <Col >
-                                <p3>Course Related</p3>
-                             </Col>
-                              <Col md={{span:1 ,offset:1}} className='nmbr'>
-                                 04
-                              </Col>
-                           </Row>
-                           <Row className='categories'>
-                             <Col >
-                                <p3>Registration Related</p3>
-                             </Col>
-                              <Col md={{span:1 ,offset:1}} className='nmbr'>
-                                 03
-                              </Col>
-                           </Row>
-                        </Col>
-                       
-                    </Row>
-                </Container>
-
-
-                <Container>
-
-                    <Row className='faq2-left'>
-                        <Col md={7}>
-                            <h1>Registration Related</h1>
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Who should take an Online Course?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-                            <Accordion className='padding-aqccordation' defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Who should take an Online Course?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>How do I select a course?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Are there prerequisites or language requirements?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>I am a high school student, can I join?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-
-                            <Accordion defaultActiveKey="">
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Can I take more than one course at a time?</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-
-
-                        </Col>
-
-                        <Col md={5}>
-
+                        <Col className='about-us-4-img' md={{offset:3,span:3}} sm={6}>
+                           <img src="../assets/img/learn-more.png" alt="" />
                         </Col>
                     </Row>
                 </Container>
-
-
             </section>
 
-            <Footer/>
+            <section className='about-us-5'>
+                <Container>
+                    <Row>
+                        <Col md={{offset:1,span:3}}>
+                            <h1> <span>21,500+</span>  <br /> Happy Students</h1>
+                        </Col>
+                        <Col md={{offset:1,span:3}}>
+                           <h1><span>360+</span><br /> Hrs. of content </h1>
+                        </Col>
+                        <Col md={{offset:1,span:3}}>
+                          <h1><span>21,500</span>+<br />Community</h1>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+  
+             <Footer/>
         </div>
     )
 }

@@ -1,8 +1,66 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import CdNav from './CdNav'
+import { useSelector } from 'react-redux';
+import { listCourse } from '../actions/courseActions';
+import { useDispatch } from 'react-redux';
+import LoadingBox from './LoadingBox';
+// import {PayPalButton} from 'react-paypal-button-v2'
 
 export default function CdPayment() {
+    const courseList = useSelector((state) => state.courseList);
+    const { loading, error, courses } = courseList;
+    const [sdkReady,setSdkReady] =useState(false)
+    const location = useLocation()
+    const cid = location.state?.cid2
+    console.log(cid,'idd');
+
+   
+    const [sc, setSc] = useState([])
+    const dispatch= useDispatch()
+
+    useEffect(() => {      
+        dispatch(listCourse())
+        console.log(courses,'crsees');
+      }, [dispatch]);
+
+    useEffect(() => {
+        if (!loading) {
+            if (!error) {
+                const IC = courses.results.data.filter(elm => {
+                    return elm.id == cid
+                })
+                setSc(IC[0])
+                console.log(sc.name,"ppppp");
+
+            }
+        }
+        
+    }, [courses])
+    useEffect(()=>{
+        const addPayPalScript = async()=>{
+            const {data} =await axios.get('http://192.241.138.220/app/api/payment')
+            const script =document.createElement('script')
+            script.type="text/javascript";
+            script.src=`https://www.paypal.com/sdk/js?client-id=${data}`
+            script.async =true;
+            script.onload=()=>{
+                setSdkReady(true)
+            }
+            document.body.appendChild(script)
+        }
+         if(!window.paypal){
+             addPayPalScript()
+         }else{
+             setSdkReady(true)
+         }
+     },[sdkReady])
+
+     const successPaymentHandler=()=>{
+
+     }
     return (
         <div>
             <CdNav />
@@ -12,7 +70,7 @@ export default function CdPayment() {
                         <Col md={7} className="cdp-col1">
                             <Row >
                                 <Col md={12} className="cd1-breadcrumbs" >
-                                    <h6 > Bootcamp &gt; Information Visualization &gt; Course Details </h6>
+                                    <h6 > Bootcamp &gt; {sc.name} &gt; Course Details </h6>
                                 </Col>
                             </Row>
                             <Row>
@@ -31,8 +89,8 @@ export default function CdPayment() {
                             <hr className="cdp-hr" />
                             <Row>
                                 <Col md={6} className="cdp-cn">
-                                    <h4>Information Visualization :</h4>
-                                    <h5>Using Python</h5>
+                                    <h4>{sc.name}:</h4>
+                                    <h5>{sc.sub_name}</h5>
                                     <p className="mt-4 mb-1 cdp-modules"><strong>4</strong> Modules • <strong>4</strong> Mini Project</p>
                                     <p className="cdp-modules"><strong>1</strong> Major Project • <strong>36h 15m</strong> total length</p>
                                 </Col>
@@ -119,6 +177,12 @@ export default function CdPayment() {
                                 </Col>
                                 <Col md={6}>
                                     <h6 className="cdp-box-price">$10.<span className="dbl-zero">95</span></h6>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="cdp-col2-hr">
+                                   {/* {!sdkReady? <LoadingBox></LoadingBox>: */}
+                                   {/* <PayPalButton onSuccess={successPaymentHandler}/> */}
                                 </Col>
                             </Row>
                         </Col>
