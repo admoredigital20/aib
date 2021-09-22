@@ -4,13 +4,23 @@ import { Col, Container, Row } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
 
-export default class AiSlider extends Component {
+export default class AiSlider extends React.PureComponent {
 
-    state = {
-        slideIndex: 0,
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            slideIndex: 1,
+            SN : 1
+        };
+    }
+    
 
     
+    componentWillReceiveProps(pP) {
+        console.log(pP,"k");
+        this.setState({SN:this.props.sn})
+        this.slider.slickGoTo(this.state.SN)
+    }
 
 
     render() {
@@ -42,6 +52,12 @@ export default class AiSlider extends Component {
             beforeChange: (current, next) => this.setState({ slideIndex: next })
         };
 
+        // const Sgoto = () => {
+        //     this.slider.slickGoTo(1)
+        // }
+
+        
+
 
         return (
             <div>
@@ -51,8 +67,8 @@ export default class AiSlider extends Component {
                     type="range"
                     min={0}
                     max={3}
-                />
-                <button onClick={e => this.slider.slickGoTo(3)}>add</button> */}
+                /> */}
+                {/* <button onClick={()=>Sgoto()}>add</button>  */}
 
                 <Slider ref={slider => (this.slider = slider)} {...settings}>
                     <div className="slider-all">
@@ -71,7 +87,7 @@ export default class AiSlider extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="slider-email">
-                                    <Col md={6} sm={6} lg={4}>
+                                    {/* <Col md={6} sm={6} lg={4}>
                                         <Row>
                                             <h6 class="home-slider-h6">Want to know more ?</h6>
                                         </Row>
@@ -84,7 +100,7 @@ export default class AiSlider extends Component {
                                                 />
                                             </Col>
                                         </Row>
-                                    </Col>
+                                    </Col> */}
                                     <Col md={6}>
                                         <Row>
                                             <Col>
@@ -118,7 +134,7 @@ export default class AiSlider extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="slider-email">
-                                    <Col md={6} sm={6} lg={4}>
+                                    {/* <Col md={6} sm={6} lg={4}>
                                         <Row>
                                             <h6 class="home-slider-h6">Want to know more ?</h6>
                                         </Row>
@@ -131,7 +147,7 @@ export default class AiSlider extends Component {
                                                 />
                                             </Col>
                                         </Row>
-                                    </Col>
+                                    </Col> */}
                                     <Col md={6}>
                                         <Row>
                                             <Col>
@@ -166,7 +182,7 @@ export default class AiSlider extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="slider-email">
-                                    <Col md={6} sm={6} lg={4}>
+                                    {/* <Col md={6} sm={6} lg={4}>
                                         <Row>
                                             <h6 class="home-slider-h6">Want to know more ?</h6>
                                         </Row>
@@ -179,7 +195,7 @@ export default class AiSlider extends Component {
                                                 />
                                             </Col>
                                         </Row>
-                                    </Col>
+                                    </Col> */}
                                     <Col md={6}>
                                         <Row>
                                             <Col>
@@ -213,7 +229,7 @@ export default class AiSlider extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="slider-email">
-                                    <Col md={6} sm={6} lg={4}>
+                                    {/* <Col md={6} sm={6} lg={4}>
                                         <Row>
                                             <h6 class="home-slider-h6">Want to know more ?</h6>
                                         </Row>
@@ -226,7 +242,7 @@ export default class AiSlider extends Component {
                                                 />
                                             </Col>
                                         </Row>
-                                    </Col>
+                                    </Col> */}
                                     <Col md={6}>
                                         <Row>
                                             <Col>

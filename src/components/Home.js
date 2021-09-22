@@ -8,7 +8,7 @@ import HomeSlider from './HomeSlider';
 import Navbar1 from './Navbar';
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
-import { help, helpList, listBootcamp } from '../actions/generalAction';
+import { help, helpList, listBootcamp, sliderEmail } from '../actions/generalAction';
 import { webinarCourse } from '../actions/webinarAction';
 import CourseDiv from './CourseDiv';
 import "slick-carousel/slick/slick.css";
@@ -21,6 +21,7 @@ import MediaGallery from './MediaGallery';
 import HireSection from './HireSection';
 import HireStudent from './HireStudent';
 import { Link } from 'react-router-dom';
+import Banner from './Banner';
 
 
 
@@ -37,6 +38,9 @@ const Home = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [query, setQuery] = useState('')
+    const [email1, setEmail1] = useState('')
+
+    
 
     const [isOpen, setOpen] = useState(false);
     const [isOpen1, setOpen1] = useState(false);
@@ -110,20 +114,26 @@ const Home = () => {
         console.log(helpQuery, 'help');
     }
 
+    const knowMoreSubmit=(e)=>{
+        e.preventDefault()
+        dispatch(sliderEmail(email1))
+        setEmail1('')
+    }
+
     var hwwImg1 = "../assets/img/hww-clr (1).png"
-    var hwwImg12 = "../assets/img/hww-clr (1).png"
+    var hwwImg12 = "../assets/img/hww-clr2 (1).png"
 
     var hwwImg2 = "../assets/img/hww-clr (2).png"
-    var hwwImg22 = "../assets/img/hww-clr (2).png"
+    var hwwImg22 = "../assets/img/hww-clr2 (2).png"
 
-    var hwwImg3 = "../assets/img/qw.png"
-    var hwwImg32 = "../assets/img/qw.png"
+    var hwwImg3 = "../assets/img/hww-clr (3).png"
+    var hwwImg32 = "../assets/img/hww-clr2 (3).png"
 
     var hwwImg4 = "../assets/img/hww-clr (4).png"
-    var hwwImg42 = "../assets/img/hww-clr (4).png"
+    var hwwImg42 = "../assets/img/hww-clr2 (4).png"
 
-    var hwwImg5 = "../assets/img/qwe.png"
-    var hwwImg52 = "../assets/img/qwe.png"
+    var hwwImg5 = "../assets/img/hww-clr (5).png"
+    var hwwImg52 = "../assets/img/hww-clr2 (5).png"
 
     const [hwwImgState, setHwwImg] = useState(hwwImg1)
     const [hwwImgState2, setHwwImg2] = useState(hwwImg2)
@@ -235,85 +245,12 @@ const Home = () => {
         setBnrImg3(false)
     }
 
+    const [pp, setPp] = useState(4)
+
     return (
         <>
-            <Navbar1 />
             <div className="main">
-                <section className="header1 banner-img" style={{ backgroundImage: "url(" + "../assets/img/header2.png" + ")" }} >
-                    <div className="header1-container">
-                        <Container>
-                            <Row>
-                                <Col md={6} className="header-details">
-                                    <h1>Empower Your Learning <br />and Upskill for Data Science, <br />Machine Learning, and <br />AI Career Path</h1>
-                                    <Row>
-                                        <Col md={9}>
-                                            <p>Learn from the best. Experienced online educators and comprehensive curriculum.</p>
-                                            <p>Highest quality content in hands-on and project-based model delivered in online synchronous/asynchronous mode.</p>
-                                            <Row className="header1-btn-grp">
-                                                <Col className="header1-btn2">
-                                                    <img src="../assets/img/play-btn.png" />
-                                                </Col>
-                                                <Col className="header1-btn3">Introduction</Col>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                </Col>
-
-                                <Col>
-                                    {/* <Row className="fr-row">
-                                        <Col>
-                                            {bnrImg ? <>
-                                                <img className="firsttext" src="../assets/img/firsttext.png" alt="" />
-                                            </> :
-                                                <>
-                                                    <div className="firsttext"></div>
-                                                </>
-                                            }
-                                        </Col>
-                                        <Col className="fr-col">
-                                            <img className="firstround" onMouseOver={bnrFun} onMouseOut={bnrFunOut} src="../assets/img/1round.png" alt="" />
-                                        </Col>
-                                    </Row> */}
-                                    <Row>
-
-                                        {/* <Col className="tr-col" md={1}>
-                                            <img className="thirdround" onMouseOver={bnrFun3} onMouseOut={bnrFunOut3} src="../assets/img/3round.png" alt="" />
-                                        </Col>
-                                        <Col>
-                                            {bnrImg3 ? <>
-                                                <img className="firsttext" src="../assets/img/firsttext3.png" alt="" />
-                                            </> :
-                                                <>
-                                                    <div className="firsttext"></div>
-                                                </>
-                                            }
-
-                                        </Col> */}
-
-                                        <img className="header1-img" src="../assets/img/header1-img2.png" alt="ai brilliance header zoom image" />
-                                        {/* <Col md={1}>
-                                            <img className="secondround" onMouseOver={bnrFun2} onMouseOut={bnrFunOut2} src="../assets/img/2round.png" alt="" />
-                                        </Col>
-                                        <Col>
-                                            {bnrImg2 ? <>
-                                                <img className="firsttext" src="../assets/img/firsttext2.png" alt="" />
-                                            </> :
-                                                <>
-                                                    <div className="firsttext"></div>
-                                                </>
-                                            }
-
-                                        </Col> */}
-                                    </Row>
-                                </Col>
-                            </Row>
-
-
-                        </Container>
-
-                    </div>
-
-                </section>
+                <Banner />
                 {/* <Row className="ai-op1">
                     <img src="../assets/img/ai-op.svg" alt="ai brilliance" />
                 </Row> */}
@@ -754,8 +691,36 @@ const Home = () => {
 
 
                 <section className="sec9">
-                    <AiSlider id='aislider' />
+                    <AiSlider id='aislider' sn={pp} />
                 </section>
+                <div className="se-div">
+                    <Container className="se-con">
+                        <Row className="slider-email">
+                                <Col md={6} sm={6} lg={4}>
+                                    <Row>
+                                        <h6 class="home-slider-h6">Want to know more ?</h6>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={12} className="slider-col">
+                                            <Form onSubmit={knowMoreSubmit}>
+                                            <input type="email" className="home-slider-input1" placeholder="enter your email id @ this space"  value={email1} onChange={(e) => setEmail1(e.target.value)}/><button type='submit'><FontAwesome
+                                                size="2x"
+                                                name="arrow-circle-right"
+                                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', marginLeft: '1rem', color: '#589af1' }}
+                                            /></button>
+                                            </Form>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                        </Row>
+                    </Container>
+                </div>
+
+                {/* <button onClick={()=>setPp(1)}>adddd</button>
+                <button onClick={()=>setPp(2)}>adddd</button>
+                <button onClick={()=>setPp(3)}>adddd</button>
+                <button onClick={()=>setPp(4)}>adddd</button> */}
+
 
 
                 <Webinar />

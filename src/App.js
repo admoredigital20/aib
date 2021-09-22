@@ -16,6 +16,7 @@ import HireStudent from "./components/HireStudent";
 import ContactUs from "./components/ContactUs";
 import Faq from "./components/Faq";
 import AboutUs from "./components/AboutUs";
+import Events from "./components/Banner";
 
 
 function App() {

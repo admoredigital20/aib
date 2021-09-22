@@ -37,9 +37,9 @@ function Faq() {
                     </Row>
 
                     <Row className='faq-left'>
-                        <Col md={6}>
+                        <Col md={7}>
                             <h1>Course Related</h1>
-                            <Accordion defaultActiveKey="">
+                            <Accordion defaultActiveKey="0">
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Who should take an Online Course?</Accordion.Header>
                                     <Accordion.Body>
@@ -134,7 +134,7 @@ function Faq() {
 
                         </Col>
 
-                        <Col  className='faq-right'>
+                        <Col md={{offset:1}}  className='faq-right'>
                         <h1>Categories</h1>
                         <Row className='categories'>
                              <Col >

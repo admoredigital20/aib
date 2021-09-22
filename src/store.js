@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { courseListReducer } from "./reducer/courseReducer";
-import { bootcampListReducer, helpReducer } from "./reducer/generalReducer";
+import { bootcampListReducer, ConatactReducer, helpReducer, sliderEmailReducer } from "./reducer/generalReducer";
 import { userRegisterReducer, userSigninReducer } from "./reducer/userReducer";
 import { webinarListReducer } from "./reducer/webinarReducer";
 
@@ -17,6 +17,8 @@ const reducer = combineReducers({
   userSignin:userSigninReducer,
   userRegister:userRegisterReducer,
   help:helpReducer,
+  contact:ConatactReducer,
+  emailSLider:sliderEmailReducer,
 
 })
 

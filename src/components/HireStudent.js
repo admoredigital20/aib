@@ -13,7 +13,7 @@ function HireStudent(props) {
             <Row className='hirestudent'>
                <Col md={7} className='hirestudent-first'>
                   <Container className='hirestudent-cntnr'>
-                      <h1 >We have got brilliant minds !Hire our students !</h1>
+                      <h1 >We have got brilliant minds !<br/>Hire our students !</h1>
                       <p>Get free access to the best talent !</p>
                       <div className='hirestudent-div'>
                           <Container className='div-conatiner'>
@@ -31,10 +31,9 @@ function HireStudent(props) {
                   </Container>
                </Col>
                <Col MD={5} className='hirestudent-second' style={{ backgroundImage: "url(" + "../assets/img/contactus.png" + ")" }}>
-               <a class="fa fa-times close" onClick={()=>props.state()} ></a> 
+               <a class="fa fa-times close" onClick={()=>props.state()}></a> 
                  <Container>
                      <p>Enter the following details,To learn about hiring a student from AIBrilliance</p>
-
             <Modal.Body>
                     <Form className='hire' >
                         <Form.Group className="mb-3" controlId="formGroupEmail">

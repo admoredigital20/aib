@@ -75,7 +75,7 @@ export default function LearnMore() {
                           <img className='grail' src='../assets/img/grail.png' />
                     </Col>
                     <Col md={{ span: 4 }}>
-                      <h1>He directs the Geometric Reasoningand Artificial Intelligence Lab (GRAIL)</h1>
+                      <h1>I directs the Geometric Reasoningand Artificial Intelligence Lab (GRAIL)</h1>
                     </Col>
                 </Row>
                 <Row className='box-down-2'>
