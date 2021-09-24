@@ -161,7 +161,7 @@ function AboutUs() {
             </section>
 
 
-            <section className='about-us-4'>
+            <section className='about-us-4' style={{ backgroundImage: "url(" + "../assets/img/rahul-abt.png" + ")" }}>
                 <Container>
                     <Row >
                         <Col className='about-us-4-h1' md={4} sm={6}>
@@ -170,7 +170,7 @@ function AboutUs() {
                              <LinkContainer to="/learnmore"><Button className="btn-blue btn-white sec5-btn"><span className='sec4-btn-tiltle'>Learn More</span> <img className='sec4-img' src='../assets/img/right.png'></img></Button></LinkContainer>
                         </Col>
                         <Col className='about-us-4-img' md={{offset:3,span:3}} sm={6}>
-                           <img src="../assets/img/learn-more.png" alt="" />
+                           <img src="../assets/img/learn-more-bw.png" alt="" />
                         </Col>
                     </Row>
                 </Container>

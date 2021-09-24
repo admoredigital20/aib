@@ -270,7 +270,8 @@ const Home = () => {
                                 bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
                                     :
                                     <>
-                                        {bootcamps.results.data.slice(0, 2).map(data => {
+                                        {bootcamps.results.data? (
+                                        bootcamps.results.data.slice(0, 2).map(data => {
                                             return (
 
                                                 <Col key={data.id} md={6} sm={12}>
@@ -289,7 +290,7 @@ const Home = () => {
                                                     </div>
                                                 </Col>
                                             )
-                                        })}
+                                        })):(<MessageBox>No Bootcamp Are Found</MessageBox>)}
 
                                     </>
                             }

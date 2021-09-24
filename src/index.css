@@ -458,8 +458,8 @@ body {
     color: white;
 }
 
-..navbar-light .navbar-nav .nav-link:hover {
-    color: white !important;
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(67, 171, 251) !important;
 }
 
 .nav2 .navbar-nav .nav-link {
@@ -2119,8 +2119,9 @@ body {
 }
 
 .fc-container .adv-fil {
-    position: absolute;
-    top: 62px;
+    /* position: absolute;
+    top: 62px; */
+    padding: 6px;
 }
 
 .fc-container .fc-discover {
@@ -2132,6 +2133,10 @@ body {
 }
 
 /* HomeSlider */
+
+.home-slider-input1:focus {
+    outline: none;
+}
 
 .sec9 .pg-container {
     /* width: 100vw; */
@@ -3375,6 +3380,7 @@ body {
     color: #fff;
 }
 
+
 .sec10 .course-cat-active1 {
     background-color: #17529F;
     color: #fff;
@@ -4347,7 +4353,6 @@ a{
     letter-spacing: normal;
     text-align: center;
     color: #1b3138;
-    margin-top: 200px;
 }
 .about-us-3-padding{
     padding: 30px;
@@ -4356,7 +4361,9 @@ a{
 align-items: center;
 }
 .about-us-4{
-    background-color:  #3562b9;
+    /* background-color:  #3562b9; */
+    background-position: center;
+    background-size: cover;
     height: auto;
 }
 .about-us-4 h1{
@@ -4604,4 +4611,22 @@ align-items: center;
 .slider-col button {
     background: none;
     border: none;
+}
+.all-crse-end{
+    justify-content: end !important;
+}
+/* @media screen and (min-width: 800px) {
+    .fc-container .all-course-cat {
+        display: flex;
+        align-self: center;
+        justify-content: flex-start !important;
+    }
+} */
+
+
+
+.af-active {
+    background-color: #17529F !important;
+    color: #fff !important;
+    border-radius: 10px;
 }

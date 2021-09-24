@@ -26,7 +26,7 @@ export default function CourseDiv() {
 
     }, [dispatch])
 
-    const [cat, setCat] = useState(1)
+    const [cat, setCat] = useState(4)
 
     const activeBtn = (e) => {
 
@@ -43,9 +43,9 @@ export default function CourseDiv() {
                 <Row>
                     <Col md={3}><h2 className="sec2-h2">Our Bootcamp and Training Courses</h2></Col>
                     <Col md={9} className="all-course-cat">
-                        <div className="course-cat  course-cat-active" onClick={(e) => { setCat(1); activeBtn(e) }} ><h5>Data Science & ML</h5></div>
-                        <div className="course-cat" onClick={(e) => { setCat(2); activeBtn(e) }} ><h5>Deep Learning</h5></div>
-                        <div className="course-cat" onClick={(e) => { setCat(3); activeBtn(e) }}><h5>Artificial Intelligence</h5></div>
+                        <div className="course-cat  course-cat-active" onClick={(e) => { setCat(4); activeBtn(e) }} ><h5>Data Science & ML</h5></div>
+                        <div className="course-cat" onClick={(e) => { setCat(6); activeBtn(e) }} ><h5>Deep Learning</h5></div>
+                        <div className="course-cat" onClick={(e) => { setCat(5); activeBtn(e) }}><h5>Artificial Intelligence</h5></div>
                     </Col>
                 </Row>
 
@@ -54,8 +54,8 @@ export default function CourseDiv() {
                         error ? <MessageBox>{error}</MessageBox>
                             :
                             (
-                                <>{
-                                    courses.results.data.filter(elm => elm.category_id === cat).map(elem => {
+                                <>{ courses.results.data? (
+                                    courses.results.data.filter(elm => elm.category_id === cat).slice(0, 4).map(elem => {
                                         const { id, name, sub_name, course_image, course_type, course_code, author_image, author_name, author_position } = elem;
                                         return (
 
@@ -86,7 +86,7 @@ export default function CourseDiv() {
 
                                         )
                                     })
-                                }</>
+                                ):<MessageBox>No Courses Are Found</MessageBox>}</>
                             )}
                 </Row>
                 <Row>

@@ -69,9 +69,11 @@ function Webinar() {
     useEffect(() => {
         if (!webinarLoading) {
             if (!webinarError) {
-                setItems(webinar.results.data.filter((curElem) => {
-                    return curElem.status == "Next"
-                }))
+                if (webinar.results.data) {
+                    setItems(webinar.results.data.filter((curElem) => {
+                        return curElem.status == "Next"
+                    }))
+                }
             }
         }
     }, [webinar])
@@ -88,7 +90,7 @@ function Webinar() {
 
     }
 
-    
+
 
     const btnPast = () => {
         const upcoming = document.getElementById("upc")
@@ -108,13 +110,13 @@ function Webinar() {
             <section className="sec10">
                 <Container>
                     <Row><h2 className="sec10-h2">Webinars</h2></Row>
-                        <Row className="justify-content-md-center">
-                            <Col className="all-course-cat mb-5">
-                                <div className="course-cat" onClick={(e) => { setItems(webinar.results.data); activeBtn(e); btnPast(); }} ><h5 className=''>All</h5></div>
-                                <div className="course-cat"  onClick={(e) => { filterItem('Next'); activeBtn(e) }} ><h5 id="upc" className="course-cat-active1">Upcoming</h5></div>
-                                <div className="course-cat" onClick={(e) => { filterItem('Completed'); activeBtn(e); btnPast(); }}><h5 className=''>Past</h5></div>
-                            </Col>
-                        </Row>
+                    <Row className="justify-content-md-center">
+                        <Col className="all-course-cat mb-5">
+                            <div className="course-cat" onClick={(e) => { setItems(webinar.results.data); activeBtn(e); btnPast(); }} ><h5 className=''>All</h5></div>
+                            <div className="course-cat" onClick={(e) => { filterItem('Next'); activeBtn(e) }} ><h5 id="upc" className="course-cat-active1">Upcoming</h5></div>
+                            <div className="course-cat" onClick={(e) => { filterItem('Completed'); activeBtn(e); btnPast(); }}><h5 className=''>Past</h5></div>
+                        </Col>
+                    </Row>
 
 
                     <Modal className="sec-10-modal" show={show} onHide={handleClose}>
@@ -135,31 +137,31 @@ function Webinar() {
                         {
                             webinarLoading ? (<LoadingBox></LoadingBox>) :
                                 webinarError ? (<MessageBox>{webinarError}</MessageBox>) :
+                                    items ? (
+                                        items.map((elem) => {
+                                            const { id, date, image, name, webinar_link, status, time } = elem;
+                                            return (
 
-                                    items.map((elem) => {
-                                        const { id, date, image, name, webinar_link, status, time } = elem;
-                                        return (
+                                                <>
 
-                                            <>
-                                            
-                                                <Col className="web1-col mt-4" md={4} >
-                                             
-                                                    <button className="webinar-btn" variant="light" onClick={handleShow}>
-                                                        <div className="web1-main">
-                                                            <img className="web1-img" src={image} />
-                                                            <div className="web1-content">
-                                                                <br />
-                                                                <h6>{date}</h6>
+                                                    <Col className="web1-col mt-4" md={4} >
+
+                                                        <button className="webinar-btn" variant="light" onClick={handleShow}>
+                                                            <div className="web1-main">
+                                                                <img className="web1-img" src={image} />
+                                                                <div className="web1-content">
+                                                                    <br />
+                                                                    <h6>{date}</h6>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </button>
-                                                  
-                                                </Col>
-                                               
+                                                        </button>
 
-                                            </>
-                                        )
-                                    })}
+                                                    </Col>
+
+
+                                                </>
+                                            )
+                                        })) : <MessageBox>No Webinar Are Found</MessageBox>}
                     </Row>
 
                 </Container>
