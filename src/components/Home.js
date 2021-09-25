@@ -89,14 +89,14 @@ const Home = () => {
     var hww1 = "Select from the available courses from a list of free or paid courses.For paid courses, enroll in abatch to start learning in synchronous mode."
     var hww12 = "Free courses are offered in asynchronous mode (material posted online)."
 
-    var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction by the coach occurring at a set time."
-    var hww22 = "  Students are required to  log in and participate in class at a specific time each week."
-    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition,set weekly office hours (different from live lectures). To ask coding and mini-project ,"
-    var hww33 = "related questions In addition set weekly office hours (different from live lectures) to ask coding and mini-project related questions."
+    var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction ."
+    var hww22 = "by the coach occurring at a set time  Students are required to  log in and participate in class at a specific time each week."
+    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition,set weekly office hours "
+    var hww33 = "(different from live lectures). To ask coding and mini-project,related questions In addition set weekly office hours (different from live lectures) to ask coding and mini-project related questions."
     var hww4 = " Complete a set of Python-based mini projects related to instruction material and a major project "
     var hww44 = "  related to your choice of domain"
-    var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once acertificate is issued, we also provide a personalized referral "
-    var hww55 = "for job-related referral inquiries. Once acertificate is issued, we also provide a personalized referral for job-related referral inquiries."
+    var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once acertificate is issued, we also  "
+    var hww55 = "provide a personalized referral for job-related referral inquiries. Once acertificate is issued, we also provide a personalized referral for job-related referral inquiries."
 
     const [hwwContent, setHwwContent] = useState(`${hww1}`)
     const [hwwContent1, setHwwContent1] = useState(`${hww12}`)
@@ -308,7 +308,7 @@ const Home = () => {
                         <Row>
                             <Col md="3" className="make-us-diff">
                                 <h3 className='sec4-h3'>What makes us Different</h3>
-                                <Button onClick={() => setSidebarIsOpen(true)} className="btn-blue"><span className='sec4-btn-tiltle'>Read About Us</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
+                             <Link to='/aboutus'><Button  className="btn-blue"><span className='sec4-btn-tiltle'>Read About Us</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button></Link>   
                             </Col>
                             <Col md="9">
                                 <Slider {...settings}>

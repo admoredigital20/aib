@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useLocation } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import Footer from './Footer';
 import Navbar1 from './Navbar';
+import { motion } from "framer-motion"
 
 function AboutUs() {
     const { pathname } = useLocation();
 
+    const [animate, setAnimate] = useState(false)
+
     useEffect(() => {
-      window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     }, [pathname]);
     return (
         <div>
@@ -22,9 +25,9 @@ function AboutUs() {
                             <Col md={5}>
                                 <h1>We are <span style={{ color: "#43abfb" }}> on a Mission </span>to Empower Your Learning</h1>
                             </Col>
-                            <Col md={{offset:1,span:6}}>
-                            <img src="../assets/img/mg (4).png" alt="" />
-                           </Col>
+                            <Col md={{ offset: 1, span: 6 }}>
+                                <img src="../assets/img/mg (4).png" alt="" />
+                            </Col>
 
                         </Row>
                     </Container>
@@ -35,21 +38,21 @@ function AboutUs() {
                 <div className='about-us-2'>
                     <Container>
                         <Row>
-                          <Col className='about-us-2-blue' md={{ span: 5 }}>
-                            <h2>Mission</h2>
-                            <p>AIBrilliance’s mission is to deliver high-quality data science, machine learning, and AI education content at affordable prices to empower learners worldwide to upskill themselves.</p>
-                         </Col>
-                        <Col md={{offset:1,span:4}}>
-                            <img src="../assets/img/mg (3).png" alt="" />
-                        </Col>
+                            <Col className='about-us-2-blue' md={{ span: 5 }}>
+                                <h2>Mission</h2>
+                                <p>AIBrilliance’s mission is to deliver high-quality data science, machine learning, and AI education content at affordable prices to empower learners worldwide to upskill themselves.</p>
+                            </Col>
+                            <Col md={{ offset: 1, span: 4 }}>
+                                <img src="../assets/img/mg (3).png" alt="" />
+                            </Col>
                         </Row>
                     </Container>
                 </div>
             </section>
 
 
-            <section className='about-us-3'>
-                <Container>
+            <section className='about-us-3' onMouseEnter={() => { setAnimate(true) }} onMouseLeave={() => { setAnimate(false) }} >
+                <Container >
                     <Row className='about-us-3-row'>
                         <Col md={3}>
                             <h1>What makes us Different</h1>
@@ -57,7 +60,15 @@ function AboutUs() {
                         <Col md={9} className='about-us-3-padding'>
                             <Row>
                                 <Col xs={12} sm={6} md={4}>
-                                    <div className="sec4-div">
+                                    <motion.div className="sec4-div"
+                                        animate={{
+                                            x: animate ? 0 : -20,
+                                            y: animate ? 0 : -130,
+                                            rotate: animate ? 0 : 30,
+                                            scale: animate ? 1 : 0.8
+
+                                        }}
+                                    >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>Safe and Secure<br />No Fee Traps</h5></Row>
                                         <Row className="sec4-grp">
@@ -69,10 +80,16 @@ function AboutUs() {
                                                 <img className="sec4-img2" src="../assets/img/sec4-img1.png" alt="sec4-img2" />
                                             </Col>
                                         </Row>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                                 <Col xs={12} sm={6} md={4}>
-                                    <div className="sec4-div">
+                                    <motion.div className="sec4-div"
+                                        animate={{
+                                            x: animate ? 0 : -35,
+                                            y: animate ? 0 : -210,
+                                            scale: animate ? 1 : 0.8
+                                        }}
+                                    >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon1.svg" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>Certificate and <br />Reference Guarantee </h5></Row>
                                         <Row className="sec4-grp">
@@ -84,10 +101,17 @@ function AboutUs() {
                                                 <img className="sec4-img2" src="../assets/img/sec4-img3.png" alt="sec4-img2" />
                                             </Col>
                                         </Row>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                                 <Col xs={12} sm={6} md={4}>
-                                    <div className="sec4-div">
+                                    <motion.div className="sec4-div"
+                                        animate={{
+                                            x: animate ? 0 : 20,
+                                            y: animate ? 0 : -130,
+                                            rotate: animate ? 0 : 30,
+                                            scale: animate ? 1 : 0.8
+                                        }}
+                                    >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>1 to 1 Personalized
                                             <br />Education</h5></Row>
@@ -100,12 +124,19 @@ function AboutUs() {
                                                 <img className="sec4-img2" src="../assets/img/sec4-img5.png" alt="sec4-img2" />
                                             </Col>
                                         </Row>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col xs={12} sm={6} md={4}>
-                                    <div className="sec4-div">
+                                    <motion.div className="sec4-div"
+                                        animate={{
+                                            x: animate ? 0 : -90,
+                                            y: animate ? 0 : 150,
+                                            rotate: animate ? 0 : -30,
+                                            scale: animate ? 1 : 0.9
+                                        }}
+                                    >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>Redefining Learning
                                             <br />With Light-board</h5></Row>
@@ -118,10 +149,17 @@ function AboutUs() {
                                                 <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
                                             </Col>
                                         </Row>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                                 <Col xs={12} sm={6} md={4}>
-                                    <div className="sec4-div">
+                                    <motion.div className="sec4-div"
+                                        animate={{
+                                            x: animate ? 0 : -30,
+                                            y: animate ? 0 : 130,
+                                            rotate: animate ? 0 : 30,
+                                            scale: animate ? 1 : 0.9
+                                        }}
+                                    >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>Domain-specific
                                             <br />capstone project</h5></Row>
@@ -134,10 +172,17 @@ function AboutUs() {
                                                 <img className="sec4-img2" src="../assets/img/sec4-img.png" alt="sec4-img2" />
                                             </Col>
                                         </Row>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                                 <Col xs={12} sm={6} md={4}>
-                                    <div className="sec4-div">
+                                    <motion.div className="sec4-div"
+                                        animate={{
+                                            x: animate ? 0 : 150,
+                                            y: animate ? 0 : 45,
+                                            rotate: animate ? 0 : -15,
+                                            scale: animate ? 1 : 0.9
+                                        }}
+                                    >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>Small Group (5-25)
                                             <br />Focused Learning </h5></Row>
@@ -150,7 +195,7 @@ function AboutUs() {
                                                 <img className="sec4-img2" src="../assets/img/sec4-img6.png" alt="sec4-img2" />
                                             </Col>
                                         </Row>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                             </Row>
 
@@ -165,12 +210,12 @@ function AboutUs() {
                 <Container>
                     <Row >
                         <Col className='about-us-4-h1' md={4} sm={6}>
-                             <h1>Dr. Rahul Rai</h1>
-                             <p>CEO and Founder of AIBrilliance</p>
-                             <LinkContainer to="/learnmore"><Button className="btn-blue btn-white sec5-btn"><span className='sec4-btn-tiltle'>Learn More</span> <img className='sec4-img' src='../assets/img/right.png'></img></Button></LinkContainer>
+                            <h1>Dr. Rahul Rai</h1>
+                            <p>CEO and Founder of AIBrilliance</p>
+                            <LinkContainer to="/learnmore"><Button className="btn-blue btn-white sec5-btn"><span className='sec4-btn-tiltle'>Learn More</span> <img className='sec4-img' src='../assets/img/right.png'></img></Button></LinkContainer>
                         </Col>
-                        <Col className='about-us-4-img' md={{offset:3,span:3}} sm={6}>
-                           <img src="../assets/img/learn-more-bw.png" alt="" />
+                        <Col className='about-us-4-img' md={{ offset: 3, span: 3 }} sm={6}>
+                            <img src="../assets/img/learn-more-bw.png" alt="" />
                         </Col>
                     </Row>
                 </Container>
@@ -179,20 +224,20 @@ function AboutUs() {
             <section className='about-us-5'>
                 <Container>
                     <Row>
-                        <Col md={{offset:1,span:3}}>
+                        <Col md={{ offset: 1, span: 3 }}>
                             <h1> <span>21,500+</span>  <br /> Happy Students</h1>
                         </Col>
-                        <Col md={{offset:1,span:3}}>
-                           <h1><span>360+</span><br /> Hrs. of content </h1>
+                        <Col md={{ offset: 1, span: 3 }}>
+                            <h1><span>360+</span><br /> Hrs. of content </h1>
                         </Col>
-                        <Col md={{offset:1,span:3}}>
-                          <h1><span>21,500</span>+<br />Community</h1>
+                        <Col md={{ offset: 1, span: 3 }}>
+                            <h1><span>21,500</span>+<br />Community</h1>
                         </Col>
                     </Row>
                 </Container>
             </section>
-  
-             <Footer/>
+
+            <Footer />
         </div>
     )
 }

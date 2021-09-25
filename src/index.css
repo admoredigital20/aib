@@ -1134,6 +1134,7 @@ body {
     margin-top: 2rem;
     margin-bottom: 4rem;
     font-weight: 500;
+    font-size: 1.3rem;
 }
 
 .sec7 {
@@ -1272,7 +1273,7 @@ body {
 
 .sec8 .sec8-p {
     font-size: 28px;
-    font-weight: 500;
+    font-weight: bold;
     color: #5C5959;
     text-align: center;
 }
@@ -3639,6 +3640,7 @@ body {
     appearance: none;
     border-radius: 11px;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border: none;
 }
 
 .hire .mb-3 {
@@ -3648,6 +3650,7 @@ body {
 
 .hire .signin-btn {
     padding: 10px;
+    border: none;
 }
 
 @media screen and (max-width: 1400px) {
@@ -4051,7 +4054,7 @@ body {
     color: white !important;
 }
 .contactus-social a{
-    padding: 18px;
+    /* padding: 18px; */
 }
  .rev-last {
     height: 2rem;
@@ -4334,16 +4337,19 @@ a{
 }
 .about-us-header{
     width: 100%;
-    min-height: 225px;
+    min-height: 400px;
     height: 60vh;
     margin-top: -6.5rem;
     background-size: cover;
 }
+
 .about-us-3{
     background-color: 
     #f5f5f5;
     height: auto;
+    overflow: hidden;
 }
+
 .about-us-3 h1{
     font-size: 3rem;
     font-weight: bold;
@@ -4629,4 +4635,20 @@ align-items: center;
     background-color: #17529F !important;
     color: #fff !important;
     border-radius: 10px;
+}
+._2K878{
+    display: none !important;
+}
+.gbutton{
+    display: none !important;
+}
+.contactus-social img{
+    padding: 10px;
+    /* padding-left: 10px; */
+    height: 60px;
+}
+@media screen and (min-width: 1000px){
+    .all-course-card{
+        justify-content: start;
+    }
 }

@@ -55,7 +55,8 @@ function ContactUs(props) {
                                         <Form.Control id="number" placeholder="Phone Number *" value={phone_number} onChange={(e) => setphone_number(e.target.value)} />
                                     </Form.Group>
                                     <Form.Group className="mb-3" >
-                                        <Form.Control type="query" id="query" required placeholder="Type Your Query ? " value={query} onChange={(e) => setQuery(e.target.value)} />
+                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"  type="query" id="query" required placeholder="Type Your Query ? " value={query} onChange={(e) => setQuery(e.target.value)} ></textarea>
+                                        {/* <Form.Control  rows="3" cols="25"/> */}
                                     </Form.Group>
 
                                     <Button className="signin-btn mt-4" type="submit">
@@ -93,30 +94,35 @@ function ContactUs(props) {
                         <Container>
                             <h1 className="cont-soc-h1">Follow us on </h1>
                             <div className='contactus-social'>
-                                <a href="https://www.facebook.com/AIBrilliance"><FontAwesome
+                            <a href="https://www.facebook.com/AIBrilliance"><img src="../assets/img/Facebook-1.png" alt="" /></a>
+                            <a href="https://www.instagram.com/ai_brilliance/">  <img src="../assets/img/Instagram-1.png" alt="" /></a> 
+                                <img src="../assets/img/tiktok-1.png" alt="" />
+                            <a href="https://www.linkedin.com/company/aibrilliance/"><img src="../assets/img/linkdin-1.png" alt="" /></a> 
+                            <a href="https://www.youtube.com/channel/UCNjLj-lSW11ORiFgbYdHUlQ"><img src="../assets/img/youtube-1.png" alt="" /></a> 
+                                {/* <a href="https://www.facebook.com/AIBrilliance"><FontAwesome
                                     name="facebook-square"
                                     size="2x"
-                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
-                                <a href="https://www.instagram.com/ai_brilliance/"><FontAwesome
+                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a> */}
+                                {/* <a href="https://www.instagram.com/ai_brilliance/"><FontAwesome
                                     name="instagram"
                                     size="2x"
                                     href=''
-                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
-                                <a href="https://twitter.com/?lang=en"><FontAwesome
+                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a> */}
+                                {/* <a href="https://twitter.com/?lang=en"><FontAwesome
                                     name="twitter"
                                     size="2x"
                                     href=''
-                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
-                                <a href="https://www.linkedin.com/company/aibrilliance/"><FontAwesome
+                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a> */}
+                                {/* <a href="https://www.linkedin.com/company/aibrilliance/"><FontAwesome
                                     name="linkedin"
                                     size="2x"
                                     href=''
-                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
-                                <a href="https://www.youtube.com/channel/UCNjLj-lSW11ORiFgbYdHUlQ"><FontAwesome
+                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a> */}
+                                {/* <a href="https://www.youtube.com/channel/UCNjLj-lSW11ORiFgbYdHUlQ"><FontAwesome
                                     name="youtube"
                                     size="2x"
                                     href=''
-                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
+                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a> */}
 
                             </div>
                         </Container>
