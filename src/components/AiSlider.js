@@ -1,7 +1,7 @@
 import React, { useState, Component } from 'react'
 import Slider from "react-slick";
 import { Col, Container, Row } from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
+
 
 
 export default class AiSlider extends React.PureComponent {

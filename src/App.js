@@ -1,3 +1,5 @@
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-modal-video/css/modal-video.min.css';
@@ -17,6 +19,7 @@ import ContactUs from "./components/ContactUs";
 import Faq from "./components/Faq";
 import AboutUs from "./components/AboutUs";
 import Events from "./components/Banner";
+import Api from './components/Api';
 
 
 function App() {
@@ -55,6 +58,9 @@ function App() {
             </Route>
             <Route path='/aboutus'>
               <AboutUs/>
+            </Route>
+            <Route path='/api'>
+              <Api/>
             </Route>
             <Route exact path="/">
               <Home />

@@ -1,4 +1,4 @@
-import { BOOTCAMP_LIST_FAIL, BOOTCAMP_LIST_REQUEST, BOOTCAMP_LIST_SUCCESS, CONTACTUS_FAIL, CONTACTUS_REQUEST, CONTACTUS_SUCCESS, HELP_LIST_FAIL, HELP_LIST_REQUEST, HELP_LIST_SUCCESS, SLIDER_EMAIL_FAIL, SLIDER_EMAIL_REQUEST, SLIDER_EMAIL_SUCCESS } from "../constants/generalConstant";
+import { BOOTCAMP_LIST_FAIL, BOOTCAMP_LIST_REQUEST, BOOTCAMP_LIST_SUCCESS, CONTACTUS_FAIL, CONTACTUS_REQUEST, CONTACTUS_SUCCESS, HELP_LIST_FAIL, HELP_LIST_REQUEST, HELP_LIST_SUCCESS, HIRESTUDENT_FAIL, HIRESTUDENT_REQUEST, HIRESTUDENT_SUCCESS, PAYMENT_FAIL, PAYMENT_REQUEST, PAYMENT_SUCCESS, SLIDER_EMAIL_FAIL, SLIDER_EMAIL_REQUEST, SLIDER_EMAIL_SUCCESS } from "../constants/generalConstant";
 
 export const bootcampListReducer = (state = { loading: true }, action) => {
     switch (action.type) {
@@ -49,5 +49,30 @@ export const sliderEmailReducer=(state = { loading: true }, action)=>{
             return { loading: false, error: action.payload }
         default:
             return state  
+    }
+}
+
+export const paymentReducer=(state={loading:true},action)=>{
+    switch(action.type){
+        case PAYMENT_REQUEST:
+            return {loading:true}
+        case PAYMENT_SUCCESS:
+            return {loading:false,paymentStatus:action.payload}
+        case PAYMENT_FAIL:
+            return {loading:false,error:action.payload}  
+        default:
+            return state          
+    }
+}
+export const HireStudentReducer = (state = { loading: true }, action) => {
+    switch (action.type) {
+        case HIRESTUDENT_REQUEST:
+            return { loading: true }
+        case HIRESTUDENT_SUCCESS:
+            return { loading: false, hireQurey: action.payload }
+        case HIRESTUDENT_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
     }
 }

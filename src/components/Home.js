@@ -177,10 +177,6 @@ const Home = () => {
     }
 
 
-    const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
-
-
-
     const settings = {
         dots: false,
         infinite: true,
@@ -217,35 +213,6 @@ const Home = () => {
         ]
     };
 
-
-    const [bnrImg, setBnrImg] = useState(false)
-
-    const bnrFun = () => {
-        setBnrImg(true)
-    }
-    const bnrFunOut = () => {
-        setBnrImg(false)
-    }
-
-    const [bnrImg2, setBnrImg2] = useState(false)
-
-    const bnrFun2 = () => {
-        setBnrImg2(true)
-    }
-    const bnrFunOut2 = () => {
-        setBnrImg2(false)
-    }
-
-    const [bnrImg3, setBnrImg3] = useState(false)
-
-    const bnrFun3 = () => {
-        setBnrImg3(true)
-    }
-    const bnrFunOut3 = () => {
-        setBnrImg3(false)
-    }
-
-    const [pp, setPp] = useState(4)
 
     return (
         <>
@@ -633,8 +600,8 @@ const Home = () => {
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Rahul Rail</Col>
-                                                <Col className="col-pd-0 prof-dsgn">CEO,AIBrilliance</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Beatrice Fox</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Data Analys</Col>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -692,7 +659,7 @@ const Home = () => {
 
 
                 <section className="sec9">
-                    <AiSlider id='aislider' sn={pp} />
+                    <AiSlider id='aislider'/>
                 </section>
                 <div className="se-div">
                     <Container className="se-con">
@@ -720,7 +687,7 @@ const Home = () => {
                 {/* <button onClick={()=>setPp(1)}>adddd</button>
                 <button onClick={()=>setPp(2)}>adddd</button>
                 <button onClick={()=>setPp(3)}>adddd</button>
-                <button onClick={()=>setPp(4)}>adddd</button> */}
+                <button onClick={()=>setPp(0)}>adddd</button> */}
 
 
 
@@ -754,15 +721,15 @@ const Home = () => {
                     </Container>
                 </section>
 
-                <section className='home-faq'>
+                <Link to='/faq'><section className='home-faq'>
                     <Container>
                         <Row>
                             <Col className='home-faq-left'>
-                                <h1> >  Who should take an Online Course?</h1>
-                                <h1> >  How do I select a course?</h1>
-                                <h1> >  Are there prerequisites or language requirements?</h1>
-                                <h1> >  I am a high school student, can I join?</h1>
-                                <h1> >  Can I take more than one course at a time?</h1>
+                                <h1> &gt;  Who should take an Online Course?</h1>
+                                <h1> &gt;  How do I select a course?</h1>
+                                <h1> &gt;  Are there prerequisites or language requirements?</h1>
+                                <h1> &gt;  I am a high school student, can I join?</h1>
+                                <h1> &gt;  Can I take more than one course at a time?</h1>
                                 <Link to='/faq'>  <h>See More....</h>     </Link>
                             </Col>
                             <Col className='faq-right'>
@@ -779,7 +746,7 @@ const Home = () => {
                             </Col>
                         </Row>
                     </Container>
-                </section>
+                </section></Link>
                 <Footer />
             </div>
         </>

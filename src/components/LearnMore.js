@@ -37,14 +37,14 @@ export default function LearnMore() {
                            </Row>
                            <Row>
                                <Col className='social-media'>
-                                 <a href="https://www.linkedin.com/company/aibrilliance/"><img src='../assets/img/linikedin.png' /></a> 
-                                 <a href="https://www.facebook.com/AIBrilliance">  <img src='../assets/img/facebook.png' /></a>
-                                 <a href="https://www.instagram.com/ai_brilliance/"> <img src='../assets/img/ig.png' /></a>
+                                 <a href="https://www.linkedin.com/in/rahul-rai-3790029/" target="_blank"><img src='../assets/img/linikedin.png' /></a> 
+                                 <a href="https://hi-in.facebook.com/people/Rahul-Rai/100000560581614/" target="_blank">  <img src='../assets/img/facebook.png' /></a>
+                                 <a href="https://www.clemson.edu/cecas/departments/automotive-engineering/people/rahul-rai.html" target="_blank"> <img src='../assets/img/clemson.jpg' /></a>
                                </Col>
                            </Row>
                          
                         </Col>
-                        <Col md={{span:4}} >
+                        <Col md={{span:4}} className="lm-img-col" >
                             <img className="lm-header-img" src="../assets/img/learn-more.png" />
                         </Col>
                         

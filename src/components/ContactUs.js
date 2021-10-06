@@ -94,11 +94,11 @@ function ContactUs(props) {
                         <Container>
                             <h1 className="cont-soc-h1">Follow us on </h1>
                             <div className='contactus-social'>
-                            <a href="https://www.facebook.com/AIBrilliance"><img src="../assets/img/Facebook-1.png" alt="" /></a>
-                            <a href="https://www.instagram.com/ai_brilliance/">  <img src="../assets/img/Instagram-1.png" alt="" /></a> 
+                            <a href="https://www.facebook.com/AIBrilliance" target="_blank"><img src="../assets/img/Facebook-1.png" alt="" /></a>
+                            <a href="https://www.instagram.com/ai_brilliance/" target="_blank">  <img src="../assets/img/Instagram-1.png" alt="" /></a> 
                                 <img src="../assets/img/tiktok-1.png" alt="" />
-                            <a href="https://www.linkedin.com/company/aibrilliance/"><img src="../assets/img/linkdin-1.png" alt="" /></a> 
-                            <a href="https://www.youtube.com/channel/UCNjLj-lSW11ORiFgbYdHUlQ"><img src="../assets/img/youtube-1.png" alt="" /></a> 
+                            <a href="https://www.linkedin.com/company/aibrilliance/" target="_blank"><img src="../assets/img/linkdin-1.png" alt="" /></a> 
+                            <a href="https://www.youtube.com/channel/UCNjLj-lSW11ORiFgbYdHUlQ" target="_blank"><img src="../assets/img/youtube-1.png" alt="" /></a> 
                                 {/* <a href="https://www.facebook.com/AIBrilliance"><FontAwesome
                                     name="facebook-square"
                                     size="2x"

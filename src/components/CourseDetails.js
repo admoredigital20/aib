@@ -7,6 +7,7 @@ import CdNav from './CdNav'
 import { useSelector } from 'react-redux';
 import { listCourse } from '../actions/courseActions';
 import { useDispatch } from 'react-redux';
+import Calender from './Calender';
 
 var FontAwesome = require('react-fontawesome')
 
@@ -518,7 +519,11 @@ export default function CourseDetails(props) {
                                 className="cd5-cert-img" >
                                 <img src="../assets/img/v12.png" />
                             </Col>
-
+                        </Row>
+                        <Row className="cd6 section" id="cd6" >
+                            <Col md={8}>
+                                <Calender />
+                            </Col>
                         </Row>
                     </Col >
                 </Row>

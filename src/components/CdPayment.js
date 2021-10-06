@@ -7,11 +7,20 @@ import { useSelector } from 'react-redux';
 import { listCourse } from '../actions/courseActions';
 import { useDispatch } from 'react-redux';
 import LoadingBox from './LoadingBox';
-// import {PayPalButton} from 'react-paypal-button-v2'
+import { paymentAction } from '../actions/generalAction';
+import MessageBox from './MessageBox';
+import { withRouter } from 'react-router';
+import Signin from './Signin';
 
-export default function CdPayment() {
+
+const CdPayment=(history)=> {
+    console.log(history,'hi');
     const courseList = useSelector((state) => state.courseList);
     const { loading, error, courses } = courseList;
+    const paymentReducers=useSelector(state=>state.paymentReducers)
+    const {loading:loadingPayment,error:errorPayment,paymentStatus}=paymentReducers
+    const userSignin=useSelector(state=>state.userSignin)
+    const {loading:userLoading,error:userError, userInfo} = userSignin
     const [sdkReady,setSdkReady] =useState(false)
     const location = useLocation()
     const cid = location.state?.cid2
@@ -20,10 +29,13 @@ export default function CdPayment() {
    
     const [sc, setSc] = useState([])
     const dispatch= useDispatch()
-
+    // const course_id =
+    // const course_name
+    // const price
     useEffect(() => {      
         dispatch(listCourse())
         console.log(courses,'crsees');
+       
       }, [dispatch]);
 
     useEffect(() => {
@@ -39,28 +51,46 @@ export default function CdPayment() {
         }
         
     }, [courses])
-    useEffect(()=>{
-        const addPayPalScript = async()=>{
-            const {data} =await axios.get('http://192.241.138.220/app/api/payment')
-            const script =document.createElement('script')
-            script.type="text/javascript";
-            script.src=`https://www.paypal.com/sdk/js?client-id=${data}`
-            script.async =true;
-            script.onload=()=>{
-                setSdkReady(true)
-            }
-            document.body.appendChild(script)
-        }
-         if(!window.paypal){
-             addPayPalScript()
-         }else{
-             setSdkReady(true)
-         }
-     },[sdkReady])
+    // useEffect(()=>{
+    //     const addPayPalScript = async()=>{
+    //         const {data} =await axios.get('http://192.241.138.220/app/api/payment')
+    //         const script =document.createElement('script')
+    //         script.type="text/javascript";
+    //         script.src=`https://www.paypal.com/sdk/js?client-id=${data}`
+    //         script.async =true;
+    //         script.onload=()=>{
+    //             setSdkReady(true)
+    //         }
+    //         document.body.appendChild(script)
+    //     }
+    //      if(!window.paypal){
+    //          addPayPalScript()
+    //      }else{
+    //          setSdkReady(true)
+    //      }
+    //  },[sdkReady])
 
      const successPaymentHandler=()=>{
 
      }
+     const payment=()=>{
+        dispatch(paymentAction(sc.id,sc.name,sc.price))
+          
+     
+                 //  history.push('/')   
+     }
+     if(paymentStatus){
+        console.log(paymentStatus.payment_redirect_page,'yoo');
+        // history.push(paymentStatus.payment_redirect_page)
+        window.location.href=paymentStatus.payment_redirect_page
+        
+
+      }
+          
+      
+        
+     
+   
     return (
         <div>
             <CdNav />
@@ -95,7 +125,7 @@ export default function CdPayment() {
                                     <p className="cdp-modules"><strong>1</strong> Major Project • <strong>36h 15m</strong> total length</p>
                                 </Col>
                                 <Col md={6} className="cdp-price">
-                                    <h5>$499.<span className="dbl-zero">00</span></h5>
+                                    <h5>{sc.price}.<span className="dbl-zero">00</span></h5>
                                 </Col>
                             </Row>
                             <Row>
@@ -147,7 +177,7 @@ export default function CdPayment() {
                                     <h6 className="cdp-box-name">Subtotal</h6>
                                 </Col>
                                 <Col md={6}>
-                                    <h6 className="cdp-box-price">$499.<span className="dbl-zero">00</span></h6>
+                                    <h6 className="cdp-box-price">{sc.price}<span className="dbl-zero">00</span></h6>
                                 </Col>
                             </Row>
                             <Row className="mb-3">
@@ -173,7 +203,7 @@ export default function CdPayment() {
                             </Row>
                             <Row>
                                 <Col md={6}>
-                                    <h5 className="cdp-box-total">Total (including tax)</h5>
+                                    <h5  className="cdp-box-total">Total (including tax)</h5>
                                 </Col>
                                 <Col md={6}>
                                     <h6 className="cdp-box-price">$10.<span className="dbl-zero">95</span></h6>
@@ -182,7 +212,16 @@ export default function CdPayment() {
                             <Row>
                                 <Col className="cdp-col2-hr">
                                    {/* {!sdkReady? <LoadingBox></LoadingBox>: */}
-                                   {/* <PayPalButton onSuccess={successPaymentHandler}/> */}
+                                   {/* <PayPalButton  onSuccess={successPaymentHandler} onClick={payment}/> */}
+                                   {userInfo?(
+                                      <button className="paypal"  onClick={payment}>Paypal</button>
+                                   ):
+                                   (
+                                    //    <button className='paypal'>Sign in to purchase</button>
+                                    <Signin className='paypal'/>
+                                   )}
+                                    
+                                  
                                 </Col>
                             </Row>
                         </Col>
@@ -192,3 +231,4 @@ export default function CdPayment() {
         </div>
     )
 }
+export default withRouter(CdPayment) 

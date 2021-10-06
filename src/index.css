@@ -521,6 +521,16 @@ body {
     box-shadow: none;
 }
 
+.si-m .modal-dialog {
+    display: flex;
+    justify-content: center;
+}
+
+.modal.fade .modal-dialog {
+    display: flex;
+    justify-content: center;
+}
+
 .si-m .modal-content {
     background-color: #000000;
     color: #edf2f8;
@@ -782,6 +792,10 @@ body {
     bottom: 1rem;
 }
 
+.course-detail p {
+    padding-right: 10px;
+}
+
 .course-detail h5 {
     font-family: Semplicita Pro;
     font-size: 1.3rem;
@@ -801,7 +815,8 @@ body {
 .user-credit {
     color: #fff;
     align-items: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
 }
 
 .user-credit img {
@@ -817,11 +832,14 @@ body {
 .prof-pic {
     width: 3rem;
     margin-right: 1rem;
+    
 }
 
 .prof-details {
     color: #fff;
     align-items: center;
+    width: fit-content;
+    margin-left: 0px;
 }
 
 .prof-name {
@@ -1135,11 +1153,12 @@ body {
     margin-bottom: 4rem;
     font-weight: 500;
     font-size: 1.3rem;
+    min-height: 100px;
 }
 
 .sec7 {
     background: transparent linear-gradient(90deg, #030303 0%, #0C63A7 100%) 0% 0% no-repeat padding-box;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .sec7 .std-feedback {
@@ -1161,7 +1180,7 @@ body {
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
     padding-left: 1.3rem;
@@ -1254,9 +1273,19 @@ body {
     padding-right: 1.3rem;
 }
 
+.sec7 .rev-half2 {
+    height: 1.8rem;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0 ;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    top: 3.1%;
+    position: relative;
+}
+
 .sec7 .review-vid {
     background-size: cover;
-    height: 12rem;
+    height: 11rem;
     cursor: pointer;
     position: relative;
 }
@@ -1282,14 +1311,14 @@ body {
     width: 80%;
 }
 
-.sec9 {
-    /* background-image: url("http://localhost:3000/assets/img/sec9-bg.jpg");
+/* .sec9 {
+    background-image: url("http://localhost:3000/assets/img/sec9-bg.jpg");
   background-size: cover;
   background-position: center;
   color: #fff;
   padding-top: 3rem;
-  padding-bottom: 3rem; */
-}
+  padding-bottom: 3rem;
+} */
 
 .sec9 .slick-thumb {
     z-index: 99;
@@ -1932,6 +1961,12 @@ body {
     width: 100%;
 }
 
+.lm-img-col {
+    top: 50px;
+    position: relative;
+    align-self: end;
+}
+
 .lm-all-rows {
     top: 8rem;
     position: relative;
@@ -2002,10 +2037,6 @@ body {
 .lm3-content h6 {
     font-size: 1.2rem;
     color: #53698d;
-}
-
-.lm3-img img {
-    /* height: 350px; */
 }
 
 .lm3-div {
@@ -3156,7 +3187,7 @@ body {
 .hww-hr {
     z-index: 1;
     margin: 0;
-    bottom: 13rem;
+    bottom: 16rem;
     position: relative;
 }
 
@@ -4053,13 +4084,12 @@ body {
 .Contactus-second a:hover{
     color: white !important;
 }
-.contactus-social a{
-    /* padding: 18px; */
-}
  .rev-last {
-    height: 2rem;
-    background-color: #fff;
+    height: 0.5rem;
+    background-color: #3194E04D;
     border-radius: 10px 10px 0px 0px;
+    top: 1.4%;
+    position: relative;
     /* padding-left: 1.3rem; */
     /* padding-right: 1.3rem; */
 }
@@ -4532,28 +4562,29 @@ align-items: center;
 .sec0 .bnr-img {
     text-align: center;
     position: relative;
+    top: 20px;
 }
 
 .sec0 .bnr-img .header-img {
-    width: 75%;
+    width: 80%;
 }
 
 .sec0 .tr {
     width: 35px;
-    left: 135px;
+    left: 125px;
     position: absolute;
     cursor: pointer;
 }
 
 .sec0 .tt {
     position: absolute;
-    width: 25%;
+    width: 27%;
     margin-top: 45px;
-    left: 75px;
+    left: 65px;
 }
 
 .sec0 .tr-div {
-    padding-top: 35%;
+    padding-top: 37%;
 }
 
 .sec0 .sr {
@@ -4566,8 +4597,8 @@ align-items: center;
 
 .sec0 .st {
     position: absolute;
-    width: 25%;
-    right: 0%;
+    width: 26%;
+    right: -2%;
     bottom: 54%;
 }
 
@@ -4593,9 +4624,9 @@ align-items: center;
 
 .sec0 .ft {
     position: absolute;
-    width: 35%;
+    width: 40%;
     bottom: -10px;
-    margin-right: 40px;
+    margin-right: 85px;
 }
 
 .sec0 .header-mouse {
@@ -4651,4 +4682,42 @@ align-items: center;
     .all-course-card{
         justify-content: start;
     }
+}
+
+
+.ft-div .slick-slider {
+    display: none;
+}
+
+
+.course-detail p {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 100;
+    width: 180px;
+}
+
+.course-detail p b {
+    font-weight: 500;
+}
+
+.paypal{
+    width: 100%;
+    background-color: gold;
+    padding: 12px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 12px;
+}
+
+
+
+
+.cd6 {
+    padding: 2rem;
+    padding-left: 3rem;
+}
+
+.cdp-col2-hr .signin-nav {
+    margin-left:0;
 }

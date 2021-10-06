@@ -15,7 +15,7 @@ export default function CourseDiv() {
     const { loading, error, courses } = courseList;
 
     function truncate(str,n) {
-        return str?.length>n?str.substr(0,n-1)+ "...." :str
+        return str?.length>n?str.substr(0,n-1)+ "..." :str
     }
 
     const dispatch = useDispatch()
@@ -63,7 +63,8 @@ export default function CourseDiv() {
                                                 <Link to={{pathname: "/bootcamp",state: { cid: id },}}> <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
                                                     <div className="free-course">{course_type}</div>
                                                     <div className="course-detail">
-                                                        <h5>{name} :</h5><span>{truncate(sub_name,30)}</span>
+                                                        {/* <h5>{truncate(name,30)} :</h5><span>{truncate(sub_name,30)}</span> */}
+                                                        <p><b>{truncate(name, 30)} :</b>{truncate(sub_name, 30)}</p>
                                                         <div className="user-credit">
                                                             <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
                                                             <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">{course_code}</span>

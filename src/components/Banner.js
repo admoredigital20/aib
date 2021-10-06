@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
 import Navbar1 from './Navbar';
 
@@ -10,6 +10,8 @@ export default function Banner() {
 
     const bnrFun = () => {
         setBnrImg(true)
+        setBnrImg2(false)
+        setBnrImg3(false)
     }
     const bnrFunOut = () => {
         setBnrImg(false)
@@ -19,6 +21,8 @@ export default function Banner() {
 
     const bnrFun2 = () => {
         setBnrImg2(true)
+        setBnrImg(false)
+        setBnrImg3(false)
     }
     const bnrFunOut2 = () => {
         setBnrImg2(false)
@@ -28,10 +32,39 @@ export default function Banner() {
 
     const bnrFun3 = () => {
         setBnrImg3(true)
+        setBnrImg2(false)
+        setBnrImg(false)
     }
     const bnrFunOut3 = () => {
         setBnrImg3(false)
     }
+
+    const bnrAuto = () => {
+        setTimeout(() => {
+            bnrFun()
+        }, 3000);
+        setTimeout(() => {
+            bnrFun2()
+        }, 8000);
+        setTimeout(() => {
+            bnrFun3()
+        }, 13000);
+    }
+
+    useEffect(() => {
+        const interval = setInterval(function(){
+            setTimeout(() => {
+                bnrFun()
+            }, 3000);
+            setTimeout(() => {
+                bnrFun2()
+            }, 8000);
+            setTimeout(() => {
+                bnrFun3()
+            }, 13000);
+        },14000)
+        bnrAuto()
+    }, [])
 
 
     return (

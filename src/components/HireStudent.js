@@ -1,19 +1,37 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, Modal, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { hireStudent } from '../actions/generalAction'
 
 function HireStudent(props) {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone_number, setphone_number] = useState('')
+    const [query, setQuery] = useState('')
     
-
+    const hireStudentReducers = useSelector(state => state.hireStudentReducers)
+    const { loading, error, hireQurey, success } = hireStudentReducers
+    const dispatch =useDispatch()
     
-   
+   const submitHandler=(e)=>{
+       e.preventDefault()
+       dispatch(hireStudent(name,email,query,phone_number))
+       console.log(hireQurey,'hire');
+       setName('')
+        
+        setEmail('')
+        setQuery('')
+        setphone_number('')
+        
+   }
 
     return (
         <div className='hire-main'>
             <Row className='hirestudent'>
                <Col md={7} className='hirestudent-first'>
                   <Container className='hirestudent-cntnr'>
-                      <h1 >We have got brilliant minds !<br/>Hire our students !</h1>
+                      <h1 >Hire our students !</h1>
                       <p>Get free access to the best talent !</p>
                       <div className='hirestudent-div'>
                           <Container className='div-conatiner'>
@@ -35,18 +53,18 @@ function HireStudent(props) {
                  <Container>
                      <p>Enter the following details,To learn about hiring a student from AIBrilliance</p>
             <Modal.Body>
-                    <Form className='hire' >
-                        <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Control id="email" placeholder="Enter Your Name *"  />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Control type="password" id="password" required placeholder="Work Email *"   />
+                    <Form className='hire' onSubmit={submitHandler}>
+                        <Form.Group className="mb-3" controlId="formGroupName">
+                            <Form.Control id="name" placeholder="Enter Your Name *" value={name} onChange={(e) => setName(e.target.value)} />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Control id="email" placeholder="Phone Number *"  />
+                            <Form.Control type="email" id="email" required placeholder="Work Email *"  value={email} onChange={(e) => setEmail(e.target.value)} />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Control type="password" id="password" required placeholder="Your organization needs ? *"   />
+                        <Form.Group className="mb-3" controlId="formGroupNumber">
+                            <Form.Control id="number" placeholder="Phone Number *"  value={phone_number} onChange={(e) => setphone_number(e.target.value)} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formGroupQuery">
+                            <Form.Control type="query" id="query" required placeholder="Your organization needs ? *"   value={query} onChange={(e) => setQuery(e.target.value)}  />
                         </Form.Group>
                        
                         <Button className="signin-btn mt-4" type="submit">
