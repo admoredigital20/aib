@@ -52,7 +52,7 @@ export default function Banner() {
     }
 
     useEffect(() => {
-        const interval = setInterval(function(){
+        const interval = setInterval(function () {
             setTimeout(() => {
                 bnrFun()
             }, 3000);
@@ -62,7 +62,7 @@ export default function Banner() {
             setTimeout(() => {
                 bnrFun3()
             }, 13000);
-        },14000)
+        }, 14000)
         bnrAuto()
     }, [])
 
@@ -127,7 +127,17 @@ export default function Banner() {
                             </div> */}
                         </Col>
                         <div md={12} className="header-mouse">
-                            <img src="../assets/img/mouse.png" alt="" />
+                            {/* <img src="../assets/img/mouse.png" alt="" /> */}
+                            <span class="scroll-btn">
+                                <a href="#">
+                                    <span class="mouse">
+                                        <span>
+                                        </span>
+                                    </span>
+                                </a>
+                                <p>scroll me</p>
+
+                            </span>
                         </div>
                     </Row>
                 </Container>

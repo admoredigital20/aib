@@ -143,6 +143,11 @@ const Home = () => {
 
     const imgHandler = () => {
         setHwwImg(hwwImg12)
+        contentHandler(hww1, hww12);
+        imgHandlerout2()
+        imgHandlerout3()
+        imgHandlerout4()
+        imgHandlerout5()
     }
     const imgHandlerout = () => {
         setHwwImg(hwwImg1)
@@ -150,6 +155,11 @@ const Home = () => {
 
     const imgHandler2 = () => {
         setHwwImg2(hwwImg22)
+        contentHandler(hww2, hww22);
+        imgHandlerout()
+        imgHandlerout3()
+        imgHandlerout4()
+        imgHandlerout5()
     }
     const imgHandlerout2 = () => {
         setHwwImg2(hwwImg2)
@@ -157,6 +167,11 @@ const Home = () => {
 
     const imgHandler3 = () => {
         setHwwImg3(hwwImg32)
+        contentHandler(hww3, hww33);
+        imgHandlerout2()
+        imgHandlerout()
+        imgHandlerout4()
+        imgHandlerout5()
     }
     const imgHandlerout3 = () => {
         setHwwImg3(hwwImg3)
@@ -164,6 +179,11 @@ const Home = () => {
 
     const imgHandler4 = () => {
         setHwwImg4(hwwImg42)
+        contentHandler(hww4, hww44);
+        imgHandlerout2()
+        imgHandlerout3()
+        imgHandlerout()
+        imgHandlerout5()
     }
     const imgHandlerout4 = () => {
         setHwwImg4(hwwImg4)
@@ -171,10 +191,85 @@ const Home = () => {
 
     const imgHandler5 = () => {
         setHwwImg5(hwwImg52)
+        contentHandler(hww5, hww55);
+        imgHandlerout2()
+        imgHandlerout3()
+        imgHandlerout4()
+        imgHandlerout()
     }
     const imgHandlerout5 = () => {
         setHwwImg5(hwwImg5)
     }
+
+
+    
+    const bnrAuto = () => {
+        setTimeout(() => {
+            imgHandler()
+            imgHandlerout5()
+        }, 5000);
+        setTimeout(() => {
+            imgHandler2()
+            imgHandlerout()
+        }, 10000);
+        setTimeout(() => {
+            imgHandler3()
+            imgHandlerout2()
+        }, 15000);
+        setTimeout(() => {
+            imgHandler4()
+            imgHandlerout3()
+        }, 20000);
+        setTimeout(() => {
+            imgHandler5()
+            imgHandlerout4()
+        }, 25000);
+    }
+
+    useEffect(() => {
+        const interval = setInterval(function(){
+            setTimeout(() => {
+                imgHandler()
+                imgHandlerout5()
+            }, 5000);
+            setTimeout(() => {
+                imgHandler2()
+                imgHandlerout()
+            }, 10000);
+            setTimeout(() => {
+                imgHandler3()
+                imgHandlerout2()
+            }, 15000);
+            setTimeout(() => {
+                imgHandler4()
+                imgHandlerout3()
+            }, 20000);
+            setTimeout(() => {
+                imgHandler5()
+                imgHandlerout4()
+            }, 25000);
+        },26000)
+        bnrAuto()
+    }, [])
+
+    const clrIntr = () => {
+        
+    }
+
+    // useEffect(() => {
+    //     const interval = setInterval(function(){
+    //         setTimeout(() => {
+    //             bnrFun()
+    //         }, 3000);
+    //         setTimeout(() => {
+    //             bnrFun2()
+    //         }, 8000);
+    //         setTimeout(() => {
+    //             bnrFun3()
+    //         }, 13000);
+    //     },14000)
+    //     bnrAuto()
+    // }, [])
 
 
     const settings = {
@@ -470,11 +565,11 @@ const Home = () => {
                             <h2>How We Work ?</h2>
                         </Row>
                         <Row className="sec6-hover-img">
-                            <Col><img onMouseOver={() => { contentHandler(hww1, hww12); imgHandler(); }} onMouseOut={imgHandlerout} className="hww-img" src={hwwImgState} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww2, hww22); imgHandler2(); }} onMouseOut={imgHandlerout2} className="hww-img" src={hwwImgState2} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww3, hww33); imgHandler3(); }} onMouseOut={imgHandlerout3} className="hww-img" src={hwwImgState3} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww4, hww44); imgHandler4(); }} onMouseOut={imgHandlerout4} className="hww-img" src={hwwImgState4} /></Col>
-                            <Col><img onMouseOver={() => { contentHandler(hww5, hww55); imgHandler5(); }} onMouseOut={imgHandlerout5} className="hww-img" src={hwwImgState5} /></Col>
+                            <Col><img onMouseOver={()=>{imgHandler();clrIntr()}} onMouseOut={imgHandlerout} className="hww-img" src={hwwImgState} /></Col>
+                            <Col><img onMouseOver={imgHandler2} onMouseOut={imgHandlerout2} className="hww-img" src={hwwImgState2} /></Col>
+                            <Col><img onMouseOver={imgHandler3} onMouseOut={imgHandlerout3} className="hww-img" src={hwwImgState3} /></Col>
+                            <Col><img onMouseOver={imgHandler4} onMouseOut={imgHandlerout4} className="hww-img" src={hwwImgState4} /></Col>
+                            <Col><img onMouseOver={imgHandler5} onMouseOut={imgHandlerout5} className="hww-img" src={hwwImgState5} /></Col>
                         </Row>
                         <Row><p className="hww-p">{hwwContent} <br />{hwwContent1}</p></Row>
                         {/* <Row><p className="hww-p"></p></Row> */}
