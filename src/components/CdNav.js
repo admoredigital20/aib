@@ -36,8 +36,8 @@ const CdNav = (history) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto cdnav2">
                         <LinkContainer style={{backgroundColor:getclr('/')}} to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
-                        <LinkContainer   to="#"><Nav.Link>Events</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/fullcourse')}} to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
+                        <LinkContainer   to="#"><Nav.Link>Events</Nav.Link></LinkContainer>
                         <LinkContainer   to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
                         <LinkContainer  style={{color: getclr('/faq')}} to="/faq"><Nav.Link>FAQ</Nav.Link></LinkContainer>
                         <Signin/>

@@ -138,13 +138,6 @@ export default function CourseDetails(props) {
                             </Col>
                             <Col className="cd1-play-btn" >
                                 <Row >
-                                    {/* < FontAwesome className="header1-play-circle"
-                                        name="play-circle"
-                                        size="5x"
-                                        style={
-                                            { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#43abfb' }
-                                        }
-                                    /> */}
                                     <Col>
                                         <img src="../assets/img/Play@2x.png" />
                                     </Col>

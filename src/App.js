@@ -18,8 +18,8 @@ import HireStudent from "./components/HireStudent";
 import ContactUs from "./components/ContactUs";
 import Faq from "./components/Faq";
 import AboutUs from "./components/AboutUs";
-import Events from "./components/Banner";
 import Api from './components/Api';
+import Bootcamp from './components/Bootcamp';
 
 
 function App() {
@@ -61,6 +61,9 @@ function App() {
             </Route>
             <Route path='/api'>
               <Api/>
+            </Route>
+            <Route path='/events'>
+              <Bootcamp />
             </Route>
             <Route exact path="/">
               <Home />

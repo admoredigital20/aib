@@ -58,6 +58,7 @@
     ]
   },
   "devDependencies": {
-    "devextreme-themebuilder": "^21.1.5"
+    "devextreme-themebuilder": "^21.1.5",
+    "video.js": "^7.15.4"
   }
 }
