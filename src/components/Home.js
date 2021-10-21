@@ -51,6 +51,14 @@ const Home = () => {
     const [isOpen5, setOpen5] = useState(false);
 
 
+    const [isOpen10, setOpen10] = useState(false);
+    const [isOpen11, setOpen11] = useState(false);
+    const [isOpen12, setOpen12] = useState(false);
+    const [isOpen13, setOpen13] = useState(false);
+    const [isOpen14, setOpen14] = useState(false);
+    const [isOpen15, setOpen15] = useState(false);
+
+
     const bootcampList = useSelector(state => state.bootcampList)
     const { loading: bootcampLoading, error: bootcampError, bootcamps } = bootcampList
 
@@ -370,6 +378,12 @@ const Home = () => {
                 </section>
                 <section className="sec4">
                     <Container>
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen15} videoId="7fvlCJqwNek" onClose={() => setOpen15(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen10} videoId="oZANGdv59n0" onClose={() => setOpen10(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen11} videoId="OwSec2a857w" onClose={() => setOpen11(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen13} videoId="n4Za3pWxAns" onClose={() => setOpen13(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen14} videoId="zPq8466o7gI" onClose={() => setOpen14(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen12} videoId="Ar6Fhff7NUk" onClose={() => setOpen12(false)} />
                         <Row>
                             <Col md="3" className="make-us-diff">
                                 <h3 className='sec4-h3'>What makes us Different</h3>
@@ -388,7 +402,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/hww-small-group.gif" alt="sec4-img2" />
+                                                    <img className="sec4-img2" onClick={() => setOpen15(true)} src="../assets/img/hww-small-group.gif" alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -404,7 +418,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/hww-lightBoard.gif" alt="sec4-img2" />
+                                                    <img className="sec4-img2"  src="../assets/img/hww-lightBoard.gif" onClick={() => setOpen10(true)} alt="sec4-img2"  />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -420,11 +434,12 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/hww-codingAssis.gif" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-codingAssis.gif" onClick={() => setOpen11(true)} alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
                                     </Col>
+                                    
                                     <Col md="3">
                                         <div className="sec4-div">
                                             <Row><img className="icon" src="../assets/img/sec4-img-icon5.png" alt="Redefining Learning With Light-board" /></Row>
@@ -435,7 +450,8 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/hww-pay-as-you.gif" alt="sec4-img2" />
+                                                    
+                                                    <img className="sec4-img2" src="../assets/img/hww-pay-as-you.gif" onClick={() => setOpen12(true)} alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -451,7 +467,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/hww-domain-sp.gif" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-domain-sp.gif" onClick={() => setOpen13(true)} alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -466,7 +482,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/hww-cert.gif" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-cert.gif" onClick={() => setOpen14(true)} alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>

@@ -1014,6 +1014,7 @@ body {
   height: 150px;
   border-top-left-radius:75px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .sec4-div .sec4-r8 p {
