@@ -115,14 +115,14 @@ export default function CourseDetails(props) {
                                     </Col>
                                 </a >
                             </Row>
-                            <Row className="sb-item" >
+                            {/* <Row className="sb-item" >
                                 <a href="#cd6" >
                                     < Col className="cd6-div" >
                                         <img className="sb-item"
                                             src="../assets/img/sidebar-img-5.png" style={{width:"25px"}} />
                                     </Col>
                                 </a >
-                            </Row>
+                            </Row> */}
                         </div >
                     </Col>
                     <Col className="right-div"  >
@@ -152,19 +152,20 @@ export default function CourseDetails(props) {
                             <Col md={{ span: 3, offset: 7 }} xs={{ span: 5, offset: 5 }} className="cd1-detail-bar" >
                                 <img src="../assets/img/cd-details-img.jpg" />
                                 <Row className="cd1-dtl-grp mt-4">
-                                    <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-left" > Discounted Price </p></Col >
+                                    <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-left" > </p></Col >
                                     <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-r8" > Slots left </p></Col >
                                 </Row>
                                 <Row className="cd1-dtl-grp">
                                     <Col className="price" >
-                                        <h2 className='cd1-detail-free' > {sc.course_type}</h2> <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p>
+                                        <h2 className='cd1-detail-free' > {sc.course_type}</h2> 
+                                        {/* <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p> */}
                                     </Col >
                                     <Col > < h3 className='cd1-detail-bar-h2 cd1-p-r8 mt-3 mb-0'> 8 / 25 </h3></Col >
                                 </Row>
-                                <Row >
+                                {/* <Row >
                                     <Col md={12} >
                                        <Link to={{pathname: "/payment",state: { cid2: cid },}}> <Button className='cd1-detail-row-btn' > Enroll Now </Button> </Link> </Col > 
-                                </Row>
+                                </Row> */}
                                 <Row >
                                     <Col >
                                         <p className='cd1-detail-row-par' > Batch Starting on <h6 className="">15th Jun 21</h6></p>
@@ -197,9 +198,9 @@ export default function CourseDetails(props) {
                                         </Row>
                                     </Col>
                                 </Row>
-                                <Row>
+                                {/* <Row>
                                     <Button className='cd1-detail-row-btn' > Enroll Now </Button>
-                                </Row>
+                                </Row> */}
                                 <Row>
                                     <p className='cd1-detail-row-par' > Batch Starting on <h6 className="">15th Jun 21</h6></p>
                                 </Row>
@@ -228,7 +229,7 @@ export default function CourseDetails(props) {
                                 </Row>
                             </Col>
                             <Row className="cd2-mouse" >
-                                <p className="cd2-more-details" > More Details < img src={sc.author_image} /> </p>
+                                <p className="cd2-more-details" > More Details < img src="../assets/img/mouseBlack.png" style={{paddingBottom:'5px'}} /> </p>
                             </Row >
 
                         </Row>
@@ -374,27 +375,39 @@ export default function CourseDetails(props) {
                             </Col>
                         </Row>
                         <Row className="cd4 section" id="cd4" >
-                            <Col md={6} className="cd4-1" >
+                            <Col md={8} className="cd4-1" >
                                 <Row >
-                                    <h2 className="cd4-h2" > Meet your Captain, Challenge Slayers <br /> and peers
-                                        for this class </h2>
+                                    <h2 className="cd4-h2" > Meet your The Coach & <br />Coding Enablers </h2>
                                 </Row >
-                                <Row className="cd4-coach-det" >
-                                    <Col md={3}
-                                        className="cd4-pic-div" >
-                                        <img src="../assets/img/coach-dp.png" />
-                                        <img className='talk-img' src='../assets/img/talk.png'/>
-                                    </Col >
-                                    <Col className='coach-padding'>
+                                <div className="d-flex">
+                                <Row className="cd4-coach-det" style={{marginRight:"2rem"}} >
+                                    <Col className='coach-padding' >
+                                        <img src="../assets/img/couch2.png" width="350" />
+                                        <div style={{padding:"1rem"}}>
                                         <h4 className="cd4-coach-name" > Dr.Rahul Rai </h4>
                                         <h4 className="cd4-coach-name1" > AI Coach </h4>
                                         <div className="cd4-dtls-bottom" >
                                             <h6 > About Me </h6>
                                             <p> Dean’ s Distinguished Professor at Clemson University, USA and An expert in AI and Analytics and have led several prestigious research initiatives and innovations in intelligent manufacturing, ML and AI, including a rich stint with NASA </p>
                                         </div >
+                                        </div>
                                     </Col>
                                 </Row >
-                                <Row className="all-task-master" >
+                                <Row className="cd4-coach-det" >
+                                    <Col className='coach-padding'>
+                                        <img src="../assets/img/couch1.png" width="350" />
+                                        <div style={{padding:"1rem"}}>
+                                        <h4 className="cd4-coach-name" > Shubendu </h4>
+                                        <h4 className="cd4-coach-name1" > Coding Enabler </h4>
+                                        <div className="cd4-dtls-bottom" >
+                                            <h6 > About Me </h6>
+                                            <p> Dean’ s Distinguished Professor at Clemson University, USA and An expert in AI and Analytics and have led several prestigious research initiatives and innovations in intelligent manufacturing, ML and AI, including a rich stint with NASA </p>
+                                        </div >
+                                        </div>
+                                    </Col>
+                                </Row >
+                                </div>
+                                {/* <Row className="all-task-master" >
                                     <Col className="cd4-task-master" >
                                         <img src="../assets/img/coach-dp.png" />
                                         <h5 > Bruce Stewart </h5>
@@ -411,7 +424,7 @@ export default function CourseDetails(props) {
                                         <img src="../assets/img/coach-dp.png" />
                                         <h5 > Bruce Stewart </h5> <h6 > Task Master </h6> <p > Dean’ s Distinguished Professor at Clemson University, USA </p>
                                     </Col >
-                                </Row>
+                                </Row> */}
 
 
                             </Col>
@@ -513,11 +526,11 @@ export default function CourseDetails(props) {
                                 <img src="../assets/img/v12.png" />
                             </Col>
                         </Row>
-                        <Row className="cd6 section" id="cd6" >
+                        {/* <Row className="cd6 section" id="cd6" >
                             <Col md={8}>
                                 <Calender />
                             </Col>
-                        </Row>
+                        </Row> */}
                     </Col >
                 </Row>
             </div >

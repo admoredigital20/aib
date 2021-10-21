@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { courseListReducer } from "./reducer/courseReducer";
-import { bootcampListReducer, ConatactReducer, helpReducer, HireStudentReducer, paymentReducer, sliderEmailReducer } from "./reducer/generalReducer";
+import { bootcampListReducer, ConatactReducer, helpReducer, HireStudentReducer, paymentReducer, sliderEmailReducer, courseCategoryReducer, taskReducer } from "./reducer/generalReducer";
 import { userRegisterReducer, userSigninReducer } from "./reducer/userReducer";
 import { webinarListReducer } from "./reducer/webinarReducer";
 
@@ -21,6 +21,8 @@ const reducer = combineReducers({
   emailSLider:sliderEmailReducer,
   paymentReducers:paymentReducer,
   hireStudentReducers:HireStudentReducer,
+  courseCategory:courseCategoryReducer,
+  task:taskReducer,
 
 })
 

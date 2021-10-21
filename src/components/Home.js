@@ -275,7 +275,6 @@ const Home = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
@@ -322,11 +321,11 @@ const Home = () => {
                 <section>
                     <Container className="sec3">
 
-                        <Row>
+                        {/* <Row>
                             <Col className="sec3-heading">
                                 <h2>Upcoming Bootcamp</h2>
                             </Col>
-                        </Row>
+                        </Row> */}
                         <Row className="upcoming-bc-grp">
                             {bootcampLoading ? <LoadingBox></LoadingBox> :
                                 bootcampError ? <MessageBox varinat='danger'>{bootcampError}</MessageBox>
@@ -336,23 +335,27 @@ const Home = () => {
                                         bootcamps.results.data.slice(0, 2).map(data => {
                                             return (
 
-                                                <Col key={data.id} md={6} sm={12}>
-                                                    <div className="upcoming-bc" style={{ backgroundImage: "url(" + data.image + ")" }}>
-                                                        <div className="ub-bg-overlay">
-                                                            <Row className="ub-details">
-                                                                <Col lg={8} md={8}>
-                                                                    <h4>{data.name}: </h4><h6>{truncate(data.sub_name, 60)}</h6>
-                                                                </Col>
-                                                                <Col className="txt-r8">
-                                                                    <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
-                                                                    {/* <Row className="ub-date">{data.date}</Row> */}
-                                                                </Col>
-                                                            </Row>
-                                                        </div>
-                                                    </div>
-                                                </Col>
+                                                // <Col key={data.id} md={6} sm={12}>
+                                                //     <div className="upcoming-bc" style={{ backgroundImage: "url(" + data.image + ")" }}>
+                                                //         <div className="ub-bg-overlay">
+                                                //             <Row className="ub-details">
+                                                //                 <Col lg={8} md={8}>
+                                                //                     <h4>{data.name}: </h4><h6>{truncate(data.sub_name, 60)}</h6>
+                                                //                 </Col>
+                                                //                 <Col className="txt-r8">
+                                                //                     <Row className="ub-price">{data.price > 0 ? ("$" + data.price) : ("Free")}</Row>
+                                                //                     {/* <Row className="ub-date">{data.date}</Row> */}
+                                                //                 </Col>
+                                                //             </Row>
+                                                //         </div>
+                                                //     </div>
+                                                // </Col>
+                                                <div></div>
                                             )
-                                        })):(<MessageBox>No Bootcamp Are Found</MessageBox>)}
+                                        })):(
+                                        // <MessageBox>No Bootcamp Are Found</MessageBox>
+                                        <div></div>
+                                        )}
 
                                     </>
                             }
@@ -385,7 +388,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/sec4-img6.png" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-small-group.gif" alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -401,7 +404,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-lightBoard.gif" alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -417,7 +420,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/sec4-img5.png" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-codingAssis.gif" alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -432,7 +435,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/sec4-img1.png" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-pay-as-you.gif" alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -448,7 +451,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/sec4-img.png" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-domain-sp.gif" alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -463,7 +466,7 @@ const Home = () => {
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
-                                                    <img className="sec4-img2" src="../assets/img/sec4-img3.png" alt="sec4-img2" />
+                                                    <img className="sec4-img2" src="../assets/img/hww-cert.gif" alt="sec4-img2" />
                                                 </Col>
                                             </Row>
                                         </div>
@@ -821,11 +824,11 @@ const Home = () => {
                     <Container>
                         <Row>
                             <Col className='home-faq-left'>
-                                <h1> &gt;  Who should take an Online Course?</h1>
-                                <h1> &gt;  How do I select a course?</h1>
-                                <h1> &gt;  Are there prerequisites or language requirements?</h1>
-                                <h1> &gt;  I am a high school student, can I join?</h1>
-                                <h1> &gt;  Can I take more than one course at a time?</h1>
+                                <h1> &gt;  Which courses are a good fit for me?</h1>
+                                <h1> &gt;  Who are our programs for?</h1>
+                                <h1> &gt;  What if I need additional time to complete a given course?</h1>
+                                <h1> &gt;  What will I have access to after I log in as a free user?</h1>
+                                <h1> &gt;  Will I receive a certificate after the completion of a course?</h1>
                                 <Link to='/faq'>  <h>See More....</h>     </Link>
                             </Col>
                             <Col className='faq-right'>

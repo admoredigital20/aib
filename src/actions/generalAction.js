@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BOOTCAMP_LIST_FAIL, BOOTCAMP_LIST_REQUEST, BOOTCAMP_LIST_SUCCESS, CONTACTUS_FAIL, CONTACTUS_REQUEST, CONTACTUS_SUCCESS, HELP_LIST_FAIL, HELP_LIST_REQUEST, HELP_LIST_SUCCESS, HIRESTUDENT_FAIL, HIRESTUDENT_REQUEST, HIRESTUDENT_SUCCESS, LH, PAYMENT_FAIL, PAYMENT_REQUEST, PAYMENT_SUCCESS, SLIDER_EMAIL_FAIL, SLIDER_EMAIL_REQUEST, SLIDER_EMAIL_SUCCESS } from "../constants/generalConstant";
+import { BOOTCAMP_LIST_FAIL, BOOTCAMP_LIST_REQUEST, BOOTCAMP_LIST_SUCCESS, CONTACTUS_FAIL, CONTACTUS_REQUEST, CONTACTUS_SUCCESS, COURSECATEGORY_FAIL, COURSECATEGORY_REQUEST, COURSECATEGORY_SUCCESS, HELP_LIST_FAIL, HELP_LIST_REQUEST, HELP_LIST_SUCCESS, HIRESTUDENT_FAIL, HIRESTUDENT_REQUEST, HIRESTUDENT_SUCCESS, LH, PAYMENT_FAIL, PAYMENT_REQUEST, PAYMENT_SUCCESS, SLIDER_EMAIL_FAIL, SLIDER_EMAIL_REQUEST, SLIDER_EMAIL_SUCCESS, TASK_FAIL, TASK_REQUEST, TASK_SUCCESS } from "../constants/generalConstant";
 
 
 export const listBootcamp = ( )=>  async (dispatch) =>{
@@ -70,5 +70,29 @@ export const paymentAction=(course_id,course_name,price)=>async(dispatch)=>{
         dispatch({type:HIRESTUDENT_SUCCESS,payload:data})
      }catch(error){
          dispatch({type:HIRESTUDENT_FAIL,payload:error.message})
+     }
+ }
+
+
+ export const categoryCourse=()=>async(dispatch)=>{
+     dispatch({type:COURSECATEGORY_REQUEST})
+     try{
+        const {data}= await axios.get(`${LH}/app/api/category/list`) 
+        dispatch({type:COURSECATEGORY_SUCCESS,payload:data.results.data})
+        console.log(data,'data');
+     }catch(error){
+         dispatch({type:COURSECATEGORY_FAIL,payload:error.message})
+     }
+ }
+
+
+ export const taskList=()=>async(dispatch)=>{
+     dispatch({type:TASK_REQUEST})
+     try{
+        const {data}= await axios.get(`${LH}/app/api/task/list`) 
+        dispatch({type:TASK_SUCCESS,payload:data.results.data})
+        console.log(data,'data');
+     }catch(error){
+         dispatch({type:TASK_FAIL,payload:error.message})
      }
  }

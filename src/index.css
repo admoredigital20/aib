@@ -801,7 +801,8 @@ body {
 
 .course-detail {
   position: absolute;
-  bottom: 1rem;
+  bottom: 2rem;
+  padding-right: 18px;
 }
 
 .course-detail p {
@@ -1010,6 +1011,9 @@ body {
 
 .sec4-div .sec4-img2 {
   width: 100%;
+  height: 150px;
+  border-top-left-radius:75px;
+  object-fit: cover;
 }
 
 .sec4-div .sec4-r8 p {
@@ -1810,15 +1814,15 @@ body {
 .cd4 .cd4-h2 {
   color: #11307b;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .cd4 .cd4-coach-det {
   background-color: #fff;
-  padding: 1rem;
   margin-top: 2rem;
   box-shadow: 0 5px 8px 0 rgb(0 0 0 / 20%), 0 4px 21px 0 rgb(0 0 0 / 1%);
   border-radius: 0.5rem;
+  width: 350px;
 }
 
 .cd4 .cd4-coach-name {
@@ -2718,6 +2722,15 @@ body {
 .sec4-btn-tiltle {
   font-size: 0.7rem;
   /* margin-left: 13px; */
+}
+
+.sec4-btn-tiltle1 {
+  font-size: 0.7rem;
+  /* margin-left: 13px; */
+      font-size: 0.8rem;
+    font-weight: 600;
+    color: #43abfb;
+    padding-top: 10px;
 }
 
 .sec4-img {
@@ -3850,6 +3863,7 @@ body {
   letter-spacing: normal;
   /* text-align: right; */
   color: #000;
+  text-align: right;
 }
 
 .box-down-2 h1 {
@@ -4478,8 +4492,7 @@ a {
 }
 
 .about-us-4 .sec4-img {
-  height: 14px;
-  margin-left: 6px;
+
 }
 
 .about-us-4-img img {
@@ -5142,4 +5155,39 @@ a {
 .bc-main .bc-breadcrumbs h5 {
   font-weight: 600;
   color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bnr-play img {
+  animation: ripple 2s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0rem rgba(255,255,255, 0.05),
+                0 0 0 1rem rgba(255,255,255, 0.05),
+                0 0 0 2rem rgba(255,255,255, 0.05),
+                0 0 0 5rem rgba(255,255,255, 0.05);
+  }
+  100% {
+    box-shadow: 0 0 0 1rem rgba(255,255,255, 0.05),
+                0 0 0 2rem rgba(255,255,255, 0.05),
+                0 0 0 5rem rgba(255,255,255, 0.05),
+                0 0 0 8rem rgba(255,255,255, 0);
+  }
 }

@@ -1,4 +1,4 @@
-import { BOOTCAMP_LIST_FAIL, BOOTCAMP_LIST_REQUEST, BOOTCAMP_LIST_SUCCESS, CONTACTUS_FAIL, CONTACTUS_REQUEST, CONTACTUS_SUCCESS, HELP_LIST_FAIL, HELP_LIST_REQUEST, HELP_LIST_SUCCESS, HIRESTUDENT_FAIL, HIRESTUDENT_REQUEST, HIRESTUDENT_SUCCESS, PAYMENT_FAIL, PAYMENT_REQUEST, PAYMENT_SUCCESS, SLIDER_EMAIL_FAIL, SLIDER_EMAIL_REQUEST, SLIDER_EMAIL_SUCCESS } from "../constants/generalConstant";
+import { BOOTCAMP_LIST_FAIL, BOOTCAMP_LIST_REQUEST, BOOTCAMP_LIST_SUCCESS, CONTACTUS_FAIL, CONTACTUS_REQUEST, CONTACTUS_SUCCESS, COURSECATEGORY_FAIL, COURSECATEGORY_REQUEST, COURSECATEGORY_SUCCESS, HELP_LIST_FAIL, HELP_LIST_REQUEST, HELP_LIST_SUCCESS, HIRESTUDENT_FAIL, HIRESTUDENT_REQUEST, HIRESTUDENT_SUCCESS, PAYMENT_FAIL, PAYMENT_REQUEST, PAYMENT_SUCCESS, SLIDER_EMAIL_FAIL, SLIDER_EMAIL_REQUEST, SLIDER_EMAIL_SUCCESS, TASK_FAIL, TASK_REQUEST, TASK_SUCCESS } from "../constants/generalConstant";
 
 export const bootcampListReducer = (state = { loading: true }, action) => {
     switch (action.type) {
@@ -71,6 +71,30 @@ export const HireStudentReducer = (state = { loading: true }, action) => {
         case HIRESTUDENT_SUCCESS:
             return { loading: false, hireQurey: action.payload }
         case HIRESTUDENT_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
+    }
+}
+export const courseCategoryReducer = (state = { loading: true,courseCategory:[] }, action) => {
+    switch (action.type) {
+        case COURSECATEGORY_REQUEST:
+            return { loading: true }
+        case COURSECATEGORY_SUCCESS:
+            return { loading: false, courseCategory: action.payload }
+        case COURSECATEGORY_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
+    }
+}
+export const taskReducer = (state = { loading: true,task:[] }, action) => {
+    switch (action.type) {
+        case TASK_REQUEST:
+            return { loading: true }
+        case TASK_SUCCESS:
+            return { loading: false, taskQuery: action.payload }
+        case TASK_FAIL:
             return { loading: false, error: action.payload }
         default:
             return state

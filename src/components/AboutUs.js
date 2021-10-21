@@ -212,7 +212,7 @@ function AboutUs() {
                         <Col className='about-us-4-h1' md={4} sm={6}>
                             <h1>Dr. Rahul Rai</h1>
                             <p>CEO and Founder of AIBrilliance</p>
-                            <LinkContainer to="/learnmore"><Button className="btn-blue btn-white sec5-btn"><span className='sec4-btn-tiltle'>Learn More</span> <img className='sec4-img' src='../assets/img/right.png'></img></Button></LinkContainer>
+                            <LinkContainer to="/learnmore"><Button className="btn-light sec5-btn"><span className='sec4-btn-tiltle1'>Learn More</span> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" style={{fill:"#43abfb"}}/></svg></Button></LinkContainer>
                         </Col>
                         <Col className='about-us-4-img' md={{ offset: 3, span: 3 }} sm={6}>
                             <img src="../assets/img/learn-more-bw.png" alt="" />
@@ -224,14 +224,11 @@ function AboutUs() {
             <section className='about-us-5'>
                 <Container>
                     <Row>
-                        <Col md={{ offset: 1, span: 3 }}>
-                            <h1> <span>21,500+</span>  <br /> Happy Students</h1>
+                        <Col md={{ span: 6 }}>
+                            <h1> <span>500+</span>  <br /> Happy Students</h1>
                         </Col>
-                        <Col md={{ offset: 1, span: 3 }}>
-                            <h1><span>360+</span><br /> Hrs. of content </h1>
-                        </Col>
-                        <Col md={{ offset: 1, span: 3 }}>
-                            <h1><span>21,500</span>+<br />Community</h1>
+                        <Col md={{ span: 6 }}>
+                            <h1><span>200+</span><br /> Hrs. of content </h1>
                         </Col>
                     </Row>
                 </Container>

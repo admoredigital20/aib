@@ -3,14 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 import CdNav from './CdNav'
-import FullCoursess from './data';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { LinkContainer } from 'react-router-bootstrap';
 import { listCourse } from '../actions/courseActions';
 import LoadingBox from './LoadingBox'
 import MessageBox from './MessageBox'
 import Footer from './Footer';
+import { taskList } from '../actions/generalAction';
 
 
 export default function FullCourse() {
@@ -18,6 +17,9 @@ export default function FullCourse() {
     const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
     const courseList = useSelector((state) => state.courseList);
     const { loading, error, courses } = courseList;
+    
+    const task = useSelector((state) => state.task);
+    const { loading :taskLoading, error : taskError, taskQuery } = task;
 
     const sidebarfun = () => {
         if (sidebarIsOpen) {
@@ -31,7 +33,13 @@ export default function FullCourse() {
 
     useEffect(() => {
         dispatch(listCourse())
+        dispatch(taskList())
     }, [dispatch])
+
+    useEffect(() => {
+        
+        console.log(taskQuery,"kkkk");
+    }, [])
 
     const [items, setItems] = useState([])
     const [price, setPrice] = useState("All")
@@ -44,7 +52,7 @@ export default function FullCourse() {
             }
         }
 
-    }, [courses])
+    }, [courses,loading,error])
 
 
 
@@ -141,18 +149,19 @@ export default function FullCourse() {
                     {sidebarIsOpen ? (
                         <Row className='advancedfilter'>
                             <Col className="all-course-cat">
-                                <div className="course-cat" onClick={(e) => { afActive(e); filterItem1(2); }}  ><h5>Coding</h5></div>
-                                <div className="course-cat" onClick={(e) => { afActive(e); filterItem1(3); }}  ><h5>R Programming</h5></div>
-                                <div className="course-cat" onClick={(e) => { afActive(e); filterItem1(4); }}  ><h5>Big Data</h5></div>
-                                <div className="course-cat" onClick={(e) => { afActive(e); filterItem1(5); }} ><h5>AI</h5></div>
-                                <div className="course-cat" onClick={(e) => { afActive(e); filterItem1(6); }}  ><h5>Python</h5></div>
-                                <div className="course-cat" onClick={(e) => { afActive(e); filterItem1(7); }}  ><h5>ML</h5></div>
+                                {taskQuery?(
+                                    taskQuery.map(el=>{
+                                        return (
+                                            <div key={el.id} className="course-cat" onClick={(e) => { afActive(e); filterItem1(el.id); }}  ><h5>{el.name}</h5></div>
+                                        )
+                                    })
+                                ) : null }
                             </Col>
 
                         </Row>
                     ) : ""}
 
-                    <Row>
+                    <Row style={{minHeight:"300px"}}>
                         {loading ? <LoadingBox></LoadingBox> :
                             error ? <MessageBox>{error}</MessageBox> :
                                 (
@@ -163,10 +172,11 @@ export default function FullCourse() {
 
                                                 <Col md="3" sm='6' key={id} className="all-course-card ">
                                                     <Link to={{ pathname: "/bootcamp", state: { cid: id }, }}>    <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
-                                                        <div className="free-course">{course_type}</div>
+                                                        {/* <div className="free-course">{course_type}</div> */}
                                                         <div className="course-detail">
-                                                            <p><b>{truncate(name, 30)} :</b>{truncate(sub_name, 30)}</p>
-                                                            <div className="user-credit">
+                                                            {/* <p><b>{truncate(name, 30)} :</b>{truncate(sub_name, 30)}</p> */}
+                                                            <h5>{truncate(name,30)} :&nbsp;<span>{truncate(sub_name,30)}</span></h5>
+                                                            {/* <div className="user-credit">
                                                                 <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
                                                                 <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">{course_code}</span>
                                                             </div>
@@ -181,7 +191,7 @@ export default function FullCourse() {
                                                                     </Row>
 
                                                                 </Col>
-                                                            </Row>
+                                                            </Row> */}
                                                         </div>
                                                     </div>
                                                     </Link>

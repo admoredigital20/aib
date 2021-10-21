@@ -6,13 +6,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
 import { listCourse } from '../actions/courseActions';
+import { categoryCourse } from '../actions/generalAction';
 import LoadingBox from './LoadingBox'
 import MessageBox from './MessageBox'
+
 
 export default function CourseDiv() {
 
     const courseList = useSelector((state) => state.courseList);
     const { loading, error, courses } = courseList;
+
+    const courseCategories = useSelector((state) => state.courseCategory);
+    const { loading : loading1, error : error1, courseCategory} = courseCategories;
 
     function truncate(str,n) {
         return str?.length>n?str.substr(0,n-1)+ "..." :str
@@ -22,11 +27,16 @@ export default function CourseDiv() {
 
     useEffect(() => {
         dispatch(listCourse())
+        dispatch(categoryCourse())
+      
+        
         // filterItem()
 
     }, [dispatch])
 
-    const [cat, setCat] = useState(4)
+    const [cat, setCat] = useState(5)
+
+
 
     const activeBtn = (e) => {
 
@@ -42,10 +52,23 @@ export default function CourseDiv() {
             <div className="container">
                 <Row>
                     <Col md={3}><h2 className="sec2-h2">Our Bootcamp and Training Courses</h2></Col>
-                    <Col md={9} className="all-course-cat">
-                        <div className="course-cat  course-cat-active" onClick={(e) => { setCat(4); activeBtn(e) }} ><h5>Data Science & ML</h5></div>
-                        <div className="course-cat" onClick={(e) => { setCat(6); activeBtn(e) }} ><h5>Deep Learning</h5></div>
-                        <div className="course-cat" onClick={(e) => { setCat(5); activeBtn(e) }}><h5>Artificial Intelligence</h5></div>
+                    <Col md={9} id="all-c-cat" className="all-course-cat">
+                    {loading1 ? <LoadingBox></LoadingBox> :
+                        error1 ? <MessageBox>error</MessageBox>
+                            :
+                            (
+                                <>
+                                    {
+                                        courseCategory ? (
+                                            <div className="course-cat course-cat-active" onClick={(e) => { setCat(courseCategory[0].id); activeBtn(e) }} ><h5>{courseCategory[0].name}</h5></div>
+                                        ) : null
+                                    }
+                                    {
+                                        courseCategory && courseCategory.slice(1,courseCategory.length).map((cate)=>{
+                                        return (<div className="course-cat" onClick={(e) => { setCat(cate.id); activeBtn(e) }} ><h5>{cate.name}</h5></div>)
+                                    })}
+                                </>
+                            )}
                     </Col>
                 </Row>
 
@@ -61,10 +84,10 @@ export default function CourseDiv() {
 
                                             <Col md="3" key={id} className="all-course-card">
                                                 <Link to={{pathname: "/bootcamp",state: { cid: id },}}> <div className="course-card" style={{ backgroundImage: "url(" + course_image + ")" }}>
-                                                    <div className="free-course">{course_type}</div>
+                                                    {/* <div className="free-course">{course_type}</div> */}
                                                     <div className="course-detail">
-                                                        {/* <h5>{truncate(name,30)} :</h5><span>{truncate(sub_name,30)}</span> */}
-                                                        <p><b>{truncate(name, 30)} :</b>{truncate(sub_name, 30)}</p>
+                                                        <h5>{truncate(name,30)} :&nbsp;<span>{truncate(sub_name,30)}</span></h5>
+                                                        {/* <p><b>{truncate(name, 30)} :</b>{truncate(sub_name, 30)}</p>
                                                         <div className="user-credit">
                                                             <img src="../assets/img/course-user.svg" alt="course users" /><span className="uc-no">25</span>
                                                             <img src="../assets/img/course-credit.svg" alt="course credits" /><span className="uc-no">{course_code}</span>
@@ -79,7 +102,7 @@ export default function CourseDiv() {
                                                                     <Col className="col-pd-0 prof-dsgn">{author_position}</Col>
                                                                 </Row>
                                                             </Col>
-                                                        </Row>
+                                                        </Row> */}
                                                     </div>
                                                 </div>
                                                 </Link>

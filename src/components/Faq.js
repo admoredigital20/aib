@@ -33,7 +33,7 @@ function Faq() {
             <section className='faq'>
                 <Container>
                     <Row >
-                        <h1>This is the summary of the product, It will say something about the mission/purpose or goal of the project as well as have other content like this one</h1>
+                        {/* <h1>This is the summary of the product, It will say something about the mission/purpose or goal of the project as well as have other content like this one</h1> */}
                     </Row>
 
                     <Row className='faq-left'>
@@ -43,7 +43,7 @@ function Faq() {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Which courses are a good fit for me?</Accordion.Header>
                                     <Accordion.Body>
-                                    	This is dependent on the learner’s current skill set. If you have any questions about a given course and its suitability for you, please reach out to us through email xxx@aibrilliance.com by attaching your CV.
+                                    	This is dependent on the learner’s current skill set. If you have any questions about a given course and its suitability for you, please reach out to us through email help@aibrilliance.com by attaching your CV.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -52,7 +52,7 @@ function Faq() {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>	What is the admission process for your courses? Which courses are a good fit for me?</Accordion.Header>
                                     <Accordion.Body>
-                                    	Our courses are interest and upskilling interest-driven. We do not have any specific admission criteria. If you have any questions about a given course and its suitability for you, please reach out to us through email xxx@aibrilliance.com by attaching your CV.
+                                    	Our courses are interest and upskilling interest-driven. We do not have any specific admission criteria. If you have any questions about a given course and its suitability for you, please reach out to us through email help@aibrilliance.com by attaching your CV.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -236,7 +236,7 @@ function Faq() {
                             <h1>Miscellaneous  Related</h1>
                             <Accordion defaultActiveKey="">
                                 <Accordion.Item eventKey="0">
-                                    <Accordion.Header>-	Will I receive a certificate after the completion of a course?</Accordion.Header>
+                                    <Accordion.Header>Will I receive a certificate after the completion of a course?</Accordion.Header>
                                     <Accordion.Body>
                                     	Yow will receive a certificate after completion of a course at AIBrilliance (free and paid for both!). However, we do not provide a certificate for one-day introductory workshops.
                                     </Accordion.Body>

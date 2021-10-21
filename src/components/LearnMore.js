@@ -75,12 +75,12 @@ export default function LearnMore() {
                           <img className='grail' src='../assets/img/grail.png' />
                     </Col>
                     <Col md={{ span: 4 }}>
-                      <h1>I directs the Geometric Reasoningand Artificial Intelligence Lab (GRAIL)</h1>
+                      <h1>I direct the Geometric Reasoning and Artificial Intelligence Lab (GRAIL)</h1>
                     </Col>
                 </Row>
                 <Row className='box-down-2'>
                    <Col md={{ span: 4, offset: 2 }}>
-                      <h1>He earned his doctoral degree in Mechanical Engineering from The University of Texas at Austin USA in 2006 Sequential sampling that is popularly known as “Active Learning” in the machine learning domain. </h1>
+                      <h1>Earned my doctoral degree in Mechanical Engineering from The University of Texas at Austin USA in 2006 Sequential sampling that is popularly known as “Active Learning” in the machine learning domain. </h1>
                     </Col>
                     <Col md={{ span: 3, offset: 2 }}>
                     <img className='university' src='../assets/img/university.png' />
@@ -101,25 +101,25 @@ export default function LearnMore() {
                                 <h4>21,500 + Students</h4>
                                 <p className="lm3-course">Course:</p>
                                 <h6>Intelligent Machining</h6>
-                                <div className="icon-div">
+                                <a href="https://www.coursera.org/lecture/intelligent-machining/introduction-to-intelligent-machining-4K8IX"><div className="icon-div">
                                     <FontAwesome
                                         className="play-circle"
                                         name="play-circle"
                                         size="2x"
                                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }} />
-                                    <h6>Course Preview</h6></div>
+                                    <h6>Course Preview</h6></div></a>
                             </Col>
                             <Col>
                                 <h4>17,000 + Students</h4>
                                 <p className="lm3-course">Course:</p>
                                 <h6>Advanced Manufacturing Process Analysis</h6>
-                                <div className="icon-div">
+                                <a href="https://www.coursera.org/lecture/advanced-manufacturing-process-analysis/introduction-to-advanced-manufacturing-process-analysis-sbMHl"><div className="icon-div">
                                     <FontAwesome
                                         className="play-circle"
                                         name="play-circle"
                                         size="2x"
                                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }} />
-                                    <h6>Course Preview</h6></div>
+                                    <h6>Course Preview</h6></div></a>
                             </Col>
                         </Row>
                     </Col>
