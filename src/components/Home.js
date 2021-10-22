@@ -68,7 +68,6 @@ const Home = () => {
     const help = useSelector(state => state.help)
     const { loading: loadingHelp, error: errorHelp, helpQuery } = help
 
-    console.log(bootcamps);
 
     const dispatch = useDispatch()
 
@@ -84,9 +83,6 @@ const Home = () => {
     }, [dispatch])
 
 
-    useEffect(() => {
-        console.log(bootcamps);
-    }, [])
 
     const userSignin = useSelector(state => state.userSignin)
     const { loading, error, userInfo } = userSignin
@@ -94,15 +90,18 @@ const Home = () => {
 
     // How we work
 
-    var hww1 = "Select from the available courses from a list of free or paid courses.For paid courses, enroll in abatch to start learning in synchronous mode."
+    var hww1 = "Select from the available courses from a list of free or paid courses. For paid courses, enroll in a batch to start learning in synchronous mode."
     var hww12 = "Free courses are offered in asynchronous mode (material posted online)."
 
-    var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction ."
-    var hww22 = "by the coach occurring at a set time  Students are required to  log in and participate in class at a specific time each week."
-    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition,set weekly office hours "
+    var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction"
+    var hww22 = "by the coach occurring at a set time Students are required to log in and participate in class at a specific time each week."
+  
+    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition, set weekly office hours "
     var hww33 = "(different from live lectures). To ask coding and mini-project,related questions In addition set weekly office hours (different from live lectures) to ask coding and mini-project related questions."
+  
     var hww4 = " Complete a set of Python-based mini projects related to instruction material and a major project "
-    var hww44 = "  related to your choice of domain"
+    var hww44 = "related to your choice of domain"
+  
     var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once acertificate is issued, we also  "
     var hww55 = "provide a personalized referral for job-related referral inquiries. Once acertificate is issued, we also provide a personalized referral for job-related referral inquiries."
 
@@ -119,7 +118,6 @@ const Home = () => {
         setName('')
         setQuery('')
         setEmail('')
-        console.log(helpQuery, 'help');
     }
 
     const knowMoreSubmit=(e)=>{
@@ -513,7 +511,7 @@ const Home = () => {
                             <Col md={{ span: 3, offset: 2 }} className="sec5-div2">
                                 <h6 className="sec5-coach">COACH</h6>
                                 <img src="../assets/img/brain-ai.svg" />
-                                <p className='sec5-par'><span className='sec5-span'> The Coach </span> teach you what you need to learn, He will also guide you to your right path</p>
+                                <p className='sec5-par'><span className='sec5-span'> The Coach </span> teaches you what you need to learn. He will also guide you to the right career path.</p>
                             </Col>
                             <Col md={3} className='z-index'>
                                 <img className="r-p-img" src="../assets/img/rahul-pink.png" alt="rahul rai" />
@@ -522,7 +520,7 @@ const Home = () => {
                         </Row>
                         <Row>
                             <Col md={3} className="sec5-div3">
-                                <p className='sec5-par'><strong style={{ fontSize: "1.2rem" }}>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix on to the coding world</p>
+                                <p className='sec5-par'><strong style={{ fontSize: "1.2rem" }}>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix onto the coding world.</p>
                                 <img className='coding-enblr-img' src="../assets/img/coding-enbler.png" />
                             </Col>
                             <Col md={{ offset: 3 }}>
@@ -715,8 +713,8 @@ const Home = () => {
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Beatrice Fox</Col>
-                                                <Col className="col-pd-0 prof-dsgn">Data Analys</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Ryan Nguyen</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Data Analysis</Col>
                                             </Row>
                                         </Col>
                                     </Row>

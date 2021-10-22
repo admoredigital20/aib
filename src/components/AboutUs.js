@@ -6,6 +6,8 @@ import Footer from './Footer';
 import Navbar1 from './Navbar';
 import { motion } from "framer-motion"
 
+import ModalVideo from 'react-modal-video'
+
 function AboutUs() {
     const { pathname } = useLocation();
 
@@ -14,6 +16,19 @@ function AboutUs() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
+
+
+
+    
+    const [isOpen10, setOpen10] = useState(false);
+    const [isOpen11, setOpen11] = useState(false);
+    const [isOpen12, setOpen12] = useState(false);
+    const [isOpen13, setOpen13] = useState(false);
+    const [isOpen14, setOpen14] = useState(false);
+    const [isOpen15, setOpen15] = useState(false);
+
+
+
     return (
         <div>
             <Navbar1 />
@@ -53,6 +68,12 @@ function AboutUs() {
 
             <section className='about-us-3' onMouseEnter={() => { setAnimate(true) }} onMouseLeave={() => { setAnimate(false) }} >
                 <Container >
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen15} videoId="7fvlCJqwNek" onClose={() => setOpen15(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen10} videoId="oZANGdv59n0" onClose={() => setOpen10(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen11} videoId="OwSec2a857w" onClose={() => setOpen11(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen13} videoId="n4Za3pWxAns" onClose={() => setOpen13(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen14} videoId="zPq8466o7gI" onClose={() => setOpen14(false)} />
+                    <ModalVideo channel='youtube' autoplay isOpen={isOpen12} videoId="Ar6Fhff7NUk" onClose={() => setOpen12(false)} />
                     <Row className='about-us-3-row'>
                         <Col md={3}>
                             <h1>What makes us Different</h1>
@@ -78,7 +99,7 @@ function AboutUs() {
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
-                                                <img className="sec4-img2" src="../assets/img/sec4-img6.png" alt="sec4-img2" />
+                                                    <img className="sec4-img2" onClick={() => setOpen15(true)} src="../assets/img/hww-small-group.gif" alt="sec4-img2" />
                                             </Col>
                                         </Row>
                                     </motion.div>
@@ -100,7 +121,7 @@ function AboutUs() {
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
-                                                <img className="sec4-img2" src="../assets/img/sec4-img2.png" alt="sec4-img2" />
+                                            <img className="sec4-img2"  src="../assets/img/hww-lightBoard.gif" onClick={() => setOpen10(true)} alt="sec4-img2"  />
                                             </Col>
                                         </Row>
                                     </motion.div>
@@ -123,7 +144,7 @@ function AboutUs() {
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
-                                                <img className="sec4-img2" src="../assets/img/sec4-img5.png" alt="sec4-img2" />
+                                            <img className="sec4-img2" src="../assets/img/hww-codingAssis.gif" onClick={() => setOpen11(true)} alt="sec4-img2" />
                                             </Col>
                                         </Row>
                                     </motion.div>
@@ -147,7 +168,7 @@ function AboutUs() {
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
-                                                <img className="sec4-img2" src="../assets/img/sec4-img1.png" alt="sec4-img2" />
+                                                <img className="sec4-img2" src="../assets/img/hww-pay-as-you.gif" onClick={() => setOpen12(true)} alt="sec4-img2" />
                                             </Col>
                                         </Row>
                                     </motion.div>
@@ -170,7 +191,7 @@ function AboutUs() {
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
-                                                <img className="sec4-img2" src="../assets/img/sec4-img.png" alt="sec4-img2" />
+                                            <img className="sec4-img2" src="../assets/img/hww-domain-sp.gif" onClick={() => setOpen13(true)} alt="sec4-img2" />
                                             </Col>
                                         </Row>
                                     </motion.div>
@@ -192,7 +213,7 @@ function AboutUs() {
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
-                                                <img className="sec4-img2" src="../assets/img/sec4-img3.png" alt="sec4-img2" />
+                                                <img className="sec4-img2" src="../assets/img/hww-cert.gif" onClick={() => setOpen14(true)} alt="sec4-img2" />
                                             </Col>
                                         </Row>
                                     </motion.div>
@@ -213,9 +234,6 @@ function AboutUs() {
                             <h1>Dr. Rahul Rai</h1>
                             <p>CEO and Founder of AIBrilliance</p>
                             <LinkContainer to="/learnmore"><Button className="btn-light sec5-btn"><span className='sec4-btn-tiltle1'>Learn More</span> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" style={{fill:"#43abfb"}}/></svg></Button></LinkContainer>
-                        </Col>
-                        <Col className='about-us-4-img' md={{ offset: 3, span: 3 }} sm={6}>
-                            <img src="../assets/img/learn-more-bw.png" alt="" />
                         </Col>
                     </Row>
                 </Container>

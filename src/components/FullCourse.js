@@ -38,7 +38,6 @@ export default function FullCourse() {
 
     useEffect(() => {
         
-        console.log(taskQuery,"kkkk");
     }, [])
 
     const [items, setItems] = useState([])
@@ -47,7 +46,6 @@ export default function FullCourse() {
     useEffect(() => {
         if (!loading) {
             if (!error) {
-                console.log(courses.results.data, 'full');
                 setItems(courses.results.data)
             }
         }

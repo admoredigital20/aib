@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { listCourse } from '../actions/courseActions';
 import { useDispatch } from 'react-redux';
 import Calender from './Calender';
+import Signin from './Signin';
 
 var FontAwesome = require('react-fontawesome')
 
@@ -16,7 +17,6 @@ export default function CourseDetails(props) {
     const { loading, error, courses } = courseList;
     const location = useLocation()
     const cid = location.state?.cid
-    console.log(cid,"id cid");
     
   
 
@@ -28,7 +28,6 @@ export default function CourseDetails(props) {
     useEffect(() => {
       window.scrollTo(0, 0);
       dispatch(listCourse())
-      console.log(courses);
     }, [pathname,dispatch]);
 
     
@@ -41,12 +40,18 @@ export default function CourseDetails(props) {
                     return elm.id == cid
                 })
                 setSc(IC[0])
-                console.log(sc.name,"ppp");
 
             }
         }
         
     }, [courses])
+
+    useEffect(() => {
+        if(sc){
+            // console.log(sc.course_topics);
+        }
+        
+    }, [sc])
 
     useEffect(() => {
         const sections = document.querySelectorAll(".section");
@@ -151,26 +156,28 @@ export default function CourseDetails(props) {
                         <Row className="cd1-detail-row" >
                             <Col md={{ span: 3, offset: 7 }} xs={{ span: 5, offset: 5 }} className="cd1-detail-bar" >
                                 <img src="../assets/img/cd-details-img.jpg" />
-                                <Row className="cd1-dtl-grp mt-4">
+                                {/* <Row className="cd1-dtl-grp mt-4">
                                     <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-left" > </p></Col >
                                     <Col md={6} xs={12}> < p className="cd1-detail-bar-pargra cd1-p-r8" > Slots left </p></Col >
-                                </Row>
+                                </Row> */}
                                 <Row className="cd1-dtl-grp">
                                     <Col className="price" >
-                                        <h2 className='cd1-detail-free' > {sc.course_type}</h2> 
+                                        {/* <h2 className='cd1-detail-free mt-3' > {sc.course_type}</h2>  */}
                                         {/* <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p> */}
                                     </Col >
-                                    <Col > < h3 className='cd1-detail-bar-h2 cd1-p-r8 mt-3 mb-0'> 8 / 25 </h3></Col >
+                                    {/* <Col > < h3 className='cd1-detail-bar-h2 cd1-p-r8 mt-3 mb-0'> 8 / 25 </h3></Col > */}
+                                </Row>
+                                <Row >
+                                    <Col md={12} className="registerForMore" >
+                                       {/* <Link to={{pathname: "/payment",state: { cid2: cid },}}> <Button className='cd1-detail-row-btn' >  Register For More  </Button> </Link>  */}
+                                       <Signin btnName="Register For More"/>
+                                    </Col > 
                                 </Row>
                                 {/* <Row >
-                                    <Col md={12} >
-                                       <Link to={{pathname: "/payment",state: { cid2: cid },}}> <Button className='cd1-detail-row-btn' > Enroll Now </Button> </Link> </Col > 
-                                </Row> */}
-                                <Row >
                                     <Col >
                                         <p className='cd1-detail-row-par' > Batch Starting on <h6 className="">15th Jun 21</h6></p>
                                     </Col >
-                                </Row>
+                                </Row> */}
                             </Col >
                         </Row>
                         <Row className="mt-4 mb-4 mbl-cd1">
@@ -180,30 +187,31 @@ export default function CourseDetails(props) {
 
                             <Col xs={6}>
                                 <Row>
-                                    <Col>
+                                    {/* <Col>
                                         <Row>
                                             <p>Discounted Price</p>
                                         </Row>
                                         <Row>
                                             <Col><h2 className='cd1-detail-free' > Free </h2> <p className='cd1-detail-bar-h2 cd1-detail-old'> $1200 </p></Col>
                                         </Row>
-                                    </Col>
+                                    </Col> */}
 
-                                    <Col >
+                                    {/* <Col >
                                         <Row>
                                             <p className="cd1-p-r8">Slots left</p>
                                         </Row>
                                         <Row>
                                             <p className="cd1-p-r8">8/25</p>
                                         </Row>
-                                    </Col>
+                                    </Col> */}
+                                </Row>
+                                <Row>
+                                    <Button className='cd1-detail-row-btn' > Register For More </Button>
+                                    <Signin/>
                                 </Row>
                                 {/* <Row>
-                                    <Button className='cd1-detail-row-btn' > Enroll Now </Button>
-                                </Row> */}
-                                <Row>
                                     <p className='cd1-detail-row-par' > Batch Starting on <h6 className="">15th Jun 21</h6></p>
-                                </Row>
+                                </Row> */}
                             </Col>
                             <Col md={{ offset: 1 }} xs={0}>
                             </Col>
@@ -214,7 +222,7 @@ export default function CourseDetails(props) {
                             <Col md={4}
                                 className="cd2-details" >
                                 <h1 className="cd2-heading" > {sc.name} <br /> {sc.sub_name} </h1> <p className="cd2-dtl-p"> In this course we’ ll introduce you to the essentials of the Python language, development culture, and important parts of the Python standard library.This course will help you develop the foundation you need to work on any Python project </p>
-                                <Row className="cd2-prof-details" >
+                                {/* <Row className="cd2-prof-details" >
                                     <Col className="col-pd-0 mw-mc" >
                                         <img src="../assets/img/Rectangle-WS.png"
                                             className="prof-pic"
@@ -226,13 +234,20 @@ export default function CourseDetails(props) {
                                             <Col className="col-pd-0 cd2-prof-name" > {sc.author_name},   {sc.author_position}</Col>
                                         </Row>
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </Col>
                             <Row className="cd2-mouse" >
-                                <p className="cd2-more-details" > More Details < img src="../assets/img/mouseBlack.png" style={{paddingBottom:'5px'}} /> </p>
+                                <p className="cd2-more-details" > More Details 
+                                <div>
+                                < img src="../assets/img/mouseBlack.png" style={{paddingBottom:'5px'}} /> 
+                                </div>
+                                </p>
                             </Row >
 
                         </Row>
+                        <ul>
+                                
+                        </ul>
                         <Row className="cd3 section" id="cd3" >
                             <Col md={7} >
                                 <Accordion >
@@ -341,7 +356,7 @@ export default function CourseDetails(props) {
                                         < p > Earn a Certificate upon completion </p>
                                     </Row >
                                     <Row >
-                                        < img src="../assets/img/cert-cd3.jpg" />
+                                        < img src="../assets/img/cert-cd3.png" />
                                     </Row>
                                 </div >
                                 <div className="cd3-tags" >
@@ -496,7 +511,7 @@ export default function CourseDetails(props) {
                                                     <img className="cd5-baby" src="../assets/img/cd-baby.png" alt="" />
                                                 <div className="get-eva-det" >
                                                     <h6> Get Evaluated! </h6>
-                                                    <p> During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes </p>
+                                                    <p> During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes. </p>
                                                 </div >
                                             </div>
                                         </Row >

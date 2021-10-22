@@ -20,7 +20,6 @@ function ContactUs(props) {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(contactList(name, email, query, phone_number))
-        // console.log(helpQuery, 'help');/
         setName('')
         setQuery('')
         setEmail('')

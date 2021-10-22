@@ -15,7 +15,6 @@ function HomeSlider() {
     function sliderTime() {
         setTimeout(function () {
             setTimeup(timeup + 1)
-            console.log(timeup);
         }, 10000);
     }
 
@@ -28,7 +27,6 @@ function HomeSlider() {
                     setDisplaying(element)
                 }
                 , i * 3000);
-            console.log("inside");
         });
         sliderTime()
     }, [timeup]);

@@ -12,13 +12,11 @@ function Api() {
         axios.get('https://randomuser.me/api/0.8/?results=20')
       .then(function (response) {
         
-        console.log(response.data.results[0].user.gender);
         setItem(response.data.results[0].user)
 
       })
       .catch(function (error) {
         // handle error
-        console.log(error,'heyy');
       })
       .then(function () {
         // always executed

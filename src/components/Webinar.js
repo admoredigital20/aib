@@ -63,7 +63,6 @@ function Webinar() {
 
     useEffect(() => {
         dispatch(webinarCourse())
-        console.log(webinar, 'webinar');
     }, [])
 
     useEffect(() => {
@@ -107,7 +106,7 @@ function Webinar() {
 
     return (
         <div>
-            <section className="sec10">
+            <section className="sec10" id="sec10">
                 <Container>
                     <Row><h2 className="sec10-h2">Webinars</h2></Row>
                     <Row className="justify-content-md-center">

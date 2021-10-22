@@ -5,11 +5,12 @@ import { register, signin, signout } from '../actions/userAction';
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
 
-export default function Signin() {
+export default function Signin(props) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('')
+
 
     // const redirect = props.location.search ? props.location.search.split('=')[1]: '/';
 
@@ -24,14 +25,11 @@ export default function Signin() {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(signin(email, password))
-        console.log(error, 'error1');
-        // console.log(userInfo,"blah");
     }
 
     const submitCreateHandler = (e) => {
         e.preventDefault()
         dispatch(register(username, password, email))
-        console.log(userCreatedInfo, 'regidter');
         handleClose1()
         handleShow()
     }
@@ -58,7 +56,16 @@ export default function Signin() {
     const handleClose3 = () => setShow3(false);
     const handleShow3 = () => setShow3(true);
 
-    console.log(userInfo, "userinfo");
+    const [signInName, setSignInName] = useState("Sign In")
+
+    useEffect(() => {
+        
+        if(props.btnName){
+            setSignInName(props.btnName)
+        }
+
+    }, [])
+
 
     useEffect(() => {
         if (userInfo) {
@@ -74,7 +81,6 @@ export default function Signin() {
             {userInfo ?
                 (
                     <>
-                        
                         <DropdownButton id="dropdown-basic-button" className="cdnav-signed-btn" title={userInfo.name}>
                             <Dropdown.Item onClick={signoutHandler}>Sign Out</Dropdown.Item>
                         </DropdownButton>
@@ -83,7 +89,7 @@ export default function Signin() {
                 :
                 (
                     <Button className="signin-nav" onClick={handleShow}>
-                        Sign In
+                        {signInName}
                     </Button>
                 )
             }

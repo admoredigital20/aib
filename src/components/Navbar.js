@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap'
-import { Container, Navbar, Nav, Modal, Button, Form, Row, Col } from "react-bootstrap"
+import { Container, Navbar, Nav, } from "react-bootstrap"
 import Signin from './Signin';
 import { withRouter } from 'react-router';
 import { useHistory } from 'react-router-dom'
@@ -14,7 +14,6 @@ const Navbar1 = (history) => {
    const redirect=()=>{
       history1.push('/')
    }
-    console.log(history,'his');
 
     const getclr=(curr)=>{
         if(history.location.pathname === curr){
@@ -50,7 +49,7 @@ const Navbar1 = (history) => {
                         {/* <LinkContainer style={{color: getclr('/')}} to=""><Nav.Link >Home</Nav.Link></LinkContainer> */}
                         <LinkContainer style={{color: getclr('/')}} onClick={redirect} to="#"><Nav.Link>Home</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/fullcourse')}} to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
-                        <LinkContainer style={{color: getclr('/events')}} to="/events"><Nav.Link>Events</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color:"#fff"}} to="#sec10"><Nav.Link>Events</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/aboutus')}} to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/faq')}} to="/faq"><Nav.Link>FAQ</Nav.Link></LinkContainer>
                         <Signin />

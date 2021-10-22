@@ -801,7 +801,8 @@ body {
 
 .course-detail {
   position: absolute;
-  bottom: 2rem;
+  /* bottom: 2rem; */
+  top: 13rem;
   padding-right: 18px;
 }
 
@@ -1689,10 +1690,22 @@ body {
 .cd2-more-details {
   text-align: center;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
 }
 
 .cd2-more-details img {
   width: 18px;
+  position: absolute;
+  animation: MoveUpDown 1s linear infinite;
+  left: 0;
+  bottom: 0;
+}
+
+.cd2-more-details div {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 10px;
 }
 
 .cd2-details {
@@ -4603,12 +4616,14 @@ a {
 .sec0 .bnr-play img {
   margin-right: 20px;
   width: 8%;
+  cursor: pointer;
 }
 
 .sec0 .bnr-play h6 {
   align-self: center;
   font-size: 1.2rem;
   font-weight: 300;
+  cursor: pointer;
 }
 
 .sec0 .bnr-img {
@@ -5190,5 +5205,25 @@ a {
                 0 0 0 2rem rgba(255,255,255, 0.05),
                 0 0 0 5rem rgba(255,255,255, 0.05),
                 0 0 0 8rem rgba(255,255,255, 0);
+  }
+}
+
+
+.modalNewBnr .modal-dialog {
+  width: fit-content;
+}
+
+.registerForMore .signin-nav {
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 10px;
   }
 }

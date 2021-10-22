@@ -17,7 +17,6 @@ function HireStudent(props) {
    const submitHandler=(e)=>{
        e.preventDefault()
        dispatch(hireStudent(name,email,query,phone_number))
-       console.log(hireQurey,'hire');
        setName('')
         
         setEmail('')
@@ -32,7 +31,6 @@ function HireStudent(props) {
                <Col md={7} className='hirestudent-first'>
                   <Container className='hirestudent-cntnr'>
                       <h1 >Hire our students !</h1>
-                      <p>Get free access to the best talent !</p>
                       <div className='hirestudent-div'>
                           <Container className='div-conatiner'>
                             <p>Why Our Students ?</p>

@@ -17,7 +17,6 @@ export default class AiSlider extends React.PureComponent {
 
     
     componentWillReceiveProps(pP) {
-        console.log(pP,"k");
         this.setState({SN:this.props.sn})
         this.slider.slickGoTo(this.state.SN)
     }

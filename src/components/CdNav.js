@@ -12,9 +12,6 @@ import { withRouter } from 'react-router';
 
 const CdNav = (history) => {
 
-    useEffect(()=>{
-        console.log(history,"isthri"); 
-    })
    
    
     const getclr=(curr)=>{

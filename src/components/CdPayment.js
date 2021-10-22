@@ -14,7 +14,6 @@ import Signin from './Signin';
 
 
 const CdPayment=(history)=> {
-    console.log(history,'hi');
     const courseList = useSelector((state) => state.courseList);
     const { loading, error, courses } = courseList;
     const paymentReducers=useSelector(state=>state.paymentReducers)
@@ -24,7 +23,6 @@ const CdPayment=(history)=> {
     const [sdkReady,setSdkReady] =useState(false)
     const location = useLocation()
     const cid = location.state?.cid2
-    console.log(cid,'idd');
 
    
     const [sc, setSc] = useState([])
@@ -34,7 +32,6 @@ const CdPayment=(history)=> {
     // const price
     useEffect(() => {      
         dispatch(listCourse())
-        console.log(courses,'crsees');
        
       }, [dispatch]);
 
@@ -45,7 +42,6 @@ const CdPayment=(history)=> {
                     return elm.id == cid
                 })
                 setSc(IC[0])
-                console.log(sc.name,"ppppp");
 
             }
         }
@@ -80,7 +76,6 @@ const CdPayment=(history)=> {
                  //  history.push('/')   
      }
      if(paymentStatus){
-        console.log(paymentStatus.payment_redirect_page,'yoo');
         // history.push(paymentStatus.payment_redirect_page)
         window.location.href=paymentStatus.payment_redirect_page
         
