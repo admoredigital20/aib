@@ -63,6 +63,7 @@ function Webinar() {
 
     useEffect(() => {
         dispatch(webinarCourse())
+        console.log(webinar, 'webinar');
     }, [])
 
     useEffect(() => {
@@ -106,7 +107,7 @@ function Webinar() {
 
     return (
         <div>
-            <section className="sec10" id="sec10">
+            <section className="sec10">
                 <Container>
                     <Row><h2 className="sec10-h2">Webinars</h2></Row>
                     <Row className="justify-content-md-center">
@@ -138,14 +139,14 @@ function Webinar() {
                                 webinarError ? (<MessageBox>{webinarError}</MessageBox>) :
                                     items ? (
                                         items.map((elem) => {
-                                            const { id, date, image, name, webinar_link, status, time } = elem;
+                                            const { id, date, image, name, webinar_link,youtube_link, status, time } = elem;
                                             return (
 
                                                 <>
 
                                                     <Col className="web1-col mt-4" md={4} >
-
-                                                        <button className="webinar-btn" variant="light" onClick={handleShow}>
+                                                        <a href={youtube_link} target="_blank">
+                                                        <button className="webinar-btn" variant="light" >
                                                             <div className="web1-main">
                                                                 <img className="web1-img" src={image} />
                                                                 <div className="web1-content">
@@ -154,7 +155,7 @@ function Webinar() {
                                                                 </div>
                                                             </div>
                                                         </button>
-
+                                                        </a>
                                                     </Col>
 
 

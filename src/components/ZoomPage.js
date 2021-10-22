@@ -4,8 +4,9 @@ import { Col, Container, Row } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 import { LinkContainer } from 'react-router-bootstrap'
 
-function ZoomPage() {
+function ZoomPage(props) {
     const [joinMeeting, setJoinMeeting] = useState(false)
+    console.log(props.webId,"kk");
     return (
         <div>
             <Container>
