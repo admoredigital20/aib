@@ -32,6 +32,7 @@ export default function CourseDetails(props) {
 
     
     const [sc, setSc] = useState([])
+    const [obj, setObj] = useState([])
 
     useEffect(() => {
         if (!loading) {
@@ -40,18 +41,13 @@ export default function CourseDetails(props) {
                     return elm.id == cid
                 })
                 setSc(IC[0])
-
+                setObj(IC[0].course_topics)
+                console.log(IC[0].course_topics,"kk");
             }
         }
         
     }, [courses])
 
-    useEffect(() => {
-        if(sc){
-            // console.log(sc.course_topics);
-        }
-        
-    }, [sc])
 
     useEffect(() => {
         const sections = document.querySelectorAll(".section");
@@ -170,7 +166,7 @@ export default function CourseDetails(props) {
                                 <Row >
                                     <Col md={12} className="registerForMore" >
                                        {/* <Link to={{pathname: "/payment",state: { cid2: cid },}}> <Button className='cd1-detail-row-btn' >  Register For More  </Button> </Link>  */}
-                                       <Signin btnName="Register For More"/>
+                                       <Signin btnName="Register For More Information"/>
                                     </Col > 
                                 </Row>
                                 {/* <Row >
@@ -206,7 +202,7 @@ export default function CourseDetails(props) {
                                     </Col> */}
                                 </Row>
                                 <Row>
-                                    <Button className='cd1-detail-row-btn' > Register For More </Button>
+                                    <Button className='cd1-detail-row-btn' > Register For More Information</Button>
                                     <Signin/>
                                 </Row>
                                 {/* <Row>
@@ -245,18 +241,40 @@ export default function CourseDetails(props) {
                             </Row >
 
                         </Row>
-                        <ul>
-                                
-                        </ul>
+                        {/* <ul>
+                                {
+                                    obj ? (
+                                        Object.entries(obj).map(([key, value],index) => (
+                                            <Accordion defaultActiveKey={index}
+                                                className="cd3-course-acc" >
+                                                <Accordion.Item eventKey={index} key={index} >
+                                                    <Accordion.Header > {value.ModuleName} </Accordion.Header>
+                                                    <Accordion.Body className="acc-body" >
+                                                        <Row className="acc-body-row" >
+                                                            <Col > < FontAwesome className="cd3-acc-icon"
+                                                                name="play-circle"
+                                                                style={
+                                                                    { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#898989' }
+                                                                }
+                                                            />&nbsp;&nbsp;&nbsp;&nbsp;0.1 Introduction</Col >
+                                                        </Row>
+                                                    </Accordion.Body >
+                                                </Accordion.Item>
+                                            </Accordion >
+                                        ))
+                                    ) : null
+                                        
+                                }
+                        </ul> */}
                         <Row className="cd3 section" id="cd3" >
                             <Col md={7} >
                                 <Accordion >
                                     <Accordion.Item className="main-acc-item" >
-                                        <Accordion.Header className="acc-header" > What will you learn ? < br /> < p className="acc-h-p" > 4 Modules• 4 Mini Project• 1 Major Project• 36 h 15 m total length </p></Accordion.Header >
+                                        <Accordion.Header className="acc-header" > What will you learn ? < br /> < p className="acc-h-p" > 8 Modules• 2 Mini Projects• 1 Major Project• 36 h of total live interaction </p></Accordion.Header >
 
                                     </Accordion.Item>
                                 </Accordion >
-                                <Accordion defaultActiveKey="0"
+                                {/* <Accordion defaultActiveKey="0"
                                     className="cd3-course-acc" >
                                     <Accordion.Item eventKey="0" >
                                         <Accordion.Header > 0. Welcome to the information visualization </Accordion.Header>
@@ -345,7 +363,30 @@ export default function CourseDetails(props) {
                                             </Row>
                                         </Accordion.Body >
                                     </Accordion.Item>
-                                </Accordion >
+                                </Accordion > */}
+                                {
+                                    obj ? (
+                                        Object.entries(obj).map(([key, value],index) => (
+                                            <Accordion defaultActiveKey={index}
+                                                className="cd3-course-acc" key={index} >
+                                                <Accordion.Item eventKey={index} >
+                                                    <Accordion.Header > {value.ModuleName} </Accordion.Header>
+                                                    <Accordion.Body className="acc-body" >
+                                                        <Row className="acc-body-row" >
+                                                            <Col > < FontAwesome className="cd3-acc-icon"
+                                                                name="play-circle"
+                                                                style={
+                                                                    { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: '#898989' }
+                                                                }
+                                                            />&nbsp;&nbsp;&nbsp;&nbsp;0.1 Introduction</Col >
+                                                        </Row>
+                                                    </Accordion.Body >
+                                                </Accordion.Item>
+                                            </Accordion >
+                                        ))
+                                    ) : null
+                                        
+                                }
                             </Col>
                             <Col md={{ span: 3, offset: 1 }} >
                                 <div className="cd3-certi" >
@@ -399,11 +440,11 @@ export default function CourseDetails(props) {
                                     <Col className='coach-padding' >
                                         <img src="../assets/img/couch2.png" width="350" />
                                         <div style={{padding:"1rem"}}>
-                                        <h4 className="cd4-coach-name" > Dr.Rahul Rai </h4>
+                                        <h4 className="cd4-coach-name" > Dr Rahul Rai </h4>
                                         <h4 className="cd4-coach-name1" > AI Coach </h4>
                                         <div className="cd4-dtls-bottom" >
                                             <h6 > About Me </h6>
-                                            <p> Dean’ s Distinguished Professor at Clemson University, USA and An expert in AI and Analytics and have led several prestigious research initiatives and innovations in intelligent manufacturing, ML and AI, including a rich stint with NASA </p>
+                                            <p> Dean’ s Distinguished Professor at Clemson University, USA and An expert in AI and Analytics and have led several prestigious research initiatives and innovations in intelligent manufacturing, ML and AI</p>
                                         </div >
                                         </div>
                                     </Col>
@@ -412,11 +453,11 @@ export default function CourseDetails(props) {
                                     <Col className='coach-padding'>
                                         <img src="../assets/img/couch1.png" width="350" />
                                         <div style={{padding:"1rem"}}>
-                                        <h4 className="cd4-coach-name" > Shubendu </h4>
+                                        <h4 className="cd4-coach-name" > Shubhendu Singh </h4>
                                         <h4 className="cd4-coach-name1" > Coding Enabler </h4>
                                         <div className="cd4-dtls-bottom" >
                                             <h6 > About Me </h6>
-                                            <p> Dean’ s Distinguished Professor at Clemson University, USA and An expert in AI and Analytics and have led several prestigious research initiatives and innovations in intelligent manufacturing, ML and AI, including a rich stint with NASA </p>
+                                            <p> Description of Coding Assistants in Bootcamp page: Expert in deep learning methods and have extensively used machine learning in several engineering applications over the last four years. Passionate about programming and sharing knowledge with others. </p>
                                         </div >
                                         </div>
                                     </Col>
@@ -463,7 +504,7 @@ export default function CourseDetails(props) {
                                         /> <div className="verticalLine" > </div>
                                     </Col >
                                     <Col className="cd5-det" >
-                                        <h5 className='cd5-h5'> No’ of Modules </h5> <p > 4 Modules and 18 lessons </p> </Col >
+                                        <h5 className='cd5-h5'> No. of Modules </h5> <p > 4 Modules and 18 lessons </p> </Col >
 
                                 </Row>
                                 <Row >

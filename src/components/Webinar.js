@@ -70,9 +70,7 @@ function Webinar() {
         if (!webinarLoading) {
             if (!webinarError) {
                 if (webinar.results.data) {
-                    setItems(webinar.results.data.filter((curElem) => {
-                        return curElem.status == "Next"
-                    }))
+                    setItems(webinar.results.data)
                 }
             }
         }
@@ -112,9 +110,9 @@ function Webinar() {
                     <Row><h2 className="sec10-h2">Webinars</h2></Row>
                     <Row className="justify-content-md-center">
                         <Col className="all-course-cat mb-5">
-                            <div className="course-cat" onClick={(e) => { setItems(webinar.results.data); activeBtn(e); btnPast(); }} ><h5 className=''>All</h5></div>
-                            <div className="course-cat" onClick={(e) => { filterItem('Next'); activeBtn(e) }} ><h5 id="upc" className="course-cat-active1">Upcoming</h5></div>
-                            <div className="course-cat" onClick={(e) => { filterItem('Completed'); activeBtn(e); btnPast(); }}><h5 className=''>Past</h5></div>
+                            <div className="course-cat" onClick={(e) => { setItems(webinar.results.data); activeBtn(e); btnPast(); }} ><h5 className="course-cat-active1">All</h5></div>
+                            <div className="course-cat" onClick={(e) => { filterItem('Upcoming'); activeBtn(e) }} ><h5 id="upc" className="">Upcoming</h5></div>
+                            <div className="course-cat" onClick={(e) => { filterItem('Past'); activeBtn(e); btnPast(); }}><h5 className=''>Past</h5></div>
                         </Col>
                     </Row>
 
@@ -149,6 +147,7 @@ function Webinar() {
                                                         <button className="webinar-btn" variant="light" >
                                                             <div className="web1-main">
                                                                 <img className="web1-img" src={image} />
+                                                                <h4 className="web-name">{name}</h4>
                                                                 <div className="web1-content">
                                                                     <br />
                                                                     <h6>{date}</h6>
@@ -157,7 +156,6 @@ function Webinar() {
                                                         </button>
                                                         </a>
                                                     </Col>
-
 
                                                 </>
                                             )

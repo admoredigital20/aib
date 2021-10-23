@@ -94,16 +94,16 @@ const Home = () => {
     var hww12 = "Free courses are offered in asynchronous mode (material posted online)."
 
     var hww2 = "Paid courses are offered in synchronous online learning format in small batch sizes (5-25  students). Live course instruction"
-    var hww22 = "by the coach occurring at a set time Students are required to log in and participate in class at a specific time each week."
+    var hww22 = "by the coach occurring at a set time. Students are required to log in and participate in class at a specific time each week."
   
-    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition, set weekly office hours "
-    var hww33 = "(different from live lectures). To ask coding and mini-project,related questions In addition set weekly office hours (different from live lectures) to ask coding and mini-project related questions."
+    var hww3 = "Live Python-based coding lectures taught by coding enablers (Teaching Assistants). In addition, set weekly office hours"
+    var hww33 = "(different from live lectures) to ask coding and mini-project, related questions."
   
     var hww4 = " Complete a set of Python-based mini projects related to instruction material and a major project "
-    var hww44 = "related to your choice of domain"
+    var hww44 = "related to your choice of domain."
   
-    var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once acertificate is issued, we also  "
-    var hww55 = "provide a personalized referral for job-related referral inquiries. Once acertificate is issued, we also provide a personalized referral for job-related referral inquiries."
+    var hww5 = "Earn a course specialization certificate that can be shared on social media platforms. Once a certificate is issued, we also  "
+    var hww55 = "provide a personalized referral for job-related referral inquiries."
 
     const [hwwContent, setHwwContent] = useState(`${hww1}`)
     const [hwwContent1, setHwwContent1] = useState(`${hww12}`)
@@ -409,7 +409,7 @@ const Home = () => {
                                         <div className="sec4-div">
                                             <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
                                             <Row><h5>Redefining Learning
-                                                <br />With Light-board</h5></Row>
+                                                <br />With Light board</h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
                                                     <p>See How <br />Lightboard <br />Works</p>
@@ -425,7 +425,7 @@ const Home = () => {
                                         <div className="sec4-div">
                                             <Row><img className="icon" src="../assets/img/sec4-img-icon3.png" alt="Redefining Learning With Light-board" /></Row>
                                             <Row><h5>In-person Coding
-                                                <br />Assitant Help</h5></Row>
+                                                <br />Assistant Help</h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
                                                     <p>See How <br />Lightboard <br />Works</p>
@@ -520,7 +520,7 @@ const Home = () => {
                         </Row>
                         <Row>
                             <Col md={3} className="sec5-div3">
-                                <p className='sec5-par'><strong style={{ fontSize: "1.2rem" }}>Coding Enablers’</strong> will be your teaching assistant, who will help you through the matrix onto the coding world.</p>
+                                <p className='sec5-par'><strong style={{ fontSize: "1.2rem" }}>Coding Enablers</strong> will be your teaching assistants, who will help you through the matrix onto the coding world.</p>
                                 <img className='coding-enblr-img' src="../assets/img/coding-enbler.png" />
                             </Col>
                             <Col md={{ offset: 3 }}>
@@ -600,7 +600,7 @@ const Home = () => {
                         <Row>
                             <Col md={4} className="std-feedback">
                                 <Row><h4>Student <br />Feedbacks.</h4></Row>
-                                <Row><p>Our Students are proudly rendering <br />their service in the following companies</p></Row>
+                                {/* <Row><p>Our Students are proudly rendering <br />their service in the following companies</p></Row> */}
                                 <br />
                                 <Row className="sec5-btn-row"><Col>
                                     {userInfo ?
@@ -713,8 +713,8 @@ const Home = () => {
                                         </Col>
                                         <Col className="col-pd-0">
                                             <Row>
-                                                <Col md="12" className="col-pd-0 prof-name">Ryan Nguyen</Col>
-                                                <Col className="col-pd-0 prof-dsgn">Data Analysis</Col>
+                                                <Col md="12" className="col-pd-0 prof-name">Ryan</Col>
+                                                <Col className="col-pd-0 prof-dsgn">Nguyen</Col>
                                             </Row>
                                         </Col>
                                     </Row>

@@ -115,6 +115,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show3} onHide={handleClose3}>
                     <Modal.Body>
+                        <button onClick={handleClose3}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider2.png")`, backgroundSize: "cover" }}>
@@ -139,6 +140,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show4} onHide={handleClose4}>
                     <Modal.Body>
+                    <button onClick={handleClose4}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider4.png")`, backgroundSize: "cover" }}>
@@ -163,6 +165,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show5} onHide={handleClose5}>
                     <Modal.Body>
+                    <button onClick={handleClose5}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider3.png")`, backgroundSize: "cover" }}>
@@ -188,6 +191,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show6} onHide={handleClose6}>
                     <Modal.Body>
+                    <button onClick={handleClose6}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider4.png")`, backgroundSize: "cover" }}>

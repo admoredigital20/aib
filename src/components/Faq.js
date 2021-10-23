@@ -71,7 +71,7 @@ function Faq() {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>	Do I need any particular laptop, computers, or software for attending online courses?</Accordion.Header>
                                     <Accordion.Body>
-                                    	All you need are 1) desktop computer or laptop that has common internet browsers installed on them, 2) Decent internet connection that allows video streaming or video play, and 3) 
+                                    	All you need are 1) desktop computer or laptop that has common internet browsers installed on them, 2) Decent internet connection that allows video streaming or video play, and 3) A microphone and headset combo that allows you to listen and speak during interactive sessions.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>

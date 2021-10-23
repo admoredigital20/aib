@@ -114,7 +114,7 @@ function AboutUs() {
                                     >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon.svg" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>Redefining Learning
-                                                <br />With Light-board</h5></Row>
+                                                <br />With Light board</h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
                                                 <p>See How <br />Lightboard <br />Works</p>
@@ -137,7 +137,7 @@ function AboutUs() {
                                     >
                                         <Row><img className="icon" src="../assets/img/sec4-img-icon3.png" alt="Redefining Learning With Light-board" /></Row>
                                         <Row><h5>In-person Coding
-                                                <br />Assitant Help</h5></Row>
+                                                <br />Assistant Help</h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
                                                 <p>See How <br />Lightboard <br />Works</p>

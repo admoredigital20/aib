@@ -81,6 +81,7 @@ export default function Banner() {
                 
                 <Container>
                 <Modal className="sec-10-modal sec-10-modal2 modalNewBnr" show={show3} onHide={handleClose3}>
+                    <button onClick={handleClose3}>X</button>
                     <Modal.Body className="d-flex justify-content-center">
                         <video controls>
                             <source src="../assets/vid/AIBrillianceIntroductionVideo.mp4" type="video/mp4"/>
