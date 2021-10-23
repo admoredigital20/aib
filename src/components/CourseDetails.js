@@ -217,7 +217,7 @@ export default function CourseDetails(props) {
                             id="cd2" >
                             <Col md={4}
                                 className="cd2-details" >
-                                <h1 className="cd2-heading" > {sc.name} <br /> {sc.sub_name} </h1> <p className="cd2-dtl-p"> {sc.description} </p>
+                                <h1 className="cd2-heading" > {sc.name} </h1> <p className="cd2-dtl-p"> {sc.description} </p>
                                 {/* <Row className="cd2-prof-details" >
                                     <Col className="col-pd-0 mw-mc" >
                                         <img src="../assets/img/Rectangle-WS.png"

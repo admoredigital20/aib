@@ -15,6 +15,15 @@ const Navbar1 = (history) => {
       history1.push('/')
    }
 
+    const onTop = () => {
+        if (history.location.pathname == '/') {
+            window.scrollTo(0, 5350);
+        } else {
+            //  let history = useHistory
+            history1.push('/')
+        }
+    }
+
     const getclr=(curr)=>{
         if(history.location.pathname === curr){
             
@@ -49,7 +58,7 @@ const Navbar1 = (history) => {
                         {/* <LinkContainer style={{color: getclr('/')}} to=""><Nav.Link >Home</Nav.Link></LinkContainer> */}
                         <LinkContainer style={{color: getclr('/')}} onClick={redirect} to="#"><Nav.Link>Home</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/fullcourse')}} to="/fullcourse"><Nav.Link>Bootcamp</Nav.Link></LinkContainer>
-                        <LinkContainer style={{color:"#fff"}} to="#sec10"><Nav.Link>Events</Nav.Link></LinkContainer>
+                        <LinkContainer style={{color:"#fff"}} to="#sec10" onClick={onTop}><Nav.Link>Events</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/aboutus')}} to="/aboutus"><Nav.Link>About Us</Nav.Link></LinkContainer>
                         <LinkContainer style={{color: getclr('/faq')}} to="/faq"><Nav.Link>FAQ</Nav.Link></LinkContainer>
                         <Signin />
