@@ -396,7 +396,7 @@ const Home = () => {
                                                 <br />Focused Learning </h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
-                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    <p>Watch <br />Video</p>
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
@@ -412,7 +412,7 @@ const Home = () => {
                                                 <br />With Light board</h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
-                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                <p>Watch <br />Video</p>
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
@@ -428,7 +428,7 @@ const Home = () => {
                                                 <br />Assistant Help</h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
-                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                <p>Watch <br />Video</p>
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
@@ -444,7 +444,7 @@ const Home = () => {
                                             <Row><h5>Pay-as-you-learn<br />No Bundle Fee Trap</h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
-                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                <p>Watch <br />Video</p>
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
@@ -461,7 +461,7 @@ const Home = () => {
                                                 <br />capstone project</h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
-                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                <p>Watch <br />Video</p>
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
@@ -476,7 +476,8 @@ const Home = () => {
                                             <Row><h5>Certificate and <br />Reference Guarantee </h5></Row>
                                             <Row className="sec4-grp">
                                                 <Col md={5} xs={5} className="sec4-r8">
-                                                    <p>See How <br />Lightboard <br />Works</p>
+                                                    {/* <p>See How <br />Lightboard <br />Works</p> */}
+                                                    <p>Watch <br />Video</p>
                                                     <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                                 </Col>
                                                 <Col md={7} xs={7}>
@@ -623,8 +624,8 @@ const Home = () => {
                                             </Col>
                                             <Col className="col-pd-0">
                                                 <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Alex Krolicki</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">Student</Col>
+                                                    <Col md="12" className="col-pd-0 prof-name">Alex </Col>
+                                                    <Col className="col-pd-0 prof-dsgn">Krolicki</Col>
                                                 </Row>
                                             </Col>
                                         </Row>
@@ -637,8 +638,8 @@ const Home = () => {
                                             </Col>
                                             <Col className="col-pd-0">
                                                 <Row>
-                                                    <Col md="12" className="col-pd-0 prof-name">Chandan Kumar</Col>
-                                                    <Col className="col-pd-0 prof-dsgn">Student</Col>
+                                                    <Col md="12" className="col-pd-0 prof-name">Chandan</Col>
+                                                    <Col className="col-pd-0 prof-dsgn">Kumar</Col>
                                                 </Row>
 
                                             </Col>

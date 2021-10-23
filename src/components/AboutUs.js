@@ -95,7 +95,7 @@ function AboutUs() {
                                             <br />Focused Learning </h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
-                                                <p>See How <br />Lightboard <br />Works</p>
+                                            <p>Watch <br />Video</p>
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
@@ -117,7 +117,7 @@ function AboutUs() {
                                                 <br />With Light board</h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
-                                                <p>See How <br />Lightboard <br />Works</p>
+                                            <p>Watch <br />Video</p>
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
@@ -140,7 +140,7 @@ function AboutUs() {
                                                 <br />Assistant Help</h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
-                                                <p>See How <br />Lightboard <br />Works</p>
+                                            <p>Watch <br />Video</p>
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
@@ -164,7 +164,7 @@ function AboutUs() {
                                         <Row><h5>Pay-as-you-learn<br />No Bundle Fee Trap</h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
-                                                <p>See How <br />Lightboard <br />Works</p>
+                                            <p>Watch <br />Video</p>
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
@@ -187,7 +187,7 @@ function AboutUs() {
                                                 <br />capstone project</h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
-                                                <p>See How <br />Lightboard <br />Works</p>
+                                            <p>Watch <br />Video</p>
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>
@@ -209,7 +209,7 @@ function AboutUs() {
                                         <Row><h5>Certificate and <br />Reference Guarantee </h5></Row>
                                         <Row className="sec4-grp">
                                             <Col md={5} xs={5} className="sec4-r8">
-                                                <p>See How <br />Lightboard <br />Works</p>
+                                            <p>Watch <br />Video</p>
                                                 <img className="sec4-img1" src="../assets/img/right-up-arrow.svg" alt="right-up-arrow" />
                                             </Col>
                                             <Col md={7} xs={7}>

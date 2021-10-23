@@ -134,7 +134,7 @@ export default function CourseDetails(props) {
                             } >
                             <Col md={12}
                                 className="cd1-breadcrumbs" >
-                                <h6 > Bootcamp &gt;{sc.name}  </h6>
+                                <h6 > Bootcamp &gt; {sc.name}  </h6>
 
                             </Col>
                             <Col className="cd1-play-btn" >
@@ -217,7 +217,7 @@ export default function CourseDetails(props) {
                             id="cd2" >
                             <Col md={4}
                                 className="cd2-details" >
-                                <h1 className="cd2-heading" > {sc.name} <br /> {sc.sub_name} </h1> <p className="cd2-dtl-p"> In this course we’ ll introduce you to the essentials of the Python language, development culture, and important parts of the Python standard library.This course will help you develop the foundation you need to work on any Python project </p>
+                                <h1 className="cd2-heading" > {sc.name} <br /> {sc.sub_name} </h1> <p className="cd2-dtl-p"> {sc.description} </p>
                                 {/* <Row className="cd2-prof-details" >
                                     <Col className="col-pd-0 mw-mc" >
                                         <img src="../assets/img/Rectangle-WS.png"
@@ -371,7 +371,7 @@ export default function CourseDetails(props) {
                                                 className="cd3-course-acc" key={index} >
                                                 <Accordion.Item eventKey={index} >
                                                     <Accordion.Header > {value.ModuleName} </Accordion.Header>
-                                                    <Accordion.Body className="acc-body" >
+                                                    {/* <Accordion.Body className="acc-body" >
                                                         <Row className="acc-body-row" >
                                                             <Col > < FontAwesome className="cd3-acc-icon"
                                                                 name="play-circle"
@@ -380,7 +380,7 @@ export default function CourseDetails(props) {
                                                                 }
                                                             />&nbsp;&nbsp;&nbsp;&nbsp;0.1 Introduction</Col >
                                                         </Row>
-                                                    </Accordion.Body >
+                                                    </Accordion.Body > */}
                                                 </Accordion.Item>
                                             </Accordion >
                                         ))
