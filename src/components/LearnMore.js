@@ -95,7 +95,7 @@ export default function LearnMore() {
                     </Col>
                     <Col md={11} xs={8} className="lm3-content">
                         <Row>
-                            <Col><h2>He has also curated and delivered two online courses at Coursera</h2></Col></Row>
+                            <Col><h2>I have also curated and delivered two online courses at Coursera</h2></Col></Row>
                         <Row>
                             <Col>
                                 <h4>21,500 + Students</h4>

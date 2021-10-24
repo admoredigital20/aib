@@ -457,7 +457,7 @@ export default function CourseDetails(props) {
                                         <h4 className="cd4-coach-name1" > Coding Enabler </h4>
                                         <div className="cd4-dtls-bottom" >
                                             <h6 > About Me </h6>
-                                            <p> Description of Coding Assistants in Bootcamp page: Expert in deep learning methods and have extensively used machine learning in several engineering applications over the last four years. Passionate about programming and sharing knowledge with others. </p>
+                                            <p> Expert in deep learning methods and have extensively used machine learning in several engineering applications over the last four years. Passionate about programming and sharing knowledge with others. </p>
                                         </div >
                                         </div>
                                     </Col>
@@ -552,7 +552,7 @@ export default function CourseDetails(props) {
                                                     <img className="cd5-baby" src="../assets/img/cd-baby.png" alt="" />
                                                 <div className="get-eva-det" >
                                                     <h6> Get Evaluated! </h6>
-                                                    <p> During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes. </p>
+                                                    <p> Complete mini projects and major projects and submit them for assessment </p>
                                                 </div >
                                             </div>
                                         </Row >

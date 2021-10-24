@@ -40,6 +40,7 @@ function AboutUs() {
                             <Col md={5}>
                                 <h1>We are <span style={{ color: "#43abfb" }}> on a Mission </span>to Empower Your Learning</h1>
                             </Col>
+                            
                             <Col md={{ offset: 1, span: 6 }}>
                                 <img src="../assets/img/mg (4).png" alt="" />
                             </Col>

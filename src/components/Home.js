@@ -22,6 +22,11 @@ import HireSection from './HireSection';
 import HireStudent from './HireStudent';
 import { Link } from 'react-router-dom';
 import Banner from './Banner';
+import { useLocation } from 'react-router-dom';
+
+
+
+
 
 
 
@@ -57,6 +62,20 @@ const Home = () => {
     const [isOpen13, setOpen13] = useState(false);
     const [isOpen14, setOpen14] = useState(false);
     const [isOpen15, setOpen15] = useState(false);
+
+
+    const location = useLocation()
+
+    
+
+    useEffect(()=> {
+        if (location.hash ==="#web") {
+            window.scrollTo(0, 5200);
+            
+        } else {
+        window.scrollTo({top:0,left:0, behavior: "smooth"})
+        }
+}, [location])
 
 
     const bootcampList = useSelector(state => state.bootcampList)
@@ -803,9 +822,9 @@ const Home = () => {
                 <button onClick={()=>setPp(3)}>adddd</button>
                 <button onClick={()=>setPp(0)}>adddd</button> */}
 
-
-
+                <div id="web">
                 <Webinar />
+                </div>
 
                 {/* <MediaGallery /> */}
                 <section className="sec12">
