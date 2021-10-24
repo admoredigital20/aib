@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Row, Col, Container, Modal } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import Navbar1 from './Navbar';
+
+import ModalVideo from 'react-modal-video'
 
 export default function Banner() {
 
@@ -71,6 +73,8 @@ export default function Banner() {
     const handleClose3 = () => setShow3(false);
     const handleShow3 = () => setShow3(true);
 
+    const [isOpen, setOpen] = useState(false);
+
 
     return (
         
@@ -80,15 +84,7 @@ export default function Banner() {
             <div className="banner0" style={{ backgroundImage: "url(" + "../assets/img/header2.png" + ")" }}>
                 
                 <Container>
-                <Modal className="sec-10-modal sec-10-modal2 modalNewBnr" show={show3} onHide={handleClose3}>
-                    <button onClick={handleClose3}>X</button>
-                    <Modal.Body className="d-flex justify-content-center">
-                        <video controls>
-                            <source src="../assets/vid/AIBrillianceIntroductionVideo.mp4" type="video/mp4"/>
-                            Your browser does not support the video tag.
-                        </video>
-                    </Modal.Body>
-                </Modal>
+                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="U0-veDAQmkQ" onClose={() => setOpen(false)} />
                     <Row className="bnr-content">
                         <Col md={5} >
                             <Row>
@@ -102,8 +98,8 @@ export default function Banner() {
                                     <p>Highest quality content in hands-on and project-based model delivered in online synchronous/asynchronous mode.</p>
                                     <Row>
                                         <Col className="bnr-play" >
-                                            <img src="../assets/img/play-btn.png" onClick={handleShow3} alt="" />
-                                            <h6 onClick={handleShow3} >Introduction</h6>
+                                            <img src="../assets/img/play-btn.png" onClick={() => setOpen(true)} alt="" />
+                                            <h6 onClick={() => setOpen(true)} >Introduction</h6>
                                         </Col >
                                     </Row>
                                 </Col>
