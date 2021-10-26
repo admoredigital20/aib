@@ -104,7 +104,7 @@ function Webinar() {
     }
 
     return (
-        <div>
+        <div id='web'>
             <section className="sec10">
                 <Container>
                     <Row><h2 className="sec10-h2">Webinars</h2></Row>

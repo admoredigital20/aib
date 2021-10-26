@@ -75,11 +75,10 @@ const Footer = (history) => {
 
     const onTop3 = () => {
         if (history.location.pathname == '/') {
-            window.scrollTo(0, 5350);
-        } else {
-            //  let history = useHistory
+            window.scrollTo(5600, 5600);
+        }
+        else{
             history1.push('/')
-            window.scrollTo(0, 5350);
         }
     }
     // const onTop=()=>{

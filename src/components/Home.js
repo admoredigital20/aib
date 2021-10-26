@@ -71,7 +71,6 @@ const Home = () => {
     useEffect(()=> {
         if (location.hash ==="#web") {
             window.scrollTo(0, 5200);
-            
         } else {
         window.scrollTo({top:0,left:0, behavior: "smooth"})
         }
@@ -97,7 +96,6 @@ const Home = () => {
     useEffect(() => {
         dispatch(listBootcamp())
         // dispatch(webinarCourse())
-        window.scrollTo(0, 0);
 
     }, [dispatch])
 
