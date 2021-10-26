@@ -5249,7 +5249,7 @@ a {
 }
 
 
-.sec-10-modal2 button {
+.sec-10-modal2  .mdl-btn-close {
   position: absolute;
     z-index: 33;
     right: 25px;

@@ -75,8 +75,11 @@ const Footer = (history) => {
 
     const onTop3 = () => {
         if (history.location.pathname == '/') {
-            window.scrollTo(5600, 5600);
-
+            window.scrollTo(0, 5350);
+        } else {
+            //  let history = useHistory
+            history1.push('/')
+            window.scrollTo(0, 5350);
         }
     }
     // const onTop=()=>{
@@ -115,7 +118,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show3} onHide={handleClose3}>
                     <Modal.Body>
-                        <button onClick={handleClose3}>X</button>
+                        <button className="mdl-btn-close" onClick={handleClose3}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider2.png")`, backgroundSize: "cover" }}>
@@ -140,7 +143,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show4} onHide={handleClose4}>
                     <Modal.Body>
-                    <button onClick={handleClose4}>X</button>
+                    <button className="mdl-btn-close" onClick={handleClose4}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider4.png")`, backgroundSize: "cover" }}>
@@ -165,7 +168,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show5} onHide={handleClose5}>
                     <Modal.Body>
-                    <button onClick={handleClose5}>X</button>
+                    <button className="mdl-btn-close" onClick={handleClose5}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider3.png")`, backgroundSize: "cover" }}>
@@ -191,7 +194,7 @@ const Footer = (history) => {
                 </Modal>
                 <Modal className="sec-10-modal sec-10-modal2" show={show6} onHide={handleClose6}>
                     <Modal.Body>
-                    <button onClick={handleClose6}>X</button>
+                    <button className="mdl-btn-close" onClick={handleClose6}>X</button>
                         <Slider {...settings}>
                             <div className="slider-all">
                                 <div className="ai-slider-img" style={{ backgroundImage: `url("../assets/img/aislider4.png")`, backgroundSize: "cover" }}>
@@ -245,7 +248,7 @@ const Footer = (history) => {
                         <Col className="ft-link" md={{ span: 2 }}>
                             <p className='footer-bold' style={{ fontWeight: getclr('/'), fontSize: getSize('/') }} onClick={onTop}>Home</p>
                             <p className='footer-bold' style={{ fontWeight: getclr('/fullcourse'), fontSize: getSize('/fullcourse') }} onClick={onTop2}> Bootcamps</p>
-                            <Link to='' onClick={onTop3}>    <p className='footer-bold' >Events</p>  </Link>
+                            <Link to='#web' onClick={onTop3}>    <p className='footer-bold' >Events</p>  </Link>
 
                         </Col>
                         <Col className="ft-link" md={{ span: 2, }}>

@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.b58cedcd.chunk.css",
-    "main.js": "/static/js/main.e8e9a451.chunk.js",
-    "main.js.map": "/static/js/main.e8e9a451.chunk.js.map",
+    "main.css": "/static/css/main.e100c7cb.chunk.css",
+    "main.js": "/static/js/main.e0245631.chunk.js",
+    "main.js.map": "/static/js/main.e0245631.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.55210fe6.js",
     "runtime-main.js.map": "/static/js/runtime-main.55210fe6.js.map",
     "static/css/2.51b89c8f.chunk.css": "/static/css/2.51b89c8f.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.01355a93.chunk.js.map": "/static/js/2.01355a93.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.51b89c8f.chunk.css.map": "/static/css/2.51b89c8f.chunk.css.map",
-    "static/css/main.b58cedcd.chunk.css.map": "/static/css/main.b58cedcd.chunk.css.map",
+    "static/css/main.e100c7cb.chunk.css.map": "/static/css/main.e100c7cb.chunk.css.map",
     "static/js/2.01355a93.chunk.js.LICENSE.txt": "/static/js/2.01355a93.chunk.js.LICENSE.txt",
     "static/media/dx.light.css": "/static/media/dxicons.d8b3a23c.ttf",
     "static/media/index.css": "/static/media/sfprodisplay-semibold-webfont.f78c2510.woff2",
@@ -20,7 +20,7 @@
     "static/js/runtime-main.55210fe6.js",
     "static/css/2.51b89c8f.chunk.css",
     "static/js/2.01355a93.chunk.js",
-    "static/css/main.b58cedcd.chunk.css",
-    "static/js/main.e8e9a451.chunk.js"
+    "static/css/main.e100c7cb.chunk.css",
+    "static/js/main.e0245631.chunk.js"
   ]
 }

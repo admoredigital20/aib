@@ -49,7 +49,7 @@ function HireStudent(props) {
                <Col MD={5} className='hirestudent-second' style={{ backgroundImage: "url(" + "../assets/img/contactus.png" + ")" }}>
                <a class="fa fa-times close" onClick={()=>props.state()}></a> 
                  <Container>
-                     <p>Enter the following details,To learn about hiring a student from AIBrilliance</p>
+                     <p>Enter the following details to learn about hiring a student from AIBrilliance.</p>
             <Modal.Body>
                     <Form className='hire' onSubmit={submitHandler}>
                         <Form.Group className="mb-3" controlId="formGroupName">
