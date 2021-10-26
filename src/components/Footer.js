@@ -241,7 +241,6 @@ const Footer = (history) => {
                                     size="2x"
                                     href=''
                                     style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "#fff" }} /></a>
-
                             </div>
                         </Col>
                         <Col className="ft-link" md={{ span: 2 }}>
