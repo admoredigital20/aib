@@ -51,7 +51,7 @@ function HireSection() {
                             
                             <Col className="hire-center" md={4} xs={12}>
                                 <h3>Get free access to the best talent, No placement fees involved. </h3>
-                                <p>"We are proud of our prouduct"</p>
+                                <p>"We are proud of our product"</p>
                             </Col>
                             <Col className='stdntgrdt-pding' md={4} xs={12}>
                                <Button className="btn-blue sec5-btn" onClick={handleShow}><span className='sec4-btn-tiltle'>Hire Our Student</span><img className='sec4-img' src='../assets/img/icons8-right-arrow-48.png'></img></Button>
