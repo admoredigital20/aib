@@ -1,4 +1,4 @@
-export  const LH = "http://192.241.138.220"
+export  const LH = "https://aibrilliance-admin.online/"
 
 
 export  const BOOTCAMP_LIST_REQUEST = "BOOTCAMP_LIST_REQUEST"

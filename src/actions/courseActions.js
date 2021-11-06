@@ -2,7 +2,7 @@ import axios from "axios";
 import { COURSE_LIST_FAIL, COURSE_LIST_REQUEST, COURSE_LIST_SUCCESS } from "../constants/courseConstant"
 import { LH, PAYMENT_FAIL, PAYMENT_REQUEST } from "../constants/generalConstant";
 
-export const listCourse = ( )=>  async (dispatch) =>{
+export const listCourse = ( ) =>  async (dispatch) =>{
     dispatch({
         type:COURSE_LIST_REQUEST
        
